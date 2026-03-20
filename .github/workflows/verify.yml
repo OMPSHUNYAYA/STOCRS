@@ -1,0 +1,37 @@
+name: STOCRS Verify
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run canonical demo and generate output
+        run: |
+          python demo/stocrs_canonical_demo.py --seed 101 --systems 5 --json > output.json
+
+      - name: Compare with reference output
+        run: |
+          diff -q output.json reference_outputs/reference_output.json
+
+      - name: Compute SHA256
+        run: |
+          sha256sum output.json > computed.sha256
+          cat computed.sha256
+
+      - name: Verify hash match
+        run: |
+          grep -q "$(cut -d ' ' -f1 computed.sha256)" VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt
