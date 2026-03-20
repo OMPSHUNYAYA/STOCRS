@@ -1499,3 +1499,654 @@ STOCRS preserves **structural truth even under competing claims and adversarial 
 
 ---
 
+# **PHASE 8 — Partial Information Sharing and Structural Reconvergence**
+
+---
+
+## **Test 8.1 — Partial Sharing Reconvergence Demo**
+
+**Scenario:** partial cross-system sharing under isolation  
+**Seed:** 71  
+**Systems:** 5  
+
+---
+
+### **Objective**
+
+Demonstrate that STOCRS can begin from **different incomplete structural fragments across multiple independent systems**, support partial cross-system sharing over multiple phases, preserve unresolved structure under partial visibility, and ultimately reconverge to the same complete result.
+
+---
+
+### **Conditions**
+
+• 5 independent systems  
+• no GPS  
+• no NTP  
+• no internet  
+• different initial incomplete fragments across systems  
+• partial cross-system sharing in multiple stages  
+• unresolved structure intentionally preserved in intermediate phases  
+• different internal local times on each system  
+• no timestamps used for correctness  
+
+---
+
+### **Observed Results**
+
+**No GPS:** YES  
+**No NTP:** YES  
+**No Internet:** YES  
+
+**Phase 1 Diversity OK:** YES  
+**Phase 1 Incomplete OK:** YES  
+
+**Phase 2 Growth OK:** YES  
+**Phase 3 Growth OK:** YES  
+
+**Phase 1 Unresolved Exists:** YES  
+**Phase 2 Unresolved Exists:** YES  
+**Phase 3 Unresolved Exists:** YES  
+
+**Local Time Diversity OK:** YES  
+
+**Time Used for Correctness:** NO  
+
+**Phase 4 Complete OK:** YES  
+**Phase 4 Match OK:** YES  
+
+---
+
+### **Observed Progression Per System**
+
+**S1 Phase1 Known:**  
+`6`  
+**S1 Phase2 Known:**  
+`9`  
+**S1 Phase3 Known:**  
+`14`  
+**S1 Phase4 Known:**  
+`20`  
+**S1 Phase1 Unresolved:**  
+`3`  
+**S1 Phase2 Unresolved:**  
+`6`  
+**S1 Phase3 Unresolved:**  
+`8`  
+**S1 Phase4 Local Time:**  
+`18144812.544`
+
+---
+
+**S2 Phase1 Known:**  
+`6`  
+**S2 Phase2 Known:**  
+`9`  
+**S2 Phase3 Known:**  
+`14`  
+**S2 Phase4 Known:**  
+`20`  
+**S2 Phase1 Unresolved:**  
+`3`  
+**S2 Phase2 Unresolved:**  
+`6`  
+**S2 Phase3 Unresolved:**  
+`5`  
+**S2 Phase4 Local Time:**  
+`18222089.624`
+
+---
+
+**S3 Phase1 Known:**  
+`6`  
+**S3 Phase2 Known:**  
+`9`  
+**S3 Phase3 Known:**  
+`14`  
+**S3 Phase4 Known:**  
+`20`  
+**S3 Phase1 Unresolved:**  
+`3`  
+**S3 Phase2 Unresolved:**  
+`3`  
+**S3 Phase3 Unresolved:**  
+`6`  
+**S3 Phase4 Local Time:**  
+`18314950.24`
+
+---
+
+**S4 Phase1 Known:**  
+`6`  
+**S4 Phase2 Known:**  
+`9`  
+**S4 Phase3 Known:**  
+`14`  
+**S4 Phase4 Known:**  
+`20`  
+**S4 Phase1 Unresolved:**  
+`3`  
+**S4 Phase2 Unresolved:**  
+`5`  
+**S4 Phase3 Unresolved:**  
+`7`  
+**S4 Phase4 Local Time:**  
+`18397282.152`
+
+---
+
+**S5 Phase1 Known:**  
+`6`  
+**S5 Phase2 Known:**  
+`9`  
+**S5 Phase3 Known:**  
+`14`  
+**S5 Phase4 Known:**  
+`20`  
+**S5 Phase1 Unresolved:**  
+`4`  
+**S5 Phase2 Unresolved:**  
+`6`  
+**S5 Phase3 Unresolved:**  
+`9`  
+**S5 Phase4 Local Time:**  
+`18490214.048`
+
+---
+
+### **Final Results**
+
+**Final Node Count:**  
+`20`
+
+**Final Terminal Value:**  
+`E1 = 202`
+
+**Elapsed Runtime:**  
+`0.0009 s`
+
+---
+
+### **Invariant Verified**
+
+`different_partial_fragments + partial_cross_sharing + different_local_times + no_external_authority -> same_final_result`
+
+---
+
+### **Certificate**
+
+`d5e45debc45abae5919cda68087a1ac00d4af143cbb7e50fa60501b5d5ab0e24`
+
+---
+
+## **Test 8.2 — Partial Sharing Stress Validation**
+
+**Scenario:** partial cross-system sharing under isolation  
+**Start Seed:** 71  
+**Systems:** 5  
+**Runs:** 100  
+
+---
+
+### **Objective**
+
+Validate that STOCRS consistently reconverges to the same final result across repeated randomized runs when systems begin with different incomplete fragments and exchange only partial structural information during intermediate phases.
+
+---
+
+### **Stress Test Outcome**
+
+`runs = 100`  
+`passes = 100`  
+
+**All Passed:** YES  
+
+---
+
+### **Elapsed Runtime**
+
+`0.202167 s`
+
+---
+
+### **Certificate Digest**
+
+`ef9ea0979d682bec9a862e74c4a0f7b5ba3fce0d036f1dcceba8a210805cc668`
+
+---
+
+## **Phase 8 Conclusion**
+
+STOCRS demonstrates:
+
+• deterministic reconvergence from different incomplete initial fragments  
+• preservation of unresolved structure across multiple partial-sharing phases  
+• structural growth through limited cross-system information exchange  
+• correctness despite divergent internal local times  
+• correctness without GPS, NTP, or internet  
+• final convergence to the same valid result across all systems  
+• repeatable distributed reconvergence validation across randomized runs  
+
+---
+
+## **Key Insight**
+
+STOCRS achieves **deterministic correctness even under incomplete, evolving, and partially shared structural knowledge**, without reliance on time, sequence, or coordination.
+
+---
+
+# **PHASE 9 — Bounded Sharing and Delayed Reconvergence Pressure**
+
+---
+
+## **Test 9.1 — Bounded Sharing Demo**
+
+**Scenario:** bounded partial sharing under delayed reconvergence pressure  
+**Seed:** 81  
+**Systems:** 5  
+
+---
+
+### **Objective**
+
+Demonstrate that STOCRS preserves **unresolved structural state across multiple bounded-sharing phases**, where early information exchange is intentionally restricted, and still converges to the same final result once full structural completion becomes available.
+
+---
+
+### **Conditions**
+
+• 5 independent systems  
+• no GPS  
+• no NTP  
+• no internet  
+• different initial incomplete fragments across systems  
+• early sharing intentionally bounded by strict caps  
+• unresolved structure intentionally preserved across multiple intermediate phases  
+• different internal local times on each system  
+• no timestamps used for correctness  
+
+---
+
+### **Observed Results**
+
+**No GPS:** YES  
+**No NTP:** YES  
+**No Internet:** YES  
+
+**Phase 1 Diversity OK:** YES  
+**Phase 1 Incomplete OK:** YES  
+
+**Phase 2 Bounded OK:** YES  
+**Phase 3 Bounded OK:** YES  
+**Phase 4 Bounded OK:** YES  
+
+**Phase 2 Growth OK:** YES  
+**Phase 3 Growth OK:** YES  
+**Phase 4 Growth OK:** YES  
+
+**Phase 1 Unresolved Exists:** YES  
+**Phase 2 Unresolved Exists:** YES  
+**Phase 3 Unresolved Exists:** YES  
+**Phase 4 Unresolved Exists:** YES  
+
+**Local Time Diversity OK:** YES  
+
+**Time Used for Correctness:** NO  
+
+**Phase 5 Complete OK:** YES  
+**Phase 5 Match OK:** YES  
+
+---
+
+### **Observed Progression Per System**
+
+**S1 Phase1 Known:**  
+`5`  
+**S1 Phase2 Known:**  
+`7`  
+**S1 Phase3 Known:**  
+`10`  
+**S1 Phase4 Known:**  
+`14`  
+**S1 Phase5 Known:**  
+`20`  
+**S1 Phase1 Unresolved:**  
+`4`  
+**S1 Phase2 Unresolved:**  
+`6`  
+**S1 Phase3 Unresolved:**  
+`9`  
+**S1 Phase4 Unresolved:**  
+`11`  
+**S1 Phase5 Local Time:**  
+`20059793.152`
+
+---
+
+**S2 Phase1 Known:**  
+`5`  
+**S2 Phase2 Known:**  
+`7`  
+**S2 Phase3 Known:**  
+`10`  
+**S2 Phase4 Known:**  
+`14`  
+**S2 Phase5 Known:**  
+`20`  
+**S2 Phase1 Unresolved:**  
+`4`  
+**S2 Phase2 Unresolved:**  
+`6`  
+**S2 Phase3 Unresolved:**  
+`8`  
+**S2 Phase4 Unresolved:**  
+`8`  
+**S2 Phase5 Local Time:**  
+`20136074.6`
+
+---
+
+**S3 Phase1 Known:**  
+`5`  
+**S3 Phase2 Known:**  
+`7`  
+**S3 Phase3 Known:**  
+`10`  
+**S3 Phase4 Known:**  
+`14`  
+**S3 Phase5 Known:**  
+`20`  
+**S3 Phase1 Unresolved:**  
+`4`  
+**S3 Phase2 Unresolved:**  
+`4`  
+**S3 Phase3 Unresolved:**  
+`5`  
+**S3 Phase4 Unresolved:**  
+`8`  
+**S3 Phase5 Local Time:**  
+`20229545.328`
+
+---
+
+**S4 Phase1 Known:**  
+`5`  
+**S4 Phase2 Known:**  
+`7`  
+**S4 Phase3 Known:**  
+`10`  
+**S4 Phase4 Known:**  
+`14`  
+**S4 Phase5 Known:**  
+`20`  
+**S4 Phase1 Unresolved:**  
+`4`  
+**S4 Phase2 Unresolved:**  
+`5`  
+**S4 Phase3 Unresolved:**  
+`6`  
+**S4 Phase4 Unresolved:**  
+`7`  
+**S4 Phase5 Local Time:**  
+`20311407.784`
+
+---
+
+**S5 Phase1 Known:**  
+`5`  
+**S5 Phase2 Known:**  
+`7`  
+**S5 Phase3 Known:**  
+`10`  
+**S5 Phase4 Known:**  
+`14`  
+**S5 Phase5 Known:**  
+`20`  
+**S5 Phase1 Unresolved:**  
+`3`  
+**S5 Phase2 Unresolved:**  
+`4`  
+**S5 Phase3 Unresolved:**  
+`6`  
+**S5 Phase4 Unresolved:**  
+`8`  
+**S5 Phase5 Local Time:**  
+`20404949.792`
+
+---
+
+### **Final Results**
+
+**Final Node Count:**  
+`20`
+
+**Final Terminal Value:**  
+`E1 = 202`
+
+**Elapsed Runtime:**  
+`0.001023 s`
+
+---
+
+### **Invariant Verified**
+
+`bounded_early_sharing + prolonged_unresolved_state + eventual_structural_completion -> same_final_result`
+
+---
+
+### **Certificate**
+
+`e14c152b42c21b2f5bb70a76bd06196f0df72331ac26d1386398531190d541d3`
+
+---
+
+## **Test 9.2 — Bounded Sharing Stress Validation**
+
+**Scenario:** bounded partial sharing under delayed reconvergence pressure  
+**Start Seed:** 81  
+**Systems:** 5  
+**Runs:** 100  
+
+---
+
+### **Objective**
+
+Validate that STOCRS consistently preserves unresolved structure across multiple bounded-sharing phases and converges to the same final result across repeated randomized runs.
+
+---
+
+### **Stress Test Outcome**
+
+`runs = 100`  
+`passes = 100`  
+
+**All Passed:** YES  
+
+---
+
+### **Elapsed Runtime**
+
+`0.216267 s`
+
+---
+
+### **Certificate Digest**
+
+`563422f41d1d4b4adfca17f6199cc307252b09044efc418dc4bd94d2956751cb`
+
+---
+
+## **Phase 9 Conclusion**
+
+STOCRS demonstrates:
+
+• deterministic reconvergence under explicitly bounded information sharing  
+• prolonged preservation of unresolved structure across multiple intermediate phases  
+• structural growth under strict sharing constraints  
+• correctness despite divergent internal local times  
+• correctness without GPS, NTP, or internet  
+• final convergence to the same valid result across all systems  
+• repeatable bounded-sharing validation across randomized runs  
+
+---
+
+## **Key Insight**
+
+STOCRS maintains **structural correctness even under constrained communication**, enabling delayed yet deterministic reconvergence when information flow is limited.
+
+---
+
+# **PHASE 10 — Canonical Demonstration**
+
+---
+
+## **Test 10.1 — STOCRS Canonical Demo**
+
+**Scenario:** canonical bounded-sharing structural convergence with conflict-aware validation  
+**Seed:** 101  
+**Systems:** 5  
+
+---
+
+### **Objective**
+
+Demonstrate, in a single unified canonical execution, that STOCRS can:
+
+• begin from different incomplete structural fragments  
+• remain unresolved across multiple bounded-sharing phases  
+• operate under divergent internal local times with no external authority  
+• deterministically converge to the same final structural result  
+
+while also validating:
+
+• conflict abstention under ambiguity  
+• deterministic structural recovery under reinforced support  
+
+---
+
+### **Conditions**
+
+• 5 independent systems  
+• no GPS  
+• no NTP  
+• no internet  
+• different incomplete initial fragments across systems  
+• bounded partial sharing across multiple intermediate phases  
+• prolonged unresolved persistence before completion  
+• different internal local times across systems  
+• no timestamps used for correctness  
+• embedded conflict validation story included  
+
+---
+
+### **Observed Results**
+
+**No GPS:** YES  
+**No NTP:** YES  
+**No Internet:** YES  
+
+**Time Used for Correctness:** NO  
+
+**Phase 1 Diversity OK:** YES  
+**Phase 1 Incomplete OK:** YES  
+
+**Phase 2 Bounded OK:** YES  
+**Phase 3 Bounded OK:** YES  
+**Phase 4 Bounded OK:** YES  
+
+**Phase 1 Unresolved Exists:** YES  
+**Phase 2 Unresolved Exists:** YES  
+**Phase 3 Unresolved Exists:** YES  
+**Phase 4 Unresolved Exists:** YES  
+
+**Final Complete OK:** YES  
+**Final Match OK:** YES  
+
+---
+
+### **Final Results**
+
+**Final Node Count:**  
+`20`
+
+**Final Terminal Value:**  
+`E1 = 202`
+
+---
+
+### **Conflict Story Validation**
+
+**Stable OK:** YES  
+**Conflict OK:** YES  
+**Recovery OK:** YES  
+
+---
+
+### **Conflict Story Certificate**
+
+`8cb9667dfc12e6a09ea0728e927b3f19609eee0eac00159d062e2980a67bd2b9`
+
+---
+
+### **Elapsed Runtime**
+
+`0.001418 s`
+
+---
+
+### **Invariant Verified**
+
+`different_incomplete_fragments + bounded_partial_sharing + prolonged_unresolved_state + different_local_times + no_external_authority -> same_final_result`
+
+and
+
+`conflicting_claims -> abstention_without_incorrect_result -> reinforced_resolution`
+
+---
+
+### **Certificate**
+
+`150c3ca5135af3320929a4fc2a92cc39001d5b3f49a9ce972bcccc49c1c55f36`
+
+---
+
+## **Phase 10 Conclusion**
+
+STOCRS demonstrates:
+
+• deterministic convergence from different incomplete structural fragments  
+• correctness under bounded and delayed information sharing  
+• preservation of unresolved structure across multiple intermediate phases  
+• convergence despite divergent internal local times  
+• correctness without GPS, NTP, internet, or external authority  
+• structural growth and completion without reliance on time or sequence  
+• identical final results across independent systems  
+• explicit conflict abstention under structural inconsistency  
+• deterministic recovery through reinforced structural support  
+• replay-verifiable deterministic certification  
+
+---
+
+## **Canonical Insight**
+
+This unified demonstration confirms that STOCRS preserves correctness across:
+
+• incompleteness  
+• disorder  
+• isolation  
+• bounded communication  
+• adversarial noise  
+• and direct structural conflict  
+
+---
+
+## **STOCRS Canonical Identity**
+
+`correctness = structure`
+
+---
+
+## **STOCRS Theorem (Informal)**
+
+For any valid structural program `G`:
+
+`correctness is invariant under arrival order, time variation, fragmentation, bounded sharing, adversarial noise, and structural conflict when abstention rules are preserved.`
