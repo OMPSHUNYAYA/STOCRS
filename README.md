@@ -129,10 +129,10 @@ This enables:
 
 ### 📘 Docs
 
-- [Quickstart](docs/Quickstart.txt)
-- [FAQ](docs/FAQ.txt)
-- [Convergence Proof](docs/Convergence-Proof.txt)
-- [Validation Ledger](docs/Validation_Ledger.txt)
+- [Quickstart](docs/Quickstart.md)
+- [FAQ](docs/FAQ.md)
+- [Convergence Proof](docs/Convergence-Proof.md)
+- [Validation Ledger](docs/Validation_Ledger.md)
 - [Concept Flyer](docs/Concept-Flyer_STOCRS_v1.8.pdf)
 - [STOCRS Paper](docs/STOCRS_v1.8.pdf)
 
