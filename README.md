@@ -2,6 +2,8 @@
 
 ## **Shunyaya Timeless Computation**
 
+[![STOCRS Verify](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml/badge.svg)](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml)
+
 ![STOCRS](https://img.shields.io/badge/STOCRS-Structural%20Computation-black)
 ![Deterministic](https://img.shields.io/badge/Deterministic-Convergence-green)
 ![No-Time](https://img.shields.io/badge/Time-Not%20Required-lightgrey)
