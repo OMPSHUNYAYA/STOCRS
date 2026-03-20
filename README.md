@@ -17,7 +17,7 @@
 
 ---
 
-**Correctness derived from structure — not time, sequence, or synchronization**
+**Correctness derived from structure — not time, not sequence, not synchronization**
 
 Using concepts from **Shunyaya Structural Universal Mathematics (SSUM)**
 
@@ -86,6 +86,8 @@ STOCRS extends this principle further: **if time can emerge from structure, comp
 
 ![STOCRS Structural Model](docs/STOCRS.png)
 
+*Fragmented systems converge to identical final truth without time, order, or synchronization*
+
 ---
 
 ## 🧭 **STOCRS Core Principle**
@@ -135,6 +137,8 @@ This enables:
 - [Validation Ledger](docs/Validation_Ledger.md)
 - [Concept Flyer](docs/Concept-Flyer_STOCRS_v1.8.pdf)
 - [STOCRS Paper](docs/STOCRS_v1.8.pdf)
+- [STOCRS Structural Model](docs/STOCRS.png)
+- [Shunyaya Structural Paradigm](docs/Shunyaya-Structural-Paradigm.png)
 
 ---
 
@@ -152,13 +156,15 @@ This enables:
 ### ⚡ Run
 
 ```
-python demo\stocrs_canonical_demo.py --seed 101 --systems 5
+python demo/stocrs_canonical_demo.py --seed 101 --systems 5
 ```
 
 Verify:
 
+```
 compare → reference_outputs  
 hash → VERIFY/FREEZE_*.txt
+```
 
 ---
 
@@ -263,7 +269,7 @@ Without using:
 Run the canonical demo:
 
 ```
-python demo\stocrs_canonical_demo.py --seed 101 --systems 5
+python demo/stocrs_canonical_demo.py --seed 101 --systems 5
 ```
 
 ### **Expected Output**
@@ -348,7 +354,7 @@ STOCRS does not require:
 
 - clocks  
 - timestamps  
-- ordering  
+- event ordering  
 - synchronization  
 - central authority  
 
