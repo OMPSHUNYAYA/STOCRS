@@ -2,9 +2,9 @@ name: STOCRS Verify
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   verify:
@@ -12,26 +12,94 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
-      - name: Run canonical demo and generate output
+      - name: Run canonical demo and generate deterministic JSON
         run: |
-          python demo/stocrs_canonical_demo.py --seed 101 --systems 5 --json > output.json
+          python demo/stocrs_canonical_demo.py --seed 101 --systems 5 --json > raw_output.json
 
-      - name: Compare with reference output
-        run: |
-          diff -q output.json reference_outputs/reference_output.json
+          python - <<'PY'
+          import json
 
-      - name: Compute SHA256
-        run: |
-          sha256sum output.json > computed.sha256
-          cat computed.sha256
+          with open("raw_output.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
 
-      - name: Verify hash match
+          with open("output.json", "w", encoding="utf-8") as f:
+              json.dump(data, f, sort_keys=True, separators=(",", ":"))
+          PY
+
+      - name: Semantic JSON verification
         run: |
-          grep -q "$(cut -d ' ' -f1 computed.sha256)" VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt
+          python - <<'PY'
+          import json
+          import sys
+
+          with open("output.json", "r", encoding="utf-8") as f:
+              generated = json.load(f)
+
+          with open("reference_outputs/reference_output.json", "r", encoding="utf-8") as f:
+              reference = json.load(f)
+
+          if generated != reference:
+              print("Semantic JSON mismatch detected.")
+              print("Generated:", generated)
+              print("Reference:", reference)
+              sys.exit(1)
+
+          print("Semantic JSON verification passed.")
+          PY
+
+      - name: Verify canonical result fields
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+
+          with open("output.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          checks = [
+              ("No GPS", data.get("gps_used") is False),
+              ("No NTP", data.get("ntp_used") is False),
+              ("No Internet", data.get("internet_used") is False),
+              ("Time Used for Correctness", data.get("time_used_for_correctness") is False),
+              ("Final Complete OK", data.get("final_complete_ok") is True),
+              ("Final Match OK", data.get("final_match_ok") is True),
+              ("Final Node Count", data.get("final_node_count") == 20),
+              ("Final E1", data.get("final_e1") == 202),
+          ]
+
+          failed = [name for name, ok in checks if not ok]
+          if failed:
+              print("Canonical field verification failed:")
+              for name in failed:
+                  print("-", name)
+              sys.exit(1)
+
+          print("Canonical field verification passed.")
+          PY
+
+      - name: Verify SHA256 hash is listed in freeze file
+        run: |
+          python - <<'PY'
+          import hashlib
+          import sys
+
+          with open("output.json", "rb") as f:
+              digest = hashlib.sha256(f.read()).hexdigest()
+
+          with open("VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt", "r", encoding="utf-8") as f:
+              freeze_text = f.read()
+
+          if digest not in freeze_text:
+              print("SHA256 not found in VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt")
+              print("Computed:", digest)
+              sys.exit(1)
+
+          print("SHA256 verification passed.")
+          PY
