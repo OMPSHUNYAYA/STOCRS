@@ -19,31 +19,30 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Run canonical demo and generate deterministic JSON
+      - name: Run canonical demo and generate output
         run: |
-          python demo/stocrs_canonical_demo.py --seed 101 --systems 5 --json > raw_output.json
+          python demo/stocrs_canonical_demo.py --seed 101 --systems 5 --json > output.json
 
-          python - <<'PY'
-          import json
-
-          with open("raw_output.json", "r", encoding="utf-8") as f:
-              data = json.load(f)
-
-          with open("output.json", "w", encoding="utf-8") as f:
-              json.dump(data, f, sort_keys=True, separators=(",", ":"))
-          PY
-
-      - name: Semantic JSON verification
+      - name: Semantic JSON verification (ignore runtime fields)
         run: |
           python - <<'PY'
           import json
           import sys
 
+          def normalize(data):
+              if isinstance(data, dict):
+                  data = dict(data)
+                  data.pop("elapsed_runtime_s", None)
+                  return {k: normalize(v) for k, v in data.items()}
+              if isinstance(data, list):
+                  return [normalize(x) for x in data]
+              return data
+
           with open("output.json", "r", encoding="utf-8") as f:
-              generated = json.load(f)
+              generated = normalize(json.load(f))
 
           with open("reference_outputs/reference_output.json", "r", encoding="utf-8") as f:
-              reference = json.load(f)
+              reference = normalize(json.load(f))
 
           if generated != reference:
               print("Semantic JSON mismatch detected.")
@@ -64,14 +63,15 @@ jobs:
               data = json.load(f)
 
           checks = [
-              ("No GPS", data.get("gps_used") is False),
-              ("No NTP", data.get("ntp_used") is False),
-              ("No Internet", data.get("internet_used") is False),
+              ("No GPS", data.get("no_gps") is True),
+              ("No NTP", data.get("no_ntp") is True),
+              ("No Internet", data.get("no_internet") is True),
               ("Time Used for Correctness", data.get("time_used_for_correctness") is False),
               ("Final Complete OK", data.get("final_complete_ok") is True),
               ("Final Match OK", data.get("final_match_ok") is True),
               ("Final Node Count", data.get("final_node_count") == 20),
               ("Final E1", data.get("final_e1") == 202),
+              ("Certificate Present", isinstance(data.get("certificate"), str) and len(data.get("certificate")) == 64),
           ]
 
           failed = [name for name, ok in checks if not ok]
@@ -84,22 +84,22 @@ jobs:
           print("Canonical field verification passed.")
           PY
 
-      - name: Verify SHA256 hash is listed in freeze file
+      - name: Verify checked-in reference file hash is frozen
         run: |
           python - <<'PY'
           import hashlib
           import sys
 
-          with open("output.json", "rb") as f:
+          with open("reference_outputs/reference_output.json", "rb") as f:
               digest = hashlib.sha256(f.read()).hexdigest()
 
           with open("VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt", "r", encoding="utf-8") as f:
               freeze_text = f.read()
 
           if digest not in freeze_text:
-              print("SHA256 not found in VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt")
+              print("reference_outputs/reference_output.json SHA256 not found in VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt")
               print("Computed:", digest)
               sys.exit(1)
 
-          print("SHA256 verification passed.")
+          print("Reference output SHA256 verification passed.")
           PY
