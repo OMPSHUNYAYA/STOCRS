@@ -1,0 +1,19 @@
+STOCRS Verification Guide
+
+1. Re-run demo scripts:
+   python demo\stocrs_poc_demo.py
+   python demo\stocrs_canonical_demo.py
+   python demo\stocrs_reconciliation_demo_v1_1.py
+
+2. Compare outputs with reference_outputs/
+
+3. Verify SHA256 hashes:
+
+   certutil -hashfile <file> SHA256
+
+4. Confirm:
+   - Outputs match reference files
+   - Hashes match FREEZE files
+
+Result:
+Deterministic reproduction confirmed.

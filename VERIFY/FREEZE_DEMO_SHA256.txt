@@ -1,0 +1,9 @@
+SHA256 hash of demo\stocrs_poc_demo.py:
+5b898feac61cf858e4972991b697059495852fbaae4708c432ec624bdc85f4a6
+CertUtil: -hashfile command completed successfully.
+SHA256 hash of demo\stocrs_canonical_demo.py:
+f9d70522bfdacaa6059a75d52fbb1fc906c4c3772a3cbb96a44dfb30837de1a0
+CertUtil: -hashfile command completed successfully.
+SHA256 hash of demo\stocrs_reconciliation_demo_v1_1.py:
+88515a663a0ebf6eebadb1cde6e3cce0c0f0464e1a1839aae793563e565ffbf3
+CertUtil: -hashfile command completed successfully.

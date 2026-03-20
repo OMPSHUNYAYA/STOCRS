@@ -1,0 +1,9 @@
+Expected Properties:
+
+- Identical output across runs
+- Order-independent convergence
+- No incorrect output under conflict
+- Abstention on inconsistent structure
+- Replay consistency
+
+All runs must produce identical structural resolution.
