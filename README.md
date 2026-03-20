@@ -129,6 +129,26 @@ This enables:
 
 ---
 
+## 🛡 **Classical Compatibility Guarantee**
+
+STOCRS is a conservative structural extension of computation.
+
+For all structurally valid computations:
+
+`classical result = STOCRS result`
+
+STOCRS does not change correctness.  
+It governs when correctness can emerge.
+
+- dependencies satisfied → correctness emerges  
+- dependencies incomplete → no result emerges  
+- conflicting structure → no valid result emerges  
+
+No incorrect result is ever produced.  
+STOCRS preserves classical correctness through structural discipline.
+
+---
+
 ## 🔗 Quick Links
 
 ### 📘 Docs
