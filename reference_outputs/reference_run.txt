@@ -1,0 +1,34 @@
+STOCRS Canonical Demo
+
+Seed: 101
+Systems: 5
+
+No GPS: YES
+No NTP: YES
+No Internet: YES
+Time Used for Correctness: NO
+
+Phase 1 Diversity OK: YES
+Phase 1 Incomplete OK: YES
+Phase 2 Bounded OK: YES
+Phase 3 Bounded OK: YES
+Phase 4 Bounded OK: YES
+
+Phase 1 Unresolved Exists: YES
+Phase 2 Unresolved Exists: YES
+Phase 3 Unresolved Exists: YES
+Phase 4 Unresolved Exists: YES
+
+Final Complete OK: YES
+Final Match OK: YES
+Final Node Count: 20
+Final E1: 202
+
+Conflict Story
+Stable OK: YES
+Conflict OK: YES
+Recovery OK: YES
+Conflict Story Certificate: 8cb9667dfc12e6a09ea0728e927b3f19609eee0eac00159d062e2980a67bd2b9
+
+Elapsed Runtime: 0.001418 s
+Certificate: 150c3ca5135af3320929a4fc2a92cc39001d5b3f49a9ce972bcccc49c1c55f36

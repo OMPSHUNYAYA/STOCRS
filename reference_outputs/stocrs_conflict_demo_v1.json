@@ -1,0 +1,85 @@
+{
+  "certificate": "88121ea437d7aec3e27bbe9baf44a15a7cc555fcd43d0a52a653449d90a8575f",
+  "conflict_run": {
+    "conflicts": {
+      "X1": {
+        "claims": [
+          2,
+          9
+        ],
+        "type": "multi_value_conflict"
+      }
+    },
+    "frontiers": [
+      [
+        "X2"
+      ]
+    ],
+    "known_count": 3,
+    "known_nodes": [
+      "X1",
+      "X2",
+      "A1"
+    ],
+    "local_time_s": 1060.0,
+    "system": "S1",
+    "unresolved": [
+      "A1"
+    ],
+    "values": {
+      "X2": 3
+    }
+  },
+  "majority_run": {
+    "conflicts": {},
+    "frontiers": [
+      [
+        "X1",
+        "X2"
+      ],
+      [
+        "A1"
+      ]
+    ],
+    "known_count": 3,
+    "known_nodes": [
+      "X1",
+      "X2",
+      "A1"
+    ],
+    "local_time_s": 1060.0,
+    "system": "S1",
+    "unresolved": [],
+    "values": {
+      "A1": 5,
+      "X1": 2,
+      "X2": 3
+    }
+  },
+  "stable_run": {
+    "conflicts": {},
+    "frontiers": [
+      [
+        "X1",
+        "X2"
+      ],
+      [
+        "A1"
+      ]
+    ],
+    "known_count": 3,
+    "known_nodes": [
+      "X1",
+      "X2",
+      "A1"
+    ],
+    "local_time_s": 1060.0,
+    "system": "S1",
+    "unresolved": [],
+    "values": {
+      "A1": 5,
+      "X1": 2,
+      "X2": 3
+    }
+  }
+}

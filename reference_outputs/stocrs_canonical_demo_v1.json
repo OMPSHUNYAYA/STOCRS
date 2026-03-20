@@ -1,0 +1,1317 @@
+{
+  "certificate": "150c3ca5135af3320929a4fc2a92cc39001d5b3f49a9ce972bcccc49c1c55f36",
+  "conflict_story": {
+    "certificate": "8cb9667dfc12e6a09ea0728e927b3f19609eee0eac00159d062e2980a67bd2b9",
+    "conflict_ok": true,
+    "recovery_ok": true,
+    "stable_ok": true
+  },
+  "conflict_story_detail": {
+    "certificate": "8cb9667dfc12e6a09ea0728e927b3f19609eee0eac00159d062e2980a67bd2b9",
+    "conflict_ok": true,
+    "conflict_run": {
+      "conflicts": {
+        "X1": {
+          "claims": [
+            2,
+            9
+          ],
+          "type": "multi_value_conflict"
+        }
+      },
+      "frontiers": [
+        [
+          "X2"
+        ]
+      ],
+      "known_count": 3,
+      "known_nodes": [
+        "X1",
+        "X2",
+        "A1"
+      ],
+      "local_time_s": 1060.0,
+      "system": "S1",
+      "unresolved": [
+        "A1"
+      ],
+      "values": {
+        "X2": 3
+      }
+    },
+    "recovery_ok": true,
+    "recovery_run": {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2"
+        ],
+        [
+          "A1"
+        ]
+      ],
+      "known_count": 3,
+      "known_nodes": [
+        "X1",
+        "X2",
+        "A1"
+      ],
+      "local_time_s": 1060.0,
+      "system": "S1",
+      "unresolved": [],
+      "values": {
+        "A1": 5,
+        "X1": 2,
+        "X2": 3
+      }
+    },
+    "stable_ok": true,
+    "stable_run": {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2"
+        ],
+        [
+          "A1"
+        ]
+      ],
+      "known_count": 3,
+      "known_nodes": [
+        "X1",
+        "X2",
+        "A1"
+      ],
+      "local_time_s": 1060.0,
+      "system": "S1",
+      "unresolved": [],
+      "values": {
+        "A1": 5,
+        "X1": 2,
+        "X2": 3
+      }
+    }
+  },
+  "elapsed_runtime_s": 0.001485,
+  "final_complete_ok": true,
+  "final_e1": 202,
+  "final_match_ok": true,
+  "final_node_count": 20,
+  "name": "STOCRS Canonical Demo",
+  "no_gps": true,
+  "no_internet": true,
+  "no_ntp": true,
+  "phase1": [
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1"
+        ]
+      ],
+      "known_count": 5,
+      "known_nodes": [
+        "X1",
+        "C1",
+        "B1",
+        "A1",
+        "D1"
+      ],
+      "local_time_s": 21542635.52,
+      "system": "S1",
+      "unresolved": [
+        "A1",
+        "B1",
+        "C1",
+        "D1"
+      ],
+      "values": {
+        "X1": 2
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X2"
+        ]
+      ],
+      "known_count": 5,
+      "known_nodes": [
+        "A2",
+        "D2",
+        "B2",
+        "X2",
+        "C2"
+      ],
+      "local_time_s": 21618184.296,
+      "system": "S2",
+      "unresolved": [
+        "A2",
+        "B2",
+        "C2",
+        "D2"
+      ],
+      "values": {
+        "X2": 3
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X3"
+        ]
+      ],
+      "known_count": 5,
+      "known_nodes": [
+        "X3",
+        "B3",
+        "C3",
+        "A3",
+        "E1"
+      ],
+      "local_time_s": 21712145.776,
+      "system": "S3",
+      "unresolved": [
+        "A3",
+        "B3",
+        "C3",
+        "E1"
+      ],
+      "values": {
+        "X3": 5
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X4"
+        ]
+      ],
+      "known_count": 5,
+      "known_nodes": [
+        "C3",
+        "X4",
+        "D2",
+        "B4",
+        "A4"
+      ],
+      "local_time_s": 21793676.456,
+      "system": "S4",
+      "unresolved": [
+        "A4",
+        "B4",
+        "C3",
+        "D2"
+      ],
+      "values": {
+        "X4": 7
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "Z1",
+          "Z2"
+        ]
+      ],
+      "known_count": 5,
+      "known_nodes": [
+        "B3",
+        "C2",
+        "Z1",
+        "Z2",
+        "B2"
+      ],
+      "local_time_s": 21887709.216,
+      "system": "S5",
+      "unresolved": [
+        "B2",
+        "B3",
+        "C2"
+      ],
+      "values": {
+        "Z1": 17,
+        "Z2": 19
+      }
+    }
+  ],
+  "phase1_diversity_ok": true,
+  "phase1_incomplete_ok": true,
+  "phase1_unresolved_exists": true,
+  "phase2": [
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1"
+        ]
+      ],
+      "known_count": 7,
+      "known_nodes": [
+        "X1",
+        "C1",
+        "B1",
+        "A1",
+        "D1",
+        "A2",
+        "D2"
+      ],
+      "local_time_s": 21629063.168,
+      "system": "S1",
+      "unresolved": [
+        "A1",
+        "A2",
+        "B1",
+        "C1",
+        "D1",
+        "D2"
+      ],
+      "values": {
+        "X1": 2
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X2",
+          "X3"
+        ],
+        [
+          "A2"
+        ]
+      ],
+      "known_count": 7,
+      "known_nodes": [
+        "A2",
+        "D2",
+        "B2",
+        "X2",
+        "C2",
+        "X3",
+        "B3"
+      ],
+      "local_time_s": 21704566.152,
+      "system": "S2",
+      "unresolved": [
+        "B2",
+        "B3",
+        "C2",
+        "D2"
+      ],
+      "values": {
+        "A2": 15,
+        "X2": 3,
+        "X3": 5
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X3",
+          "X4"
+        ],
+        [
+          "A3"
+        ]
+      ],
+      "known_count": 7,
+      "known_nodes": [
+        "X3",
+        "B3",
+        "C3",
+        "A3",
+        "E1",
+        "X4",
+        "D2"
+      ],
+      "local_time_s": 21798558.304,
+      "system": "S3",
+      "unresolved": [
+        "B3",
+        "C3",
+        "D2",
+        "E1"
+      ],
+      "values": {
+        "A3": 12,
+        "X3": 5,
+        "X4": 7
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X4"
+        ]
+      ],
+      "known_count": 7,
+      "known_nodes": [
+        "C3",
+        "X4",
+        "D2",
+        "B4",
+        "A4",
+        "B3",
+        "C2"
+      ],
+      "local_time_s": 21880068.248,
+      "system": "S4",
+      "unresolved": [
+        "A4",
+        "B3",
+        "B4",
+        "C2",
+        "C3",
+        "D2"
+      ],
+      "values": {
+        "X4": 7
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "Z1",
+          "Z2"
+        ]
+      ],
+      "known_count": 7,
+      "known_nodes": [
+        "B3",
+        "C2",
+        "Z1",
+        "Z2",
+        "B2",
+        "X1",
+        "C1"
+      ],
+      "local_time_s": 21974131.68,
+      "system": "S5",
+      "unresolved": [
+        "B2",
+        "B3",
+        "C1",
+        "C2"
+      ],
+      "values": {
+        "X1": 2,
+        "Z1": 17,
+        "Z2": 19
+      }
+    }
+  ],
+  "phase2_bounded_ok": true,
+  "phase2_unresolved_exists": true,
+  "phase3": [
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X3"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "X1",
+        "C1",
+        "B1",
+        "A1",
+        "D1",
+        "A2",
+        "D2",
+        "X3",
+        "B3",
+        "C3"
+      ],
+      "local_time_s": 21715490.816,
+      "system": "S1",
+      "unresolved": [
+        "A1",
+        "A2",
+        "B1",
+        "B3",
+        "C1",
+        "C3",
+        "D1",
+        "D2"
+      ],
+      "values": {
+        "X1": 2,
+        "X3": 5
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X2",
+          "X3",
+          "X4"
+        ],
+        [
+          "A2"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "A2",
+        "D2",
+        "B2",
+        "X2",
+        "C2",
+        "X3",
+        "B3",
+        "C3",
+        "X4",
+        "B4"
+      ],
+      "local_time_s": 21790948.008,
+      "system": "S2",
+      "unresolved": [
+        "B2",
+        "B3",
+        "B4",
+        "C2",
+        "C3",
+        "D2"
+      ],
+      "values": {
+        "A2": 15,
+        "X2": 3,
+        "X3": 5,
+        "X4": 7
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X3",
+          "X4",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A3"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "X3",
+        "B3",
+        "C3",
+        "A3",
+        "E1",
+        "X4",
+        "D2",
+        "C2",
+        "Z1",
+        "Z2"
+      ],
+      "local_time_s": 21884970.832,
+      "system": "S3",
+      "unresolved": [
+        "B3",
+        "C2",
+        "C3",
+        "D2",
+        "E1"
+      ],
+      "values": {
+        "A3": 12,
+        "X3": 5,
+        "X4": 7,
+        "Z1": 17,
+        "Z2": 19
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X4"
+        ],
+        [
+          "A4"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "C3",
+        "X4",
+        "D2",
+        "B4",
+        "A4",
+        "B3",
+        "C2",
+        "X1",
+        "C1",
+        "B1"
+      ],
+      "local_time_s": 21966460.04,
+      "system": "S4",
+      "unresolved": [
+        "B1",
+        "B3",
+        "B4",
+        "C1",
+        "C2",
+        "C3",
+        "D2"
+      ],
+      "values": {
+        "A4": 14,
+        "X1": 2,
+        "X4": 7
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "Z1",
+          "Z2"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "B3",
+        "C2",
+        "Z1",
+        "Z2",
+        "B2",
+        "X1",
+        "C1",
+        "A2",
+        "D2",
+        "X2"
+      ],
+      "local_time_s": 22060554.144,
+      "system": "S5",
+      "unresolved": [
+        "A2",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "D2"
+      ],
+      "values": {
+        "X1": 2,
+        "X2": 3,
+        "Z1": 17,
+        "Z2": 19
+      }
+    }
+  ],
+  "phase3_bounded_ok": true,
+  "phase3_unresolved_exists": true,
+  "phase4": [
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X3",
+          "X4"
+        ],
+        [
+          "A4"
+        ]
+      ],
+      "known_count": 14,
+      "known_nodes": [
+        "X1",
+        "C1",
+        "B1",
+        "A1",
+        "D1",
+        "A2",
+        "D2",
+        "X3",
+        "B3",
+        "C3",
+        "X4",
+        "B4",
+        "A4",
+        "C2"
+      ],
+      "local_time_s": 21801918.464,
+      "system": "S1",
+      "unresolved": [
+        "A1",
+        "A2",
+        "B1",
+        "B3",
+        "B4",
+        "C1",
+        "C2",
+        "C3",
+        "D1",
+        "D2"
+      ],
+      "values": {
+        "A4": 14,
+        "X1": 2,
+        "X3": 5,
+        "X4": 7
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A2"
+        ]
+      ],
+      "known_count": 14,
+      "known_nodes": [
+        "A2",
+        "D2",
+        "B2",
+        "X2",
+        "C2",
+        "X3",
+        "B3",
+        "C3",
+        "X4",
+        "B4",
+        "Z1",
+        "Z2",
+        "X1",
+        "C1"
+      ],
+      "local_time_s": 21877329.864,
+      "system": "S2",
+      "unresolved": [
+        "B2",
+        "B3",
+        "B4",
+        "C1",
+        "C2",
+        "C3",
+        "D2"
+      ],
+      "values": {
+        "A2": 15,
+        "X1": 2,
+        "X2": 3,
+        "X3": 5,
+        "X4": 7,
+        "Z1": 17,
+        "Z2": 19
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X3",
+          "X4",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A3"
+        ]
+      ],
+      "known_count": 14,
+      "known_nodes": [
+        "X3",
+        "B3",
+        "C3",
+        "A3",
+        "E1",
+        "X4",
+        "D2",
+        "C2",
+        "Z1",
+        "Z2",
+        "X1",
+        "C1",
+        "B1",
+        "A1"
+      ],
+      "local_time_s": 21971383.36,
+      "system": "S3",
+      "unresolved": [
+        "A1",
+        "B1",
+        "B3",
+        "C1",
+        "C2",
+        "C3",
+        "D2",
+        "E1"
+      ],
+      "values": {
+        "A3": 12,
+        "X1": 2,
+        "X3": 5,
+        "X4": 7,
+        "Z1": 17,
+        "Z2": 19
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "X3",
+          "X4"
+        ],
+        [
+          "A2",
+          "A4"
+        ]
+      ],
+      "known_count": 14,
+      "known_nodes": [
+        "C3",
+        "X4",
+        "D2",
+        "B4",
+        "A4",
+        "B3",
+        "C2",
+        "X1",
+        "C1",
+        "B1",
+        "A2",
+        "B2",
+        "X2",
+        "X3"
+      ],
+      "local_time_s": 22052851.832,
+      "system": "S4",
+      "unresolved": [
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "C1",
+        "C2",
+        "C3",
+        "D2"
+      ],
+      "values": {
+        "A2": 15,
+        "A4": 14,
+        "X1": 2,
+        "X2": 3,
+        "X3": 5,
+        "X4": 7
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "X3",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A2"
+        ]
+      ],
+      "known_count": 14,
+      "known_nodes": [
+        "B3",
+        "C2",
+        "Z1",
+        "Z2",
+        "B2",
+        "X1",
+        "C1",
+        "A2",
+        "D2",
+        "X2",
+        "X3",
+        "C3",
+        "A3",
+        "E1"
+      ],
+      "local_time_s": 22146976.608,
+      "system": "S5",
+      "unresolved": [
+        "A3",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "C3",
+        "D2",
+        "E1"
+      ],
+      "values": {
+        "A2": 15,
+        "X1": 2,
+        "X2": 3,
+        "X3": 5,
+        "Z1": 17,
+        "Z2": 19
+      }
+    }
+  ],
+  "phase4_bounded_ok": true,
+  "phase4_unresolved_exists": true,
+  "phase5": [
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        [
+          "D1",
+          "D2"
+        ],
+        [
+          "E1"
+        ]
+      ],
+      "known_count": 20,
+      "known_nodes": [
+        "A1",
+        "B4",
+        "X1",
+        "A4",
+        "X3",
+        "Z2",
+        "Z1",
+        "X2",
+        "E1",
+        "D2",
+        "C3",
+        "B1",
+        "X4",
+        "A2",
+        "B3",
+        "C2",
+        "A3",
+        "B2",
+        "D1",
+        "C1"
+      ],
+      "local_time_s": 21888346.112,
+      "system": "S1",
+      "unresolved": [],
+      "values": {
+        "A1": 5,
+        "A2": 15,
+        "A3": 12,
+        "A4": 14,
+        "B1": 20,
+        "B2": 3,
+        "B3": 26,
+        "B4": 19,
+        "C1": 23,
+        "C2": 46,
+        "C3": 64,
+        "D1": 92,
+        "D2": 110,
+        "E1": 202,
+        "X1": 2,
+        "X2": 3,
+        "X3": 5,
+        "X4": 7,
+        "Z1": 17,
+        "Z2": 19
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        [
+          "D1",
+          "D2"
+        ],
+        [
+          "E1"
+        ]
+      ],
+      "known_count": 20,
+      "known_nodes": [
+        "E1",
+        "D1",
+        "C1",
+        "A2",
+        "X3",
+        "Z2",
+        "A1",
+        "X4",
+        "C3",
+        "X1",
+        "C2",
+        "B1",
+        "B2",
+        "A3",
+        "X2",
+        "B4",
+        "A4",
+        "D2",
+        "B3",
+        "Z1"
+      ],
+      "local_time_s": 21963711.72,
+      "system": "S2",
+      "unresolved": [],
+      "values": {
+        "A1": 5,
+        "A2": 15,
+        "A3": 12,
+        "A4": 14,
+        "B1": 20,
+        "B2": 3,
+        "B3": 26,
+        "B4": 19,
+        "C1": 23,
+        "C2": 46,
+        "C3": 64,
+        "D1": 92,
+        "D2": 110,
+        "E1": 202,
+        "X1": 2,
+        "X2": 3,
+        "X3": 5,
+        "X4": 7,
+        "Z1": 17,
+        "Z2": 19
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        [
+          "D1",
+          "D2"
+        ],
+        [
+          "E1"
+        ]
+      ],
+      "known_count": 20,
+      "known_nodes": [
+        "B1",
+        "E1",
+        "Z2",
+        "B3",
+        "D2",
+        "C2",
+        "X4",
+        "B2",
+        "A4",
+        "A2",
+        "A3",
+        "C1",
+        "C3",
+        "D1",
+        "X3",
+        "B4",
+        "X2",
+        "A1",
+        "Z1",
+        "X1"
+      ],
+      "local_time_s": 22057795.888,
+      "system": "S3",
+      "unresolved": [],
+      "values": {
+        "A1": 5,
+        "A2": 15,
+        "A3": 12,
+        "A4": 14,
+        "B1": 20,
+        "B2": 3,
+        "B3": 26,
+        "B4": 19,
+        "C1": 23,
+        "C2": 46,
+        "C3": 64,
+        "D1": 92,
+        "D2": 110,
+        "E1": 202,
+        "X1": 2,
+        "X2": 3,
+        "X3": 5,
+        "X4": 7,
+        "Z1": 17,
+        "Z2": 19
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        [
+          "D1",
+          "D2"
+        ],
+        [
+          "E1"
+        ]
+      ],
+      "known_count": 20,
+      "known_nodes": [
+        "A1",
+        "Z1",
+        "X1",
+        "X4",
+        "A3",
+        "B3",
+        "A2",
+        "D2",
+        "A4",
+        "C3",
+        "Z2",
+        "B1",
+        "D1",
+        "C2",
+        "B4",
+        "C1",
+        "B2",
+        "X2",
+        "E1",
+        "X3"
+      ],
+      "local_time_s": 22139243.624,
+      "system": "S4",
+      "unresolved": [],
+      "values": {
+        "A1": 5,
+        "A2": 15,
+        "A3": 12,
+        "A4": 14,
+        "B1": 20,
+        "B2": 3,
+        "B3": 26,
+        "B4": 19,
+        "C1": 23,
+        "C2": 46,
+        "C3": 64,
+        "D1": 92,
+        "D2": 110,
+        "E1": 202,
+        "X1": 2,
+        "X2": 3,
+        "X3": 5,
+        "X4": 7,
+        "Z1": 17,
+        "Z2": 19
+      }
+    },
+    {
+      "conflicts": {},
+      "frontiers": [
+        [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "Z1",
+          "Z2"
+        ],
+        [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        [
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        [
+          "D1",
+          "D2"
+        ],
+        [
+          "E1"
+        ]
+      ],
+      "known_count": 20,
+      "known_nodes": [
+        "E1",
+        "D2",
+        "X2",
+        "C3",
+        "A3",
+        "D1",
+        "C2",
+        "X4",
+        "C1",
+        "A4",
+        "A2",
+        "B2",
+        "B4",
+        "Z1",
+        "X1",
+        "X3",
+        "B3",
+        "B1",
+        "Z2",
+        "A1"
+      ],
+      "local_time_s": 22233399.072,
+      "system": "S5",
+      "unresolved": [],
+      "values": {
+        "A1": 5,
+        "A2": 15,
+        "A3": 12,
+        "A4": 14,
+        "B1": 20,
+        "B2": 3,
+        "B3": 26,
+        "B4": 19,
+        "C1": 23,
+        "C2": 46,
+        "C3": 64,
+        "D1": 92,
+        "D2": 110,
+        "E1": 202,
+        "X1": 2,
+        "X2": 3,
+        "X3": 5,
+        "X4": 7,
+        "Z1": 17,
+        "Z2": 19
+      }
+    }
+  ],
+  "seed": 101,
+  "systems": 5,
+  "time_used_for_correctness": false
+}

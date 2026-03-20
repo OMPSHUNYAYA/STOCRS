@@ -1,0 +1,312 @@
+{
+  "all_match": true,
+  "certificate": "84ce661a2f89f578ee65eb25dfe46d1b7d0606a15b876c3b9ce7defc99a5f285",
+  "elapsed_runtime_s": 0.000501,
+  "final_complete": true,
+  "final_hashes": {
+    "S1": "74d58050c65afb2d2c57d6e59aa01761076a5a9e31931e713547f79a1485f112",
+    "S2": "74d58050c65afb2d2c57d6e59aa01761076a5a9e31931e713547f79a1485f112",
+    "S3": "74d58050c65afb2d2c57d6e59aa01761076a5a9e31931e713547f79a1485f112",
+    "S4": "74d58050c65afb2d2c57d6e59aa01761076a5a9e31931e713547f79a1485f112"
+  },
+  "final_values": {
+    "S1": {
+      "ACC1_FINAL": 120,
+      "ACC2_FINAL": 40,
+      "ACC3_FINAL": 80,
+      "TOTAL_BALANCE": 240
+    },
+    "S2": {
+      "ACC1_FINAL": 120,
+      "ACC2_FINAL": 40,
+      "ACC3_FINAL": 80,
+      "TOTAL_BALANCE": 240
+    },
+    "S3": {
+      "ACC1_FINAL": 120,
+      "ACC2_FINAL": 40,
+      "ACC3_FINAL": 80,
+      "TOTAL_BALANCE": 240
+    },
+    "S4": {
+      "ACC1_FINAL": 120,
+      "ACC2_FINAL": 40,
+      "ACC3_FINAL": 80,
+      "TOTAL_BALANCE": 240
+    }
+  },
+  "name": "STOCRS Reconciliation Demo v1.1",
+  "no_logs": true,
+  "no_order_required": true,
+  "no_timestamps": true,
+  "phase1": {
+    "S1": {
+      "frontiers": [],
+      "known_count": 3,
+      "known_nodes": [
+        "ACC2_DEBIT",
+        "ACC1_CREDIT",
+        "ACC1_FINAL"
+      ],
+      "unresolved": [
+        "ACC1_CREDIT",
+        "ACC1_FINAL",
+        "ACC2_DEBIT"
+      ],
+      "values": {}
+    },
+    "S2": {
+      "frontiers": [
+        [
+          "ACC1_BASE"
+        ]
+      ],
+      "known_count": 3,
+      "known_nodes": [
+        "ACC1_BASE",
+        "ACC3_CREDIT",
+        "ACC2_FINAL"
+      ],
+      "unresolved": [
+        "ACC2_FINAL",
+        "ACC3_CREDIT"
+      ],
+      "values": {
+        "ACC1_BASE": 100
+      }
+    },
+    "S3": {
+      "frontiers": [
+        [
+          "ACC2_BASE",
+          "ACC3_BASE"
+        ]
+      ],
+      "known_count": 3,
+      "known_nodes": [
+        "ACC3_FINAL",
+        "ACC2_BASE",
+        "ACC3_BASE"
+      ],
+      "unresolved": [
+        "ACC3_FINAL"
+      ],
+      "values": {
+        "ACC2_BASE": 50,
+        "ACC3_BASE": 75
+      }
+    },
+    "S4": {
+      "frontiers": [],
+      "known_count": 3,
+      "known_nodes": [
+        "ACC2_DEBIT",
+        "TOTAL_BALANCE",
+        "ACC3_CREDIT"
+      ],
+      "unresolved": [
+        "ACC2_DEBIT",
+        "ACC3_CREDIT",
+        "TOTAL_BALANCE"
+      ],
+      "values": {}
+    }
+  },
+  "phase1_all_unresolved": true,
+  "phase2": {
+    "S1": {
+      "frontiers": [
+        [
+          "ACC1_BASE",
+          "ACC2_BASE",
+          "ACC3_BASE"
+        ],
+        [
+          "ACC1_CREDIT",
+          "ACC2_DEBIT",
+          "ACC3_CREDIT"
+        ],
+        [
+          "ACC1_FINAL",
+          "ACC2_FINAL",
+          "ACC3_FINAL"
+        ],
+        [
+          "TOTAL_BALANCE"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "ACC2_DEBIT",
+        "ACC1_CREDIT",
+        "ACC1_FINAL",
+        "ACC1_BASE",
+        "ACC2_BASE",
+        "ACC3_BASE",
+        "ACC3_CREDIT",
+        "ACC2_FINAL",
+        "ACC3_FINAL",
+        "TOTAL_BALANCE"
+      ],
+      "unresolved": [],
+      "values": {
+        "ACC1_BASE": 100,
+        "ACC1_CREDIT": 120,
+        "ACC1_FINAL": 120,
+        "ACC2_BASE": 50,
+        "ACC2_DEBIT": 40,
+        "ACC2_FINAL": 40,
+        "ACC3_BASE": 75,
+        "ACC3_CREDIT": 80,
+        "ACC3_FINAL": 80,
+        "TOTAL_BALANCE": 240
+      }
+    },
+    "S2": {
+      "frontiers": [
+        [
+          "ACC1_BASE",
+          "ACC2_BASE",
+          "ACC3_BASE"
+        ],
+        [
+          "ACC1_CREDIT",
+          "ACC2_DEBIT",
+          "ACC3_CREDIT"
+        ],
+        [
+          "ACC1_FINAL",
+          "ACC2_FINAL",
+          "ACC3_FINAL"
+        ],
+        [
+          "TOTAL_BALANCE"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "ACC1_BASE",
+        "ACC3_CREDIT",
+        "ACC2_FINAL",
+        "ACC2_BASE",
+        "ACC3_BASE",
+        "ACC1_CREDIT",
+        "ACC2_DEBIT",
+        "ACC1_FINAL",
+        "ACC3_FINAL",
+        "TOTAL_BALANCE"
+      ],
+      "unresolved": [],
+      "values": {
+        "ACC1_BASE": 100,
+        "ACC1_CREDIT": 120,
+        "ACC1_FINAL": 120,
+        "ACC2_BASE": 50,
+        "ACC2_DEBIT": 40,
+        "ACC2_FINAL": 40,
+        "ACC3_BASE": 75,
+        "ACC3_CREDIT": 80,
+        "ACC3_FINAL": 80,
+        "TOTAL_BALANCE": 240
+      }
+    },
+    "S3": {
+      "frontiers": [
+        [
+          "ACC1_BASE",
+          "ACC2_BASE",
+          "ACC3_BASE"
+        ],
+        [
+          "ACC1_CREDIT",
+          "ACC2_DEBIT",
+          "ACC3_CREDIT"
+        ],
+        [
+          "ACC1_FINAL",
+          "ACC2_FINAL",
+          "ACC3_FINAL"
+        ],
+        [
+          "TOTAL_BALANCE"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "ACC3_FINAL",
+        "ACC2_BASE",
+        "ACC3_BASE",
+        "ACC1_BASE",
+        "ACC1_CREDIT",
+        "ACC2_DEBIT",
+        "ACC3_CREDIT",
+        "ACC1_FINAL",
+        "ACC2_FINAL",
+        "TOTAL_BALANCE"
+      ],
+      "unresolved": [],
+      "values": {
+        "ACC1_BASE": 100,
+        "ACC1_CREDIT": 120,
+        "ACC1_FINAL": 120,
+        "ACC2_BASE": 50,
+        "ACC2_DEBIT": 40,
+        "ACC2_FINAL": 40,
+        "ACC3_BASE": 75,
+        "ACC3_CREDIT": 80,
+        "ACC3_FINAL": 80,
+        "TOTAL_BALANCE": 240
+      }
+    },
+    "S4": {
+      "frontiers": [
+        [
+          "ACC1_BASE",
+          "ACC2_BASE",
+          "ACC3_BASE"
+        ],
+        [
+          "ACC1_CREDIT",
+          "ACC2_DEBIT",
+          "ACC3_CREDIT"
+        ],
+        [
+          "ACC1_FINAL",
+          "ACC2_FINAL",
+          "ACC3_FINAL"
+        ],
+        [
+          "TOTAL_BALANCE"
+        ]
+      ],
+      "known_count": 10,
+      "known_nodes": [
+        "ACC2_DEBIT",
+        "TOTAL_BALANCE",
+        "ACC3_CREDIT",
+        "ACC1_BASE",
+        "ACC2_BASE",
+        "ACC3_BASE",
+        "ACC1_CREDIT",
+        "ACC1_FINAL",
+        "ACC2_FINAL",
+        "ACC3_FINAL"
+      ],
+      "unresolved": [],
+      "values": {
+        "ACC1_BASE": 100,
+        "ACC1_CREDIT": 120,
+        "ACC1_FINAL": 120,
+        "ACC2_BASE": 50,
+        "ACC2_DEBIT": 40,
+        "ACC2_FINAL": 40,
+        "ACC3_BASE": 75,
+        "ACC3_CREDIT": 80,
+        "ACC3_FINAL": 80,
+        "TOTAL_BALANCE": 240
+      }
+    }
+  },
+  "seed": 101,
+  "systems": 4
+}
