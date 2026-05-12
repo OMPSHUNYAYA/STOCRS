@@ -2,8 +2,6 @@
 
 ## **Shunyaya Timeless Computation**
 
-[![STOCRS Verify](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml/badge.svg)](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml)
-
 ![STOCRS](https://img.shields.io/badge/STOCRS-Structural%20Computation-black)
 ![Deterministic](https://img.shields.io/badge/Deterministic-Convergence-green)
 ![No-Time](https://img.shields.io/badge/Time-Not%20Required-lightgrey)
@@ -12,6 +10,8 @@
 ![Replay-Verified](https://img.shields.io/badge/Replay-Deterministic%20%26%20Verifiable-blue)
 ![Conflict-Safe](https://img.shields.io/badge/Conflict-Abstention%20%26%20Resolution-orange)
 ![Open-Standard](https://img.shields.io/badge/Reference%20Implementation-Open%20Standard-blue)
+
+[![STOCRS Verify](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml/badge.svg)](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml)
 
 **Deterministic • Time-Independent • Sequence-Free • Convergence-Based Computation • Open Reference Implementation**
 
@@ -28,7 +28,7 @@ Using concepts from **Shunyaya Structural Universal Mathematics (SSUM)**
 ## 🧾 **One-Line Story**
 
 From **SSUM-Time** (time reconstructed from structure)  
-to **STOCRS** (computation reconstructed from structure):
+to **STOCRS** (computation resolved from structure):
 
 A deterministic, offline, replay-verifiable model  
 where **correctness emerges from structure alone**.
@@ -196,7 +196,7 @@ hash → VERIFY/FREEZE_*.txt
 |----------------------|--------------|----------------|---------------|---------------------------|---------------------------|
 | Traditional Systems  | YES          | YES            | YES           | NO                        | CONDITIONAL               |
 | Eventual Consistency | SOMETIMES    | SOMETIMES      | YES           | PARTIAL                   | CONDITIONAL               |
-| CRDTs                | NO           | PARTIAL        | YES           | YES                       | YES                       |
+| CRDTs                | NO           | PARTIAL        | PARTIAL       | YES                       | YES                       |
 | **STOCRS**           | **NO**       | **NO**         | **NO**        | **YES**                   | **YES**                   |
 
 ### **Key Difference**
@@ -355,7 +355,7 @@ Yet:
 - dependencies resolve  
 - truth emerges  
 
-**Convergence is guaranteed by structure, not coordination**
+**Convergence emerges from structure, not coordination**
 
 ---
 
@@ -419,6 +419,47 @@ Architecture: CC BY-NC 4.0
 A deterministic structural time engine — No GPS • No NTP • No Internet — reconstructing time from cycle alignment with replay-verifiable accuracy.
 
 https://github.com/OMPSHUNYAYA/SSUM-Time
+
+---
+
+## ⚙️ **STOCRS-R — Structural Resolution**
+
+**Reusable deterministic structural application evolution — without procedural sequencing**
+
+🔗 [STOCRS-R](https://github.com/OMPSHUNYAYA/STOCRS-R)
+
+---
+
+## 🧱 **Cross-System Dependency Elimination Map**
+
+Across these systems, the same structural pattern appears repeatedly.
+
+The dependency changes.  
+The preserved invariant does not.
+
+| Domain        | System | Dependency Removed for Correctness                  | What Preserves Correctness |
+|---------------|--------|------------------------------------|----------------------------|
+| Computation   | [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation) | Execution flow             | Structure |
+| Computation   | [STOCRS](https://github.com/OMPSHUNYAYA/STOCRS)                     | Execution pipelines        | Structure |
+| Arithmetic    | [SVARE](https://github.com/OMPSHUNYAYA/SVARE)                        | Computation                | Structure |
+| Time          | [STIME](https://github.com/OMPSHUNYAYA/Structural-Time)              | Clocks                     | Structure |
+| Time          | [SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time)                | Time reconstruction        | Structure |
+| Ordering      | [ORL](https://github.com/OMPSHUNYAYA/Orderless-Ledger)              | Ordering / sequence        | Structure |
+| Connectivity  | [STINT-Money](https://github.com/OMPSHUNYAYA/STINT-Money)           | Continuous connectivity    | Structure |
+| Communication | [STILE](https://github.com/OMPSHUNYAYA/STILE)                       | Messaging / network        | Structure |
+| Traversal     | [STRAL-Path](https://github.com/OMPSHUNYAYA/STRAL-Path)             | Traversal / search         | Structure |
+| Infrastructure| [STIC](https://github.com/OMPSHUNYAYA/STIC)                         | Cloud / infrastructure     | Structure |
+| Media         | [STRUMER](https://github.com/OMPSHUNYAYA/STRUMER)                    | Editing / manual media workflows | Structure |
+| Finance       | [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money)           | Transactions               | Structure |
+| Audit         | [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit)           | Verification workflows     | Structure |
+
+Each row demonstrates removal of a dependency for correctness, while structure preserves correctness.
+
+Correctness remains reproducible under structural constraints.
+
+Dependencies may shift from runtime coordination toward structural definition, while preserving deterministic outcomes.
+
+If correctness remains stable after removing a dependency, that dependency may not be fundamental to correctness.
 
 ---
 
