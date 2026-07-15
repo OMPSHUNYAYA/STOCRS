@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: ["main"]
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -19,38 +22,27 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Run canonical demo and generate output
+      - name: Run canonical demo
         run: |
-          python demo/stocrs_canonical_demo.py --seed 101 --systems 5 --json > output.json
+          python demo/stocrs_canonical_demo_v1_2.py --seed 101 --systems 5 --json > output.json
 
-      - name: Semantic JSON verification (ignore runtime fields)
+      - name: Verify canonical reference output
         run: |
           python - <<'PY'
           import json
           import sys
 
-          def normalize(data):
-              if isinstance(data, dict):
-                  data = dict(data)
-                  data.pop("elapsed_runtime_s", None)
-                  return {k: normalize(v) for k, v in data.items()}
-              if isinstance(data, list):
-                  return [normalize(x) for x in data]
-              return data
-
           with open("output.json", "r", encoding="utf-8") as f:
-              generated = normalize(json.load(f))
+              generated = json.load(f)
 
           with open("reference_outputs/reference_output.json", "r", encoding="utf-8") as f:
-              reference = normalize(json.load(f))
+              reference = json.load(f)
 
           if generated != reference:
-              print("Semantic JSON mismatch detected.")
-              print("Generated:", generated)
-              print("Reference:", reference)
+              print("Canonical JSON mismatch detected.")
               sys.exit(1)
 
-          print("Semantic JSON verification passed.")
+          print("Canonical JSON verification passed.")
           PY
 
       - name: Verify canonical result fields
@@ -62,6 +54,8 @@ jobs:
           with open("output.json", "r", encoding="utf-8") as f:
               data = json.load(f)
 
+          conflict_story = data.get("conflict_story", {})
+
           checks = [
               ("No GPS", data.get("no_gps") is True),
               ("No NTP", data.get("no_ntp") is True),
@@ -71,7 +65,19 @@ jobs:
               ("Final Match OK", data.get("final_match_ok") is True),
               ("Final Node Count", data.get("final_node_count") == 20),
               ("Final E1", data.get("final_e1") == 202),
-              ("Certificate Present", isinstance(data.get("certificate"), str) and len(data.get("certificate")) == 64),
+              ("Stable OK", conflict_story.get("stable_ok") is True),
+              ("Conflict OK", conflict_story.get("conflict_ok") is True),
+              ("Recovery OK", conflict_story.get("recovery_ok") is True),
+              (
+                  "Canonical Certificate",
+                  data.get("certificate")
+                  == "150c3ca5135af3320929a4fc2a92cc39001d5b3f49a9ce972bcccc49c1c55f36",
+              ),
+              (
+                  "Conflict Story Certificate",
+                  conflict_story.get("certificate")
+                  == "8cb9667dfc12e6a09ea0728e927b3f19609eee0eac00159d062e2980a67bd2b9",
+              ),
           ]
 
           failed = [name for name, ok in checks if not ok]
@@ -84,22 +90,142 @@ jobs:
           print("Canonical field verification passed.")
           PY
 
-      - name: Verify checked-in reference file hash is frozen
+      - name: Run reconciliation demo
+        run: |
+          python demo/stocrs_reconciliation_demo_v1_1.py --seed 101 --json > reconciliation-output.json
+
+      - name: Verify reconciliation reference result
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+
+          with open("reconciliation-output.json", "r", encoding="utf-8") as f:
+              generated = json.load(f)
+
+          with open("reference_outputs/reconciliation_demo_v1_1.json", "r", encoding="utf-8") as f:
+              reference = json.load(f)
+
+          fields = [
+              "certificate",
+              "all_match",
+              "final_complete",
+              "no_logs",
+              "no_timestamps",
+              "no_order_required",
+              "final_values",
+          ]
+
+          failed = [field for field in fields if generated.get(field) != reference.get(field)]
+
+          if failed:
+              print("Reconciliation semantic verification failed:")
+              for field in failed:
+                  print("-", field)
+              sys.exit(1)
+
+          print("Reconciliation semantic verification passed.")
+          PY
+
+      - name: Run runtime conflict demo
+        run: |
+          python runtime/stocrs_engine_v1_1.py --conflict-demo --json > conflict-output.json
+
+      - name: Verify runtime conflict reference output
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+
+          with open("conflict-output.json", "r", encoding="utf-8") as f:
+              generated = json.load(f)
+
+          with open("reference_outputs/stocrs_conflict_demo_v1.json", "r", encoding="utf-8") as f:
+              reference = json.load(f)
+
+          if generated != reference:
+              print("Runtime conflict JSON mismatch detected.")
+              sys.exit(1)
+
+          print("Runtime conflict JSON verification passed.")
+          PY
+
+      - name: Verify conflicting claim multiplicity cannot override structure
+        run: |
+          python - <<'PY'
+          import sys
+          from runtime.stocrs_engine_v1_1 import build_program, run_system
+
+          result = run_system(
+              "S1",
+              build_program(),
+              ["X1", "X2", "A1"],
+              1000.0,
+              60.0,
+              0.0,
+              claims={"X1": [9, 9, 2], "X2": [3, 3]},
+          )
+
+          ok = (
+              "X1" in result.get("conflicts", {})
+              and "X1" not in result.get("values", {})
+              and "A1" in result.get("unresolved", [])
+          )
+
+          if not ok:
+              print("Conflict-authority regression check failed.")
+              sys.exit(1)
+
+          print("Conflicting claim multiplicity cannot override declared structure.")
+          PY
+
+      - name: Verify frozen SHA256 hashes
         run: |
           python - <<'PY'
           import hashlib
+          import pathlib
           import sys
 
-          with open("reference_outputs/reference_output.json", "rb") as f:
-              digest = hashlib.sha256(f.read()).hexdigest()
+          checks = [
+              ("demo/stocrs_poc_demo.py", "VERIFY/FREEZE_DEMO_SHA256.txt"),
+              ("demo/stocrs_canonical_demo_v1_2.py", "VERIFY/FREEZE_DEMO_SHA256.txt"),
+              ("demo/stocrs_reconciliation_demo_v1_1.py", "VERIFY/FREEZE_DEMO_SHA256.txt"),
+              ("runtime/stocrs_engine_v1_1.py", "VERIFY/FREEZE_RUNTIME_SHA256.txt"),
+              ("reference_outputs/reference_output.json", "VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt"),
+              ("reference_outputs/reference_run.txt", "VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt"),
+              ("reference_outputs/reconciliation_demo_v1_1.json", "VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt"),
+              ("reference_outputs/stocrs_canonical_demo_v1.json", "VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt"),
+              ("reference_outputs/stocrs_conflict_demo_v1.json", "VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt"),
+          ]
 
-          with open("VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt", "r", encoding="utf-8") as f:
-              freeze_text = f.read()
+          failed = []
 
-          if digest not in freeze_text:
-              print("reference_outputs/reference_output.json SHA256 not found in VERIFY/FREEZE_REFERENCE_OUTPUTS_SHA256.txt")
-              print("Computed:", digest)
+          for file_path, freeze_path in checks:
+              path = pathlib.Path(file_path)
+              freeze = pathlib.Path(freeze_path)
+
+              actual = hashlib.sha256(path.read_bytes()).hexdigest()
+              header = "SHA256 hash of " + file_path.replace("/", "\\") + ":"
+              lines = freeze.read_text(encoding="utf-8", errors="replace").splitlines()
+
+              try:
+                  index = next(i for i, line in enumerate(lines) if line.strip() == header)
+                  expected = lines[index + 1].strip().lower()
+              except (StopIteration, IndexError):
+                  expected = ""
+
+              if actual != expected:
+                  failed.append((file_path, expected, actual))
+              else:
+                  print("PASS:", file_path)
+
+          if failed:
+              print("Frozen SHA256 verification failed:")
+              for file_path, expected, actual in failed:
+                  print("-", file_path)
+                  print("  expected:", expected)
+                  print("  actual:  ", actual)
               sys.exit(1)
 
-          print("Reference output SHA256 verification passed.")
+          print("All frozen SHA256 hashes verified.")
           PY
