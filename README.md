@@ -3,82 +3,92 @@
 ## **Shunyaya Timeless Computation**
 
 ![STOCRS](https://img.shields.io/badge/STOCRS-Structural%20Computation-black)
-![Deterministic](https://img.shields.io/badge/Deterministic-Convergence-green)
-![No-Time](https://img.shields.io/badge/Time-Not%20Required-lightgrey)
-![No-Order](https://img.shields.io/badge/Order-Not%20Required-lightgrey)
-![No-Sync](https://img.shields.io/badge/Synchronization-Not%20Required-lightgrey)
+![Deterministic](https://img.shields.io/badge/Deterministic-Structural%20Resolution-green)
+![No-Time](https://img.shields.io/badge/Correctness-Time%20Not%20Used-lightgrey)
+![No-Order](https://img.shields.io/badge/Correctness-Arrival%20Order%20Not%20Used-lightgrey)
+![No-Sync](https://img.shields.io/badge/Resolution-Continuous%20Sync%20Not%20Required-lightgrey)
 ![Replay-Verified](https://img.shields.io/badge/Replay-Deterministic%20%26%20Verifiable-blue)
-![Conflict-Safe](https://img.shields.io/badge/Conflict-Abstention%20%26%20Resolution-orange)
-![Open-Standard](https://img.shields.io/badge/Reference%20Implementation-Open%20Standard-blue)
+![Conflict-Safe](https://img.shields.io/badge/Conflict-Abstention%20%26%20Recovery-orange)
+![Reference](https://img.shields.io/badge/Reference%20Implementation-Open-blue)
 
-**Deterministic • Time-Independent • Sequence-Free • Convergence-Based Computation • Open Reference Implementation**
+**Deterministic • Structure-Driven • Explicit Incompleteness • Conflict-Aware • Replay-Verifiable • Open Reference Implementation**
 
-**No GPS • No NTP • No Internet • No Global Clock • No Central Authority Required for Correctness**
+**No GPS • No NTP • No Internet • No Global Clock Used for Correctness in the Declared Reference Cases**
 
 ---
 
-**Correctness derived from structure — not time, not sequence, not synchronization**
+**Resolution derived from declared structure and frozen rules — not from timestamps, arrival order, or claim multiplicity**
 
-Using concepts from **Shunyaya Structural Universal Mathematics (SSUM)**
+Developed within the **Shunyaya Framework**, with conceptual roots in **Shunyaya Structural Universal Mathematics (SSUM)**.
 
 ---
 
 ## 🧾 **One-Line Story**
 
-From **SSUM-Time** (time reconstructed from structure)  
-to **STOCRS** (computation resolved from structure):
+From **SSUM-Time** — where structural relations can support deterministic time reconstruction —  
+to **STOCRS** — where declared computational structure governs when a result is resolvable:
 
-A deterministic, offline, replay-verifiable model  
-where **correctness emerges from structure alone**.
+A deterministic, offline, replay-verifiable reference model in which:
+
+`same declared structure + same frozen rules -> same supported structural result`
 
 ---
 
-## ⚡ **A Radical Idea**
+## ⚡ **The Core Idea**
 
-STOCRS explores a simple but profound possibility:
+STOCRS explores a bounded but important possibility:
 
-**Computation may not need time, order, or synchronization — it can be structurally resolved**
+**A computation does not always need timestamps, arrival order, or continuous synchronization to determine its result.**
 
-Instead of relying on:
+In the STOCRS reference model:
 
-- execution order  
-- timestamps  
-- global clocks  
-- synchronized systems  
+- systems may begin with different incomplete fragments
+- fragments may arrive in different orders
+- local clock values may differ
+- intermediate states may remain unresolved
+- conflicting claims do not gain authority through repetition
 
-STOCRS demonstrates:
+When the same complete compatible structure becomes available under the same frozen rules, the supported result is deterministic.
 
-- incomplete fragments can exist safely  
-- order can remain unknown  
-- time can diverge across systems  
-- sharing can be partial and delayed  
+The central distinction is:
 
-And still:
+`transport history != resolution authority`
 
-**the same final result emerges deterministically**
+`claim multiplicity != structural authority`
 
-This idea builds on a deeper insight from SSUM-Time — that time itself can be reconstructed from structure.  
-STOCRS extends this principle further: **if time can emerge from structure, computation can as well.**
+`declared structure + frozen rules -> computational authority`
 
 ---
 
 ## ⚖️ **What STOCRS Is / Is Not**
 
 ### **STOCRS IS:**
-- a structural computation model  
-- a deterministic convergence system  
-- a proof that correctness does not require time or order  
-- a reference architecture for structure-driven systems  
+
+- a reference model for structure-driven deterministic computation
+- a dependency-governed resolution system
+- a demonstration of explicit unresolved states under incomplete structure
+- a demonstration of deterministic final agreement once the same complete compatible structure is available
+- a conflict-aware reference implementation in which incompatible claims cannot override declared computation
+- a replay-verifiable research implementation
 
 ### **STOCRS IS NOT:**
-- a timing optimization  
-- a faster distributed database  
-- a replacement for all existing systems  
-- a consensus protocol  
 
-**It is a deeper shift:**
+- a proof that every computation can ignore time or order
+- a guarantee that partial sharing alone will eventually disseminate all required structure
+- a consensus protocol
+- a distributed database
+- a replacement for all execution, transport, synchronization, or coordination mechanisms
+- a production safety certification
 
-**correctness is derived from structure, not from coordination.**
+STOCRS concerns **resolution authority**.
+
+Physical execution may still occur in time.  
+Information may still need to move between systems.  
+A production deployment may still require networking, persistence, authentication, access control, and operational coordination.
+
+The STOCRS claim is narrower:
+
+**within the declared model, those mechanisms are not used as the authority that determines the supported computational result.**
 
 ---
 
@@ -86,70 +96,72 @@ STOCRS extends this principle further: **if time can emerge from structure, comp
 
 ![STOCRS Structural Model](docs/STOCRS.png)
 
-*Fragmented systems converge to identical final truth without time, order, or synchronization*
+*Different incomplete views may remain unresolved. The same complete compatible structure, evaluated under the same frozen rules, yields the same supported result.*
 
 ---
 
-## 🧭 **STOCRS Core Principle**
+## 🧭 **STOCRS Core Relations**
 
-`correctness = structure`
+`same declared structure + same frozen rules -> same supported structural result`
 
-Not:
+`incomplete structure -> unresolved`
 
-`correctness = time + sequence + synchronization`
+`conflicting claims -> conflict at the affected node`
 
----
+`affected dependency unavailable -> dependent result remains unresolved`
 
-## ⚡ **What This Proves (In One Line)**
-
-Independent systems can begin differently, remain incomplete, operate without time or coordination, and still converge deterministically to the same final truth.
+`corrected compatible evidence -> structural resolution may proceed again`
 
 ---
 
-## ⚡ **Why This Matters**
+## ⚡ **What the Current Reference Cases Demonstrate**
 
-Modern distributed systems assume:
+The current reference implementation demonstrates that:
 
-- time must be synchronized  
-- events must be ordered  
-- systems must coordinate continuously  
+- different initial fragments can coexist without forcing premature resolution
+- different arrival orders do not alter the tested final result once the same complete compatible structure is available
+- divergent local clock values are not used to determine the computational result
+- bounded intermediate sharing can leave systems explicitly unresolved
+- explicit completion with the same compatible structure produces the same final state across the tested systems
+- conflicting claim multiplicity cannot override the value computed by declared structure
+- corrected compatible evidence can allow structural resolution to proceed again
+- frozen reference artifacts can be checked through replay and SHA-256 verification
 
-STOCRS introduces an alternative:
-
-**truth can emerge from structure — even when time, order, and synchronization are absent**
-
-This enables:
-
-- computation without global clocks  
-- recovery without replay logs  
-- convergence without coordination  
-- correctness without ordering guarantees  
+These are **reference-case results**, not universal claims about all distributed computation.
 
 ---
 
-## 🛡 **Classical Compatibility Guarantee**
+## 🛡 **Classical Compatibility**
 
-STOCRS is a conservative structural extension of computation.
+For computations represented by the declared STOCRS program:
 
-For all structurally valid computations:
+`structurally supported result = result of the declared computation`
 
-`classical result = STOCRS result`
+STOCRS does not redefine the underlying arithmetic or program functions.
 
-STOCRS does not change correctness.  
-It governs when correctness can emerge.
+Instead, it governs when a node may resolve:
 
-- dependencies satisfied → correctness emerges  
-- dependencies incomplete → no result emerges  
-- conflicting structure → no valid result emerges  
+- dependencies satisfied and structure compatible -> resolve
+- required dependencies absent -> remain unresolved
+- conflicting claims present -> do not use claim multiplicity as authority
+- claim disagrees with declared computation -> reject the claim as structurally incompatible
 
-No incorrect result is ever produced.  
-STOCRS preserves classical correctness through structural discipline.
+The implementation therefore separates:
+
+`computation rule`
+
+from:
+
+`evidence about the computation`
+
+Evidence may corroborate a structurally computed value.  
+Evidence does not replace declared computational authority.
 
 ---
 
-## 🔗 Quick Links
+## 🔗 **Quick Links**
 
-### 📘 Docs
+### 📘 Documentation
 
 - [Quickstart](docs/Quickstart.md)
 - [FAQ](docs/FAQ.md)
@@ -160,246 +172,314 @@ STOCRS preserves classical correctness through structural discipline.
 - [STOCRS Structural Model](docs/STOCRS.png)
 - [Shunyaya Structural Paradigm](docs/Shunyaya-Structural-Paradigm.png)
 
----
+### ⚙️ Current Reference Implementation
 
-### 📂 Repo
+- [Canonical Demo v1.2](demo/stocrs_canonical_demo_v1_2.py)
+- [Reconciliation Demo v1.1](demo/stocrs_reconciliation_demo_v1_1.py)
+- [Illustrative POC Demo](demo/stocrs_poc_demo.py)
+- [Runtime Engine v1.1](runtime/stocrs_engine_v1_1.py)
+- [Reference Outputs](reference_outputs/)
+- [Verification Bundle](VERIFY/)
+- [Historical Scripts](historical_scripts/)
 
-- [demo/](demo/) — canonical + reconciliation demos  
-- [runtime/](runtime/) — STOCRS engine  
-- [reference_outputs/](reference_outputs/) — deterministic outputs  
-- [VERIFY/](VERIFY/) — reproducibility + hash validation  
-- [historical_scripts/](historical_scripts/) — evolution trace  
-- [docs/](docs/) — full documentation bundle  
-
----
-
-### ⚡ Run
-
-```
-python demo/stocrs_canonical_demo.py --seed 101 --systems 5
-```
-
-Verify:
-
-```
-compare → reference_outputs  
-hash → VERIFY/FREEZE_*.txt
-```
+The POC demo is an illustrative introductory script.  
+The canonical demo, runtime engine, frozen reference outputs, and verification bundle form the current verification path.
 
 ---
 
-## 📊 **Comparison Snapshot**
+## ⚡ **Run**
 
-| Model                 | Requires Time | Requires Order | Requires Sync | Handles Incomplete Safely | Deterministic Convergence |
-|----------------------|--------------|----------------|---------------|---------------------------|---------------------------|
-| Traditional Systems  | YES          | YES            | YES           | NO                        | CONDITIONAL               |
-| Eventual Consistency | SOMETIMES    | SOMETIMES      | YES           | PARTIAL                   | CONDITIONAL               |
-| CRDTs                | NO           | PARTIAL        | PARTIAL       | YES                       | YES                       |
-| **STOCRS**           | **NO**       | **NO**         | **NO**        | **YES**                   | **YES**                   |
+Run the canonical demo:
 
-### **Key Difference**
+```text
+python demo/stocrs_canonical_demo_v1_2.py --seed 101 --systems 5
+```
 
-STOCRS does not coordinate correctness.  
-It allows correctness to **emerge from structure**.
+Run the runtime conflict demonstration:
+
+```text
+python runtime/stocrs_engine_v1_1.py --conflict-demo
+```
+
+Run the complete verification:
+
+```text
+VERIFY\verify_all.bat
+```
+
+Expected final verifier status:
+
+```text
+VERIFY RESULT: PASS
+```
+
+---
+
+## 📊 **Reference Property Snapshot**
+
+| Property | Current STOCRS Reference Model |
+|---|---|
+| Global clock used for computational correctness | NO |
+| GPS or NTP required by the reference demo | NO |
+| Internet required by the reference demo | NO |
+| Arrival order used as resolution authority | NO |
+| Continuous synchronization required for the tested final result | NO |
+| Incomplete structure represented explicitly | YES |
+| Conflicting claim multiplicity used as authority | NO |
+| Same complete compatible structure + same frozen rules yields the same tested result | YES |
+| Replay and hash verification provided | YES |
 
 ---
 
 ## 🧭 **Development Journey**
 
-```
-v1 → structural resolution proof  
-v2 → fragmented system behavior  
-v3 → isolation and independence  
-v4 → scale and graph growth  
-v5 → convergence under disorder  
-v6 → bounded sharing model  
-v7 → conflict emergence  
-v8 → abstention and recovery  
-v9 → deterministic convergence validation  
-v10 → canonical STOCRS engine  
-```
+The historical scripts preserve the evolution of the idea:
 
-**Result**
+`v1 -> structural resolution under reordered input`
 
-A complete structural computation model  
-with **deterministic, replay-verifiable convergence**.
+`v2 -> incomplete state followed by explicit completion`
+
+`v3 -> divergent local clock conditions`
+
+`v4 -> larger dependency graph`
+
+`v5 -> multiple independent systems`
+
+`v6 -> duplicate and invalid-token filtering`
+
+`v7 -> explicit claim-conflict handling`
+
+`v8 -> partial sharing followed by explicit complete structure`
+
+`v9 -> tighter bounded sharing followed by explicit complete structure`
+
+The current reference implementation then adds:
+
+- a reusable runtime engine
+- a canonical multi-system demonstration
+- explicit conflict abstention
+- recovery after conflicting evidence is corrected or removed
+- frozen reference outputs
+- replay and SHA-256 verification
+
+Historical scripts are retained as an evolution trace and should not be read as stronger guarantees than the individual scenarios they implement.
 
 ---
 
-## 🌐 **Canonical Demo (Deterministic Proof)**
+## 🌐 **Canonical Demo**
 
 ### **Scenario**
 
-- 5 independent systems  
-- no GPS  
-- no NTP  
-- no internet  
-- different incomplete initial fragments  
-- bounded partial sharing  
-- prolonged unresolved states  
-- different internal local times  
+The canonical reference case uses:
+
+- 5 systems
+- different incomplete initial fragments
+- different fragment orders
+- bounded intermediate sharing
+- prolonged unresolved states
+- different reconstructed local-time values
+- explicit final availability of the complete declared structure
 
 ### **Outcome**
 
-All systems converge to the same final result  
+Once each system receives the same complete compatible structure:
 
-Without using:
+- `Final Complete OK: YES`
+- `Final Match OK: YES`
+- `Final Node Count: 20`
+- `Final E1: 202`
 
-- time  
-- sequence  
-- synchronization  
-- external authority  
-
----
-
-## 📊 **Convergence Proof (Order & Time Independence)**
-
-| Run | Input Condition          | Arrival Order | Local Time | Final Result | Match |
-|-----|--------------------------|---------------|------------|--------------|-------|
-| 1   | Random fragments         | Random        | Different  | E1 = 202     | YES   |
-| 2   | Reversed input           | Reversed      | Different  | E1 = 202     | YES   |
-| 3   | Fragmented + delayed     | Mixed         | Different  | E1 = 202     | YES   |
-| 4   | Partial sharing          | Partial       | Different  | E1 = 202     | YES   |
-| 5   | Conflict scenario        | Random        | Different  | E1 = 202     | YES   |
-
-### **Invariant**
-
-`arrival_A != arrival_B -> result_A == result_B`
+The result is not selected from clock values, timestamps, fragment arrival order, or vote count.
 
 ---
 
-## ⚖️ **Conflict Resolution Model**
+## 📊 **Convergence Demonstration**
 
-**Behavior**
+| Stage | Structural Condition | Expected Resolution State |
+|---|---|---|
+| Initial fragments | Different and incomplete | UNRESOLVED EXISTS |
+| Bounded sharing | More structure, still incomplete | UNRESOLVED EXISTS |
+| Complete compatible structure | Same declared nodes and rules available | COMPLETE |
+| Final comparison | Same supported values across systems | MATCH |
+| Conflict injection | Distinct claims for `X1` | CONFLICT AT `X1`; DEPENDENT `A1` UNRESOLVED |
+| Corrected evidence | Compatible claim set restored | RESOLUTION PROCEEDS AGAIN |
 
-- agreement → resolve  
-- ambiguity → abstain  
-- stronger structural support → resolve  
+### **Reference Invariant**
 
-**Guarantee**
+For the tested complete compatible states:
 
-- conflict does not corrupt truth  
-- abstention preserves correctness  
-- resolution requires structural justification  
+`same structure + same rules -> same result`
+
+Arrival order may differ without becoming computational authority.
 
 ---
 
-## 🚀 **Quick Start (30 Seconds)**
+## ⚖️ **Conflict Model**
 
-Run the canonical demo:
+The current runtime follows these rules:
 
-```
-python demo/stocrs_canonical_demo.py --seed 101 --systems 5
+- no claim -> compute from declared structure when dependencies are available
+- one distinct claimed value matching declared computation -> accept as compatible evidence
+- one distinct claimed value disagreeing with declared computation -> `claim_vs_structure`
+- more than one distinct claimed value -> `multi_value_conflict`
+- conflicting or incompatible claim -> do not resolve that node from the claim
+- dependent node without its required resolved dependency -> remain unresolved
+- corrected or removed conflicting evidence -> resolution may proceed again
+
+### **Authority Rule**
+
+`claim multiplicity != structural authority`
+
+A repeated incorrect claim does not become correct by appearing more often.
+
+Declared structure and frozen computation rules remain authoritative within the reference model.
+
+---
+
+## 🚀 **Quick Start**
+
+Run:
+
+```text
+python demo/stocrs_canonical_demo_v1_2.py --seed 101 --systems 5
 ```
 
 ### **Expected Output**
 
-```
-No GPS: YES  
-No NTP: YES  
-No Internet: YES  
-Time Used for Correctness: NO  
+```text
+No GPS: YES
+No NTP: YES
+No Internet: YES
+Time Used for Correctness: NO
 
-Final Complete OK: YES  
-Final Match OK: YES  
+Final Complete OK: YES
+Final Match OK: YES
 
-Final Node Count: 20  
+Final Node Count: 20
 Final E1: 202
+
+Stable OK: YES
+Conflict OK: YES
+Recovery OK: YES
 ```
+
+For the complete folder layout, verification commands, expected files, and reproduction procedure, see the [Quickstart](docs/Quickstart.md) and [Verification Bundle](VERIFY/).
 
 ---
 
 ## ✨ **Key Features**
 
-- Deterministic structural computation  
-- No reliance on time, sequence, or synchronization  
-- Safe unresolved states  
-- Bounded sharing  
-- Multi-phase convergence  
-- Multi-system consistency  
-- Adversarial resilience  
-- Conflict-aware resolution with abstention  
-- Replay-verifiable outputs  
+- deterministic structural resolution
+- explicit incomplete states
+- dependency-governed computation
+- arrival-order independence in the declared reference cases
+- clock-independent resolution authority in the declared reference cases
+- bounded intermediate sharing demonstrations
+- multi-system final-state comparison
+- conflict abstention
+- claim-versus-structure validation
+- recovery after conflicting evidence is corrected or removed
+- deterministic canonical reference output
+- replay and SHA-256 verification
 
 ---
 
 ## 🧠 **Structural Computation Model**
 
-STOCRS operates as a structural resolution system:
+STOCRS represents computation as a dependency structure:
 
-- nodes represent values or expressions  
-- dependencies define structure  
-- resolution occurs only when dependencies are satisfied  
+- nodes represent declared values or expressions
+- dependencies determine which prior values are required
+- a node resolves only when its declared dependencies are available
+- deterministic functions compute the supported value
+- claims may be checked against that supported value
+- conflicting evidence cannot replace structural authority
 
-**Key Idea**
+The core idea is:
 
-Structure governs correctness  
-Time is irrelevant to correctness  
+`structure determines resolvability`
 
----
-
-## 🔁 **Multi-System Convergence Model**
-
-Each system may have:
-
-- different starting fragments  
-- different arrival orders  
-- different missing information  
-- different local clocks  
-
-Yet:
-
-- structure accumulates  
-- dependencies resolve  
-- truth emerges  
-
-**Convergence emerges from structure, not coordination**
+`declared computation determines supported value`
 
 ---
 
-## 🛡 **Unresolved State Model**
+## 🔁 **Multi-System Resolution**
 
-Unresolved is not failure.  
-Unresolved is not error.
+Different systems may have:
 
-It is:
+- different starting fragments
+- different fragment arrival orders
+- different missing information
+- different local clock values
 
-**structurally valid incompleteness**
+During incompleteness, they may hold different partial states.
 
----
+The reference model does not claim that bounded sharing alone guarantees complete dissemination.
 
-## 🔎 **No Time, No Order, No Authority**
+Instead:
 
-STOCRS does not require:
-
-- clocks  
-- timestamps  
-- event ordering  
-- synchronization  
-- central authority  
+`same eventual complete compatible structure + same frozen rules -> same supported final result`
 
 ---
 
-## 🌍 **Where STOCRS Matters**
+## 🛡 **Unresolved Is a Valid State**
 
-- Distributed Systems  
-- Edge / Offline Systems  
-- Recovery Systems  
-- Data Reconciliation  
-- Resilient Infrastructure  
-- AI / Observability  
+Unresolved is not automatically failure.
+
+Within STOCRS it means:
+
+**the declared structure currently available is insufficient to support the requested result.**
+
+The system does not need to invent a value merely because a value is desired.
+
+---
+
+## 🔎 **What STOCRS Does Not Use as Resolution Authority**
+
+Within the declared reference implementation, computational correctness is not selected by:
+
+- wall-clock time
+- timestamps
+- GPS
+- NTP
+- fragment arrival order
+- continuous synchronization
+- claim majority
+
+This does not mean those mechanisms have no operational use.
+
+It means they are not the authority that determines the supported computational result in the reference cases.
+
+---
+
+## 🌍 **Potential Areas of Relevance**
+
+The STOCRS model may be relevant to research and system design involving:
+
+- distributed computation
+- edge and offline systems
+- recovery and reconstruction
+- data reconciliation
+- intermittently connected systems
+- deterministic replay
+- audit-oriented computation
+- conflict-aware structural resolution
+
+Production use in any such domain requires independent validation beyond the current reference implementation.
 
 ---
 
 ## 🧭 **Architectural Shift**
 
-Traditional systems:
+A coordination-heavy model may use:
 
-`time + order + synchronization -> correctness`
+`time + order + synchronization -> operational agreement`
 
-STOCRS:
+The STOCRS reference model asks whether some computational decisions can instead use:
 
-`structure -> correctness`
+`declared structure + frozen rules -> supported result`
+
+This is a shift in **resolution authority**, not a claim that physical execution, communication, or coordination disappear.
 
 ---
 
@@ -407,68 +487,70 @@ STOCRS:
 
 See: [LICENSE](LICENSE)
 
-Reference Implementation: **Open Standard**  
-Architecture: CC BY-NC 4.0
+The repository is a publicly available reference implementation under its stated license terms.
+
+Use of the software, documentation, architecture, and related materials is governed by the licensing terms declared in the repository.
+
+The repository does not claim recognition as a formal technical standard.
 
 ---
 
-## 🔗 **SSUM-Time Reference**
+## 🔗 **Related Systems**
 
-A deterministic structural time engine — No GPS • No NTP • No Internet — reconstructing time from cycle alignment with replay-verifiable accuracy.
+### **SSUM-Time**
 
-https://github.com/OMPSHUNYAYA/SSUM-Time
+A deterministic structural time reference system exploring time reconstruction without GPS, NTP, or internet as correctness inputs.
 
----
+[Explore SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time)
 
-## ⚙️ **STOCRS-R — Structural Resolution**
+### **STOCRS-R — Structural Resolution**
 
-**Reusable deterministic structural application evolution — without procedural sequencing**
+Reusable deterministic structural application evolution without procedural sequencing as resolution authority.
 
-🔗 [STOCRS-R](https://github.com/OMPSHUNYAYA/STOCRS-R)
-
----
-
-## 🧱 **Cross-System Dependency Elimination Map**
-
-Across these systems, the same structural pattern appears repeatedly.
-
-The dependency changes.  
-The preserved invariant does not.
-
-| Domain        | System | Dependency Removed for Correctness                  | What Preserves Correctness |
-|---------------|--------|------------------------------------|----------------------------|
-| Computation   | [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation) | Execution flow             | Structure |
-| Computation   | [STOCRS](https://github.com/OMPSHUNYAYA/STOCRS)                     | Execution pipelines        | Structure |
-| Arithmetic    | [SVARE](https://github.com/OMPSHUNYAYA/SVARE)                        | Computation                | Structure |
-| Time          | [STIME](https://github.com/OMPSHUNYAYA/Structural-Time)              | Clocks                     | Structure |
-| Time          | [SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time)                | Time reconstruction        | Structure |
-| Ordering      | [ORL](https://github.com/OMPSHUNYAYA/Orderless-Ledger)              | Ordering / sequence        | Structure |
-| Connectivity  | [STINT-Money](https://github.com/OMPSHUNYAYA/STINT-Money)           | Continuous connectivity    | Structure |
-| Communication | [STILE](https://github.com/OMPSHUNYAYA/STILE)                       | Messaging / network        | Structure |
-| Traversal     | [STRAL-Path](https://github.com/OMPSHUNYAYA/STRAL-Path)             | Traversal / search         | Structure |
-| Infrastructure| [STIC](https://github.com/OMPSHUNYAYA/STIC)                         | Cloud / infrastructure     | Structure |
-| Media         | [STRUMER](https://github.com/OMPSHUNYAYA/STRUMER)                    | Editing / manual media workflows | Structure |
-| Finance       | [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money)           | Transactions               | Structure |
-| Audit         | [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit)           | Verification workflows     | Structure |
-
-Each row demonstrates removal of a dependency for correctness, while structure preserves correctness.
-
-Correctness remains reproducible under structural constraints.
-
-Dependencies may shift from runtime coordination toward structural definition, while preserving deterministic outcomes.
-
-If correctness remains stable after removing a dependency, that dependency may not be fundamental to correctness.
+[Explore STOCRS-R](https://github.com/OMPSHUNYAYA/STOCRS-R)
 
 ---
 
-## 🌍 **Civilization-Level Implication**
+## 🧱 **Cross-System Structural Map**
 
-If correctness does not depend on time → systems can function without global clocks  
-If correctness does not depend on order → systems can function without coordination  
-If correctness does not depend on synchronization → systems can operate independently  
+Across the wider Shunyaya ecosystem, multiple projects explore a related design question:
+
+**Can a dependency that is usually treated as correctness authority be reduced, isolated, or removed from that role while preserving a declared invariant?**
+
+| Domain | System | Dependency Examined | Structural Role Explored |
+|---|---|---|---|
+| Computation | [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation) | Execution flow | Structure |
+| Computation | [STOCRS](https://github.com/OMPSHUNYAYA/STOCRS) | Time / arrival order as result authority | Structure |
+| Arithmetic | [SVARE](https://github.com/OMPSHUNYAYA/SVARE) | Procedural evaluation pathways | Structure |
+| Time | [STIME](https://github.com/OMPSHUNYAYA/Structural-Time) | Physical clocks as progress authority | Structure |
+| Time | [SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time) | External time sources | Structure |
+| Ordering | [ORL](https://github.com/OMPSHUNYAYA/Orderless-Ledger) | Event order | Structure |
+| Connectivity | [STINT-Money](https://github.com/OMPSHUNYAYA/STINT-Money) | Continuous connectivity | Structure |
+| Communication | [STILE](https://github.com/OMPSHUNYAYA/STILE) | Transport as delivery authority | Structure |
+| Traversal | [STRAL-Path](https://github.com/OMPSHUNYAYA/STRAL-Path) | Traversal / search | Structure |
+| Infrastructure | [STIC](https://github.com/OMPSHUNYAYA/STIC) | Infrastructure dependency | Structure |
+| Media | [STRUMER](https://github.com/OMPSHUNYAYA/STRUMER) | Manual workflow dependency | Structure |
+| Finance | [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money) | Transaction sequencing | Structure |
+| Audit | [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit) | Verification workflow | Structure |
+
+The exact claim boundary differs by project.
+
+The shared architectural question is whether a system can preserve its declared invariant while moving authority away from a conventional external dependency and into explicit structure.
+
+---
+
+## 🌍 **Broader Implication**
+
+Where the required structure is complete, compatible, and governed by deterministic rules:
+
+- correctness may not need a global clock as authority
+- correctness may not need arrival order as authority
+- correctness may not need continuous synchronization as authority
+
+STOCRS provides a bounded reference implementation of that idea for deterministic structural computation.
 
 ---
 
 # ⭐ **One-Line Summary**
 
-**STOCRS demonstrates that independent systems can begin differently, remain incomplete, operate without time, order, synchronization, GPS, NTP, or internet — and still converge deterministically to the same final truth using structure alone.**
+**STOCRS demonstrates, within its declared reference cases, that systems can begin with different incomplete fragments and different local clock values, remain unresolved while structure is incomplete, reject conflicting claims as computational authority, and converge to the same deterministic result once the same complete compatible structure is available under the same frozen rules.**
