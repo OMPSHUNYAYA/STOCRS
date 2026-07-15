@@ -1,0 +1,15 @@
+SHA256 hash of reference_outputs\reference_output.json:
+c0a4d5183c17576f06ce34dca8e1469a8a264e47d74d99c4b1ea255ace2ab41b
+CertUtil: -hashfile command completed successfully.
+SHA256 hash of reference_outputs\reference_run.txt:
+111bf39cc94bedded18a8fd51c35df5cb04b7f3d6fd31f5ed221134f4b398929
+CertUtil: -hashfile command completed successfully.
+SHA256 hash of reference_outputs\reconciliation_demo_v1_1.json:
+b0b00c1df61076085422c114eb6b3d78278d449e485b9b34aae35017afd240fe
+CertUtil: -hashfile command completed successfully.
+SHA256 hash of reference_outputs\stocrs_canonical_demo_v1.json:
+c0a4d5183c17576f06ce34dca8e1469a8a264e47d74d99c4b1ea255ace2ab41b
+CertUtil: -hashfile command completed successfully.
+SHA256 hash of reference_outputs\stocrs_conflict_demo_v1.json:
+9b90f4484b032d905aa30ca85e2a42b671648edad490faf45a539eb2d0c07aef
+CertUtil: -hashfile command completed successfully.

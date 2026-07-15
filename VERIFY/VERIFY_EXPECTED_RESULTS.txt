@@ -1,0 +1,13 @@
+STOCRS Verification Expected Properties
+
+Within the declared reference cases:
+
+- Same supported structure and same frozen rules -> same supported structural result
+- Arrival-order differences do not alter the tested final result once the same complete compatible structure is available
+- Incomplete structure remains unresolved
+- Conflicting claim multiplicity cannot override declared structure
+- Structure-incompatible claims do not force an incorrect dependent result
+- After conflicting evidence is corrected or removed, compatible structure can resolve again
+- Frozen reference artifacts remain replay-verifiable
+
+All verification checks must pass before the current runtime and canonical demo are treated as the verified reference implementation.

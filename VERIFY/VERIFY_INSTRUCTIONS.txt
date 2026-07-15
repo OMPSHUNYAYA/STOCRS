@@ -1,0 +1,30 @@
+STOCRS Verification Guide
+
+1. Re-run the current demo scripts:
+
+   python demo\stocrs_poc_demo.py
+   python demo\stocrs_canonical_demo_v1_2.py --seed 101 --systems 5
+   python demo\stocrs_reconciliation_demo_v1_1.py --seed 101
+
+2. Re-run the current runtime conflict demonstration:
+
+   python runtime\stocrs_engine_v1_1.py --conflict-demo
+
+3. Run the complete verification:
+
+   VERIFY\verify_all.bat
+
+4. The verifier checks:
+
+   - demo, runtime, and reference-output hashes against the current FREEZE files
+   - exact canonical JSON reproduction against reference_outputs\reference_output.json
+   - reconciliation result and certificate agreement within the declared reference case
+   - rejection of conflicting claim multiplicity as resolution authority
+
+5. Confirm:
+
+   VERIFY RESULT: PASS
+
+Result:
+
+Deterministic reproduction and the declared conflict-authority regression check are confirmed within the reference cases.
