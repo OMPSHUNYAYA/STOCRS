@@ -11,6 +11,8 @@
 ![Conflict-Safe](https://img.shields.io/badge/Conflict-Abstention%20%26%20Recovery-orange)
 ![Reference](https://img.shields.io/badge/Reference%20Implementation-Open-blue)
 
+[![STOCRS Verify](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml)
+
 **Deterministic • Structure-Driven • Explicit Incompleteness • Conflict-Aware • Replay-Verifiable • Open Reference Implementation**
 
 **No GPS • No NTP • No Internet • No Global Clock Used for Correctness in the Declared Reference Cases**
@@ -167,8 +169,6 @@ Evidence does not replace declared computational authority.
 - [FAQ](docs/FAQ.md)
 - [Convergence Proof](docs/Convergence-Proof.md)
 - [Validation Ledger](docs/Validation_Ledger.md)
-- [Concept Flyer](docs/Concept-Flyer_STOCRS_v1.8.pdf)
-- [STOCRS Paper](docs/STOCRS_v1.8.pdf)
 - [STOCRS Structural Model](docs/STOCRS.png)
 - [Shunyaya Structural Paradigm](docs/Shunyaya-Structural-Paradigm.png)
 
