@@ -11,8 +11,6 @@
 ![Conflict-Safe](https://img.shields.io/badge/Conflict-Abstention%20%26%20Resolution-orange)
 ![Open-Standard](https://img.shields.io/badge/Reference%20Implementation-Open%20Standard-blue)
 
-[![STOCRS Verify](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml/badge.svg)](https://github.com/OMPSHUNYAYA/STOCRS/actions/workflows/verify.yml)
-
 **Deterministic • Time-Independent • Sequence-Free • Convergence-Based Computation • Open Reference Implementation**
 
 **No GPS • No NTP • No Internet • No Global Clock • No Central Authority Required for Correctness**
