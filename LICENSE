@@ -1,157 +1,107 @@
-Open Standard License — STOCRS Reference Implementation
+STOCRS Open Use License v1.0
 
-STOCRS
-Shunyaya Timeless Computation
+1. Reference Implementation
 
-Permission
+Permission is granted, free of charge, on a worldwide, perpetual, non-exclusive, royalty-free, and irrevocable basis, provided that these terms are followed, to any person or organization obtaining a copy of the STOCRS reference implementation.
 
-Permission is hereby granted, free of charge, to any person or organization to use, execute, study, reproduce, publish, distribute, modify, implement, or extend the STOCRS reference implementation, in whole or in part, without restriction.
+This permission includes the right to use, execute, study, copy, reproduce, publish, distribute, modify, implement, extend, and deploy the reference implementation, in whole or in part, for commercial or non-commercial purposes.
 
-This permission applies to both commercial and non-commercial use.
+This permission applies to original, modified, and extended versions, subject to the conditions in Section 2.
 
-No registration required.
-No fees required.
-No approval required.
+No registration, fee, or prior approval is required.
 
-No Restrictions
 
-This Open Standard reference implementation imposes no restrictions on implementation or use, except for truthful representation and non-misleading use of the STOCRS name.
+2. Conditions
 
-Attribution is not required.
-No endorsement or certification is implied.
-No runtime obligations apply.
-No implementation approval is required.
+Redistributions of the reference implementation, or substantial portions of it, must include a copy of this license.
 
-Correctness and conformance are governed by deterministic structural behavior and replay-verifiable validation, not by licensing terms.
+Applicable third-party license notices and attributions must be retained.
 
-Modified or extended implementations must not be represented as the canonical STOCRS reference implementation unless they fully preserve the normative structural behavior defined in this document.
+Modified or extended versions must be clearly identified as modified and must not be represented as the official or canonical STOCRS reference implementation unless explicitly authorized by the authors or maintainers.
 
-Recommended Attribution (Optional)
+The name "STOCRS" or "Shunyaya Timeless Computation" may be used for accurate descriptive reference, but must not imply official authorship, endorsement, certification, approval, conformance, governance authority, production readiness, or formal technical-standard status.
 
-Attribution is recommended but not required.
+No right to use any trademark, service mark, logo, or other branding is granted except for accurate descriptive reference.
 
-Preferred form:
+Attribution to STOCRS is not required for use of the reference implementation, but is encouraged.
 
-Implements STOCRS — Shunyaya Timeless Computation
+Suggested attribution:
 
-Attribution must not imply endorsement by the authors or the Shunyaya framework.
+Based on the STOCRS reference implementation developed within the Shunyaya Framework.
 
-Use of the name “STOCRS” must not imply:
+Attribution must not imply endorsement.
 
-• endorsement
-• certification
-• official compliance approval
-• governance authority
-• authorship by the original authors
+Third-party components remain subject to their own licenses and notices.
 
-Scope of the Reference Implementation
 
-This reference implementation includes the runtime engine, canonical demo, scripts, outputs, reference outputs, validation traces, and supporting artifacts provided in this release.
+3. Architecture and Documentation
 
-STOCRS defines a deterministic structural computation model in which correctness emerges from dependency resolution rather than execution order or time.
+Unless a file or section states otherwise, the STOCRS architecture descriptions, diagrams, and documentation are licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
 
-The reference implementation establishes the following conceptual model:
+Under that license, these materials may be shared and adapted for non-commercial purposes with appropriate credit, a link to the license, and an indication of whether changes were made.
 
-resolve(nodes) ->
-    evaluate nodes whose dependencies are satisfied
-    repeat until no further resolution is possible
+Attribution must not imply endorsement.
 
-Final correctness emerges when:
+The full license terms govern these materials:
 
-structural_closure = all dependencies satisfied
+https://creativecommons.org/licenses/by-nc/4.0/legalcode
 
-The reference implementation demonstrates:
+Commercial use of the architecture descriptions, diagrams, and documentation requires separate written permission from the relevant rights holder.
 
-• computation from incomplete and fragmented states
-• independence from execution order and timing
-• bounded information sharing between systems
-• deterministic convergence across independent systems
-• structural closure leading to identical final results
-• replay-verifiable deterministic outcomes
-• correctness under conflict through abstention and structural resolution
+For clarity, the open-use permissions in Section 1 apply to the STOCRS reference implementation, including source code, executable scripts, verification tooling, machine-readable reference outputs, and related implementation artifacts, unless a specific file states otherwise.
 
-The reference implementation is provided to demonstrate the feasibility of structure-based computation without reliance on time, sequence, or synchronization.
+Documentation, explanatory architecture text, and diagrams remain governed by this Section 3 unless explicitly licensed differently.
 
-Conformance
 
-An implementation is considered compatible with the STOCRS reference architecture if it preserves the core structural principles demonstrated by the implementation, including:
+4. Reference Scope and Responsibility
 
-• correctness derived from structural dependency resolution
-• independence from execution order
-• independence from global time or synchronization
-• deterministic convergence across systems
-• reproducibility under replay conditions
+Use of STOCRS is entirely at the user's own risk.
 
-Independent implementations are permitted and encouraged.
+STOCRS is a bounded reference implementation and research model for deterministic structural computation under the declared reference cases.
 
-Relationship to Other Licenses
+The current governing relation is:
 
-This Open Standard license applies to the STOCRS reference implementation.
+same complete compatible structure + same frozen rules -> same supported structural result
 
-The STOCRS conceptual architecture is released separately under the Creative Commons Attribution-NonCommercial 4.0 license (CC BY-NC 4.0).
+The current bounded structural model includes:
 
-Reference implementations, example scripts, datasets, validation traces, and tooling may be released under separate licenses if explicitly stated.
+incomplete structure -> unresolved
 
-Implementation licensing does not alter architectural interpretation of the STOCRS framework.
+multi-value claim conflict -> conflicted node
 
-Nothing in this license grants any rights to use the STOCRS name as a trademark or to imply official status.
+structure-incompatible claim -> conflicted node
 
-Responsibility
+required dependency not resolved -> dependent node unresolved
 
-Use of STOCRS in distributed systems, databases, infrastructure, AI systems, financial systems, or safety-critical environments is undertaken entirely at the user’s own responsibility.
+claim multiplicity != structural authority
 
-STOCRS provides:
+corrected compatible evidence -> resolution may proceed again
 
-• deterministic structural computation
-• dependency-based resolution
-• convergence without synchronization
-• replay-verifiable deterministic behavior
+The current reference implementation demonstrates, within its declared cases, that systems evaluating the same complete compatible structure under the same frozen deterministic rules can produce the same supported structural result even when fragment arrival order and local clock values differ.
 
-It does not provide:
+The current reference implementation also demonstrates explicit incompleteness, bounded conflict handling, deterministic result reproduction, frozen file-identity verification, and replay-oriented validation within the declared reference cases.
 
-• operational guarantees
-• system-level fault tolerance assurances
-• regulatory certification
-• safety guarantees
+The reference implementation does not guarantee universal order independence, universal time independence, automatic convergence of arbitrary distributed protocols, automatic completion from bounded sharing, communication-free operation, coordination-free operation, consensus, factual truth of inputs, network reliability, security, system-level fault tolerance, regulatory compliance, production readiness, or fitness for financial, medical, safety-critical, or other high-risk use.
 
-No Warranty
+Time, timestamps, transport history, arrival order, and claim multiplicity are not treated as substitutes for declared structure and frozen deterministic rules as computational authority in the declared reference cases.
 
-THE STOCRS REFERENCE IMPLEMENTATION IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+These statements do not imply that clocks, timestamps, sequencing, communication, networking, persistence, retries, scheduling, synchronization, coordination, consensus, or other operational mechanisms are universally unnecessary.
 
-IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE USE OF THIS IMPLEMENTATION.
 
-Creative Commons License — STOCRS Architecture
+5. No Warranty
 
-Except for the STOCRS reference implementation (released as an Open Standard), the conceptual architecture, theoretical framework, and specification text are licensed under:
+THE STOCRS REFERENCE IMPLEMENTATION, ARCHITECTURE, DIAGRAMS, DOCUMENTATION, REFERENCE OUTPUTS, VERIFICATION MATERIALS, AND RELATED ARTIFACTS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
 
-Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+THIS INCLUDES, BUT IS NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, RELIABILITY, SECURITY, OR FITNESS FOR FINANCIAL, MEDICAL, SAFETY-CRITICAL, OR OTHER HIGH-RISK USE.
 
-This permits:
 
-• sharing
-• copying
-• redistribution
-• adaptation
-• academic use
-• research publication
+6. Limitation of Liability
 
-for non-commercial purposes, provided appropriate credit is given.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE AUTHORS AND CONTRIBUTORS SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGE, LOSS, OR OTHER LIABILITY ARISING FROM THE USE, MODIFICATION, DISTRIBUTION, IMPLEMENTATION, EXTENSION, OR DEPLOYMENT OF STOCRS.
 
-The architecture may be studied, cited, and reproduced for research and educational purposes.
 
-Commercial deployment of the architecture text or specification itself is not permitted under this license.
+7. Severability
 
-Independent implementations of the architecture remain permitted under the Open Standard license governing the reference implementation.
+If any provision of this license is held unenforceable, the remaining provisions remain in effect.
 
-Full license text:
-https://creativecommons.org/licenses/by-nc/4.0/
-
-Closing Statement
-
-STOCRS is published to explore the possibility that computation correctness can emerge from structure rather than time, sequence, or synchronization.
-
-The project is released openly to encourage independent research, validation, and implementation of structure-based computation models.
-
-Computation, long governed by order and timing, may also be understood as a process of structural resolution.
-
-STOCRS is offered as a reference architecture for that exploration.
+Exercise of the permissions granted under this license is subject to these terms.
