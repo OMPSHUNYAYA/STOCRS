@@ -1,2152 +1,863 @@
-# ⭐ STOCRS — Validation Ledger
+# ⭐ **STOCRS — Validation Ledger**
 
-## **Purpose**
+## **Shunyaya Timeless Computation**
 
-This document records **verified execution results** of STOCRS — *Shunyaya Timeless Computation*.
-
-Each entry represents a **reproducible validation** demonstrating:
-
-• deterministic structural computation  
-• convergence under disorder  
-• independence from time, sequence, and synchronization  
-
-All entries are **append-only and reproducible**.
+**Current Reference Validation • Historical Lineage • Frozen Reproducibility**
 
 ---
 
-## **Non-Claims**
+## **1. Purpose**
 
-STOCRS does not claim:
+This ledger records the validated behavior of STOCRS across:
 
-• improved runtime performance over optimized classical systems  
-• elimination of all coordination in practical deployments  
-• replacement of all existing computation models  
+- historical development experiments
+- the current canonical reference implementation
+- the current runtime conflict model
+- reconciliation validation
+- frozen SHA-256 verification
+- automated workflow verification
 
-STOCRS establishes **correctness guarantees — not performance guarantees**.
+The current governing relation is:
 
----
+`same complete compatible structure + same frozen rules -> same supported structural result`
 
-## **Core Identity**
+The current authority rule is:
 
-`correctness = structure`
+`claim multiplicity != structural authority`
 
-### Example
+This ledger distinguishes between:
 
-Let `G = structural graph`  
-Let `A_i = arrival order permutation`  
+- **historical validation evidence** — experiments preserved in `historical_scripts/`
+- **current reference validation** — the canonical demo, runtime engine, frozen reference outputs, and verification bundle
 
-`Resolve(G, A_i) = V`
-
-### Invariant
-
-For all `i, j`:
-
-`Resolve(G, A_i) = Resolve(G, A_j)`
+Historical experiments remain part of the development record, but they do not override the current runtime semantics or current claim boundary.
 
 ---
 
-### Example for Fragmentation
+## **2. Scope Boundary**
 
-`Resolve_partial(G) = U (unresolved)`  
-`Resolve(G_complete) = V`
+STOCRS does not claim that:
 
-### Invariant
+- every computation is independent of time or order
+- every distributed system can eliminate coordination
+- bounded sharing guarantees eventual complete dissemination
+- communication, persistence, or execution infrastructure is unnecessary
+- conflicting evidence resolves through majority support
+- all adversarial inputs are universally handled
+- the current reference implementation is a production safety certification
+- the repository is a formally recognized technical standard
 
-`U -> V (deterministic completion)`
+The current reference model demonstrates:
 
----
-
-## **Table of Contents**
-
-Phase 1 — Structural Convergence Without Sequence  
-Phase 2 — Fragmented Resolution & Re-Derivation  
-Phase 3 — Isolation, Divergent Time, and Convergence Without Authority  
-Phase 4 — Large-Scale Structural Compute Graph  
-Phase 5 — Multi-System Structural Convergence  
-Phase 6 — Adversarial Robustness and Contradictory Inputs  
-Phase 7 — Conflict Resolution and Structural Truth  
-Phase 8 — Partial Information Sharing and Structural Reconvergence  
-Phase 9 — Bounded Sharing and Delayed Reconvergence Pressure  
-Phase 10 — Canonical Demonstration  
-
----
-
-# **PHASE 1 — Structural Convergence Without Sequence**
+- explicit unresolved states under incomplete structure
+- deterministic resolution from declared dependencies and frozen rules
+- final agreement when the same complete compatible structure is available
+- arrival-order independence in the declared reference cases
+- local-time independence as computational authority in the declared reference cases
+- conflict abstention
+- claim-versus-structure rejection
+- recovery after conflicting evidence is corrected or removed
+- deterministic replay and SHA-256 verification
 
 ---
 
-## **Test 1.1 — Branching Structure**
+## **3. Current Reference Implementation**
 
-**Scenario:** branching  
-**Seed:** 7  
+### **Canonical Demo**
 
-### **Conditions**
+`demo/stocrs_canonical_demo_v1_2.py`
 
-• two independent systems  
-• different arrival orders  
-• no timestamps used for correctness  
-• no network dependency  
+### **Runtime Engine**
 
-### **Observed**
+`runtime/stocrs_engine_v1_1.py`
 
-`arrival_A != arrival_B`  
-`result_A == result_B`
+### **Reconciliation Demo**
 
-### **Resolved Frontiers**
+`demo/stocrs_reconciliation_demo_v1_1.py`
 
-`[['X', 'Y'], ['A', 'B'], ['C'], ['D'], ['E']]`
+### **Illustrative POC**
 
-### **Values**
+`demo/stocrs_poc_demo.py`
 
-`C = 11`  
-`D = 121`  
-`E = 118`
+The POC is illustrative and is not the primary verification authority.
 
-### **Results**
+The current verification path is formed by:
 
-**Result Match:** YES  
-**Time Used for Correctness:** NO  
-**Network Required for Correctness:** NO  
-
-### **Certificate**
-
-`62154809a3b586000217a573c7c6a6d5dd6b519d1e0aa024109663137414c427`
+- the canonical demo
+- the runtime engine
+- the reconciliation demo
+- frozen reference outputs
+- the `VERIFY/` bundle
+- `.github/workflows/verify.yml`
 
 ---
 
-## **Test 1.2 — Diamond Structure**
+# **PART I — CURRENT REFERENCE VALIDATION**
 
-**Scenario:** diamond  
-**Seed:** 11  
+# **PHASE 10 — CANONICAL REFERENCE DEMONSTRATION**
 
-### **Conditions**
+## **Test 10.1 — STOCRS Canonical Demo v1.2**
 
-• parallel dependency resolution  
-• multi-parent structural dependencies  
-• independent arrival permutations  
-
-### **Observed**
-
-`arrival_A != arrival_B`  
-`result_A == result_B`
-
-### **Resolved Frontiers**
-
-`[['U', 'V'], ['P', 'Q'], ['R'], ['S'], ['T']]`
-
-### **Values**
-
-`R = 2.479425538604`  
-`S = 1.246867205046`  
-`T = 4.987468820185`
-
-### **Results**
-
-**Result Match:** YES  
-**Time Used for Correctness:** NO  
-**Network Required for Correctness:** NO  
-
-### **Certificate**
-
-`e088aab3711950419ab926d4a5c6b9b3e8df6d632929bc648dce321fd3350a08`
-
----
-
-## **Test 1.3 — Fragmented Scenario (Initial)**
-
-**Scenario:** fragmented  
-**Seed:** 5  
-
-### **Conditions**
-
-• partial structural evaluation  
-• unordered arrival  
-• independent systems  
-
-### **Observed**
-
-`arrival_A != arrival_B`  
-`result_A == result_B`
-
-### **Observed Structural State**
-
-`unresolved = []`
-
-### **Interpretation**
-
-• structure was sufficient for immediate resolution  
-• fragmentation depth in this configuration did not force unresolved persistence  
-
-### **Resolved Frontiers**
-
-`[['I', 'J'], ['K'], ['L'], ['M'], ['N']]`
-
-### **Results**
-
-**Result Match:** YES  
-
-### **Certificate**
-
-`28dcd7534a438087d9579a190b548abc0451d68003ae5d1bcea85f34460b65ed`
-
----
-
-## **Test 1.4 — Stress Validation (Branching)**
-
-**Runs:** 100  
-
-### **Observed**
-
-`passes = 100 / 100`
-
-### **Invariant Verified**
-
-`Resolve(G, A_1) = Resolve(G, A_2)`
-
-for all tested permutations  
-
-### **Certificate Digest**
-
-`c658d565bca3d63dc88eb16f1856febff5b96ea40ce17e2d69f961b7c175ec56`
-
----
-
-## **Test 1.5 — Stress Validation (Fragmented)**
-
-**Runs:** 100  
-
-### **Observed**
-
-`passes = 100 / 100`
-
-### **Observation**
-
-fragmentation in this configuration did not produce persistent unresolved intermediate states  
-
-### **Certificate Digest**
-
-`41760270d9eb1c1bc641b4d18fa401fd777816fefe67087d1e2c3a17a85160bf`
-
----
-
-## **Phase 1 Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic structural computation  
-• convergence under different arrival orders  
-• independence from execution sequence  
-• no dependency on time for correctness  
-• no dependency on network synchronization  
-• repeatable and stress-validated behavior  
-
----
-
-## **Key Insight**
-
-Structure alone is sufficient to guarantee consistent computational outcomes across independent systems.
-
----
-
-# **PHASE 2 — Fragmented Resolution & Re-Derivation**
-
----
-
-## **Test 2.1 — True Fragmented Resolution**
-
-**Scenario:** fragmented delayed-completion  
-**Seed:** 10  
-
----
+**Scenario:** bounded intermediate structural progression followed by explicit complete compatible structure  
+**Seed:** `101`  
+**Systems:** `5`
 
 ### **Objective**
 
-Demonstrate that STOCRS preserves **unresolved structural truth under incomplete information** and deterministically converges to the same final result once the missing structure becomes available.
+Demonstrate, in one canonical reference execution, that STOCRS can:
 
----
+- begin with different incomplete structural fragments
+- remain unresolved across several bounded intermediate phases
+- use different fragment orders
+- hold different local-time values
+- later evaluate the same complete compatible declared structure
+- produce the same supported final result
 
-### **Conditions**
+The same execution also validates:
 
-• two independent systems  
-• different Phase 1 arrival orders  
-• partial structure in Phase 1  
-• missing declaration introduced only in Phase 2  
-• no timestamps used for correctness  
-• no network required for correctness  
+- stable compatible claims
+- explicit multi-value conflict
+- dependent unresolved state under conflict
+- recovery after conflicting evidence is corrected or removed
 
----
+### **Declared Conditions**
 
-### **Program Structure**
-
-`X = 2`  
-`Y = 3`  
-`A = X + Y`  
-`B = A * 2`  
-`C = B + Z`  
-`D = C * 3`  
-`Z = 10`  
-
----
-
-### **Phase 1 Behavior**
-
-The declaration `Z` was intentionally withheld.  
-Dependent nodes could not be resolved due to incomplete structure.
-
----
-
-### **Observed Phase 1 Arrivals**
-
-**System A:**  
-`['C', 'X', 'B', 'Y', 'D', 'A']`
-
-**System B:**  
-`['B', 'D', 'A', 'C', 'X', 'Y']`
-
----
-
-### **Observed Phase 1 Unresolved State**
-
-**System A:**  
-`['D', 'C']`
-
-**System B:**  
-`['D', 'C']`
-
----
-
-### **Interpretation**
-
-This confirms that STOCRS preserves unresolved structure without forcing invalid computation.
-
----
-
-### **Phase 2 Behavior**
-
-The missing declaration `Z = 10` was introduced.  
-Structural resolution resumed and all dependent nodes were deterministically resolved.
-
----
-
-### **Final Values**
-
-`X = 2`  
-`Y = 3`  
-`Z = 10`  
-`A = 5`  
-`B = 10`  
-`C = 20`  
-`D = 60`  
-
----
-
-### **Results**
-
-**Final Result Match:** YES  
-**Time Used for Correctness:** NO  
-**Network Required for Correctness:** NO  
-
----
-
-### **Invariant Verified**
-
-`partial_structure -> unresolved_state -> re-derived_final_result`
-
-Across systems:
-
-`result_A = result_B`
-
----
-
-### **Certificate**
-
-`8f644c581f05668cfb2e13fc67d39505e46718a2e3d6076dcc6272005dc8ef40`
-
----
-
-## **Phase 2 Interim Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic structural computation under incomplete information  
-• correct preservation of unresolved nodes when dependencies are missing  
-• delayed completion through structural re-derivation  
-• convergence of independent systems after missing structure becomes available  
-• no dependency on time or synchronization for correctness  
-
----
-
-## **Key Insight**
-
-Fragmented computation is a valid and stable operating mode within STOCRS.
-
----
-
-## **Test 2.2 — Fragmented Resolution Stress Validation**
-
-**Scenario:** fragmented delayed-completion  
-**Start Seed:** 10  
-**Runs:** 100  
-
----
-
-### **Objective**
-
-Validate that STOCRS consistently preserves unresolved structure under incomplete information and converges to the same final result after missing structure becomes available across repeated randomized runs.
-
----
-
-### **Conditions**
-
-• two independent systems  
-• different randomized arrival orders in each run  
-• partial structure in Phase 1 (missing dependency)  
-• completion in Phase 2 via delayed declaration  
-• no timestamps used for correctness  
-• no network required for correctness  
-
----
-
-### **Invariant Under Test**
-
-`partial_structure -> unresolved_state -> re-derived_final_result`
-
-Across systems:
-
-`result_A = result_B`
-
----
+- 5 systems
+- no GPS used by the demo
+- no NTP used by the demo
+- no internet required by the demo
+- different incomplete initial fragments
+- bounded intermediate sharing
+- unresolved intermediate states
+- different local-time values
+- explicit final complete declared structure
+- deterministic frozen computation rules
 
 ### **Observed Results**
 
-#### **Phase 1 Unresolved State (Representative Run)**
+`No GPS: YES`
 
-**System A:**  
-`['C', 'D']`
+`No NTP: YES`
 
-**System B:**  
-`['C', 'D']`
+`No Internet: YES`
 
----
+`Time Used for Correctness: NO`
 
-### **Interpretation**
+`Phase 1 Diversity OK: YES`
 
-This confirms that STOCRS consistently:
+`Phase 1 Incomplete OK: YES`
 
-• detects missing dependencies  
-• preserves unresolved nodes  
-• prevents invalid early computation  
+`Phase 2 Bounded OK: YES`
 
----
+`Phase 3 Bounded OK: YES`
 
-### **Final Result (Representative Run)**
+`Phase 4 Bounded OK: YES`
 
-`X = 2`  
-`Y = 3`  
-`Z = 10`  
-`A = 5`  
-`B = 10`  
-`C = 20`  
-`D = 60`  
+`Phase 1 Unresolved Exists: YES`
 
----
+`Phase 2 Unresolved Exists: YES`
 
-### **Results**
+`Phase 3 Unresolved Exists: YES`
 
-**Final Result Match:** YES  
-**Final Complete:** YES  
+`Phase 4 Unresolved Exists: YES`
 
----
+`Final Complete OK: YES`
 
-### **Stress Test Outcome**
+`Final Match OK: YES`
 
-`runs = 100`  
-`passes = 100`  
+### **Final Result**
 
-**All Passed:** YES  
+`Final Node Count: 20`
 
----
+`Final E1: 202`
 
-### **Certificate Digest**
+### **Conflict Story**
 
-`d426f926c1a182ddece47c075332990668692435d54a048cb9d7002805378eb9`
+`Stable OK: YES`
 
----
+`Conflict OK: YES`
 
-## **Phase 2 Final Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic computation under incomplete structural information  
-• correct preservation of unresolved nodes when dependencies are missing  
-• delayed resolution through structural re-derivation  
-• consistent convergence across independent systems  
-• repeatable validation across randomized runs  
-• no dependency on time or synchronization for correctness  
-
----
-
-## **Phase 2 Summary**
-
-STOCRS establishes:
-
-`different arrivals -> same result`
-
-`incomplete structure -> unresolved state -> same final result`
-
----
-
-## **Key Insight**
-
-STOCRS supports fragmented computation and deterministic recovery without reliance on sequence, time, or coordination.
-
----
-
-# **PHASE 3 — Isolation, Divergent Time, and Convergence Without Authority**
-
----
-
-## **Test 3.1 — Isolation Demo with Divergent Local Times**
-
-**Scenario:** isolation with drifted internal times  
-**Seed:** 21  
-
----
-
-### **Objective**
-
-Demonstrate that STOCRS preserves **correctness under complete isolation**, even when independent systems maintain different internal time states and no external time authority is available.
-
----
-
-### **Conditions**
-
-• two independent systems  
-• no GPS  
-• no NTP  
-• no internet  
-• different Phase 1 arrival orders  
-• incomplete structure in Phase 1  
-• missing declaration introduced in Phase 2  
-• different internal local times on each system  
-• no timestamps used for correctness  
-
----
-
-### **Observed Results**
-
-**No GPS:** YES  
-**No NTP:** YES  
-**No Internet:** YES  
-
-**Arrival Orders Different:** YES  
-**Local Times Different:** YES  
-
-**Time Used for Correctness:** NO  
-
-**Phase 1 Unresolved OK:** YES  
-**Final Result Match:** YES  
-**Final Complete:** YES  
-
----
-
-### **Observed Phase 1 Unresolved State**
-
-**System A:**  
-`['C', 'D', 'E']`
-
-**System B:**  
-`['C', 'D', 'E']`
-
----
-
-### **Observed Local Times**
-
-**System A Phase 1 Local Time:**  
-`7877944.0`
-
-**System B Phase 1 Local Time:**  
-`7874750.2`
-
-**System A Phase 2 Local Time:**  
-`7964365.6`
-
-**System B Phase 2 Local Time:**  
-`7961135.08`
-
----
-
-### **Final Values**
-
-`X = 2`  
-`Y = 3`  
-`Z = 10`  
-`A = 5`  
-`B = 10`  
-`C = 20`  
-`D = 60`  
-`E = 57`  
-
----
-
-### **Invariant Verified**
-
-`different_local_times + incomplete_structure + different_arrivals -> same_final_result`
-
----
-
-### **Certificate**
-
-`727e4013fbaef1fdc762dbc8a257fe2c050d61beb1d0a2ae0d3d2e98fd175d85`
-
----
-
-## **Test 3.2 — Isolation Stress Validation**
-
-**Scenario:** isolation with drifted internal times  
-**Start Seed:** 21  
-**Runs:** 100  
-
----
-
-### **Objective**
-
-Validate that STOCRS consistently converges to the same final result across repeated randomized runs, even under complete isolation and divergent local time conditions.
-
----
-
-### **Stress Test Outcome**
-
-`runs = 100`  
-`passes = 100`  
-
-**All Passed:** YES  
-
----
-
-### **Certificate Digest**
-
-`ec770a5aba298f26884fc30d5405957ac8525ce583797953b4d601fb574d24a2`
-
----
-
-## **Phase 3 Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic structural computation under complete isolation  
-• correctness without GPS, NTP, or internet  
-• preservation of unresolved structure under incomplete information  
-• convergence despite divergent internal local times  
-• independence from any external time authority  
-• repeatable validation across randomized runs  
-
----
-
-## **Key Insight**
-
-Correct structural convergence is achievable even when time is inconsistent, unsynchronized, or entirely irrelevant to computation.
-
----
-
-# **PHASE 4 — Large-Scale Structural Compute Graph**
-
----
-
-## **Test 4.1 — Large Graph Isolation Demo**
-
-**Scenario:** large structural compute graph under isolation  
-**Seed:** 31  
-
----
-
-### **Objective**
-
-Demonstrate that STOCRS can resolve a **larger, multi-layer structural computation graph** under isolation, with delayed dependencies, divergent local times, and different arrival orders, while preserving a consistent final result.
-
----
-
-### **Conditions**
-
-• two independent systems  
-• no GPS  
-• no NTP  
-• no internet  
-• different Phase 1 arrival orders  
-• delayed structural dependencies introduced only in Phase 2  
-• different internal local times on each system  
-• no timestamps used for correctness  
-
----
-
-### **Observed Results**
-
-**No GPS:** YES  
-**No NTP:** YES  
-**No Internet:** YES  
-
-**Arrival Orders Different:** YES  
-**Local Times Different:** YES  
-
-**Time Used for Correctness:** NO  
-
-**Phase 1 Unresolved OK:** YES  
-**Final Result Match:** YES  
-**Final Complete:** YES  
-
----
-
-### **Observed Local Times**
-
-**System A Phase 1 Local Time:**  
-`10571317.76`
-
-**System B Phase 1 Local Time:**  
-`10566073.72`
-
-**System A Phase 2 Local Time:**  
-`10657745.408`
-
-**System B Phase 2 Local Time:**  
-`10652455.576`
-
----
-
-### **Observed Phase 1 Unresolved Count**
-
-**System A:**  
-`17`
-
-**System B:**  
-`17`
-
----
-
-### **Observed Phase 1 Unresolved Nodes**
-
-**System A:**  
-`['C2', 'C3', 'C6', 'D1', 'D2', 'D3', 'D5', 'E1', 'E2', 'E3', 'E4', 'F1', 'F2', 'F3', 'G1', 'G2', 'H1']`
-
-**System B:**  
-`['C2', 'C3', 'C6', 'D1', 'D2', 'D3', 'D5', 'E1', 'E2', 'E3', 'E4', 'F1', 'F2', 'F3', 'G1', 'G2', 'H1']`
-
----
-
-### **Final Results**
-
-**Final Node Count:**  
-`43`
-
-**Final Terminal Value:**  
-`H1 = 1963`
-
-**Elapsed Runtime:**  
-`0.000643 s`
-
----
-
-### **Invariant Verified**
-
-`larger_graph + incomplete_structure + different_local_times + different_arrivals -> same_final_result`
-
----
-
-### **Certificate**
-
-`7b146519ce2bfd0b3a1ea665035323d5e3f9b8fb03d0a6ee7fd65d808f4d1307`
-
----
-
-## **Test 4.2 — Large Graph Stress Validation**
-
-**Scenario:** large structural compute graph under isolation  
-**Start Seed:** 31  
-**Runs:** 100  
-
----
-
-### **Objective**
-
-Validate that STOCRS consistently converges to the same final result across repeated randomized runs on a larger structural graph with delayed dependencies and divergent local times.
-
----
-
-### **Stress Test Outcome**
-
-`runs = 100`  
-`passes = 100`  
-
-**All Passed:** YES  
-
----
-
-### **Elapsed Runtime**
-
-`0.153145 s`
-
----
-
-### **Certificate Digest**
-
-`2525817f8e629ab02cae0cf7c9ca2a97a7f8aa0d8eab6b62e57da99e2a22624b`
-
----
-
-## **Phase 4 Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic structural computation on a larger multi-layer graph  
-• correct preservation of unresolved structure under delayed dependencies  
-• convergence despite different arrival orders  
-• convergence despite divergent internal local times  
-• correctness without GPS, NTP, or internet  
-• repeatable large-scale validation across randomized runs  
-
----
-
-## **Key Insight**
-
-STOCRS scales from compact proofs to larger structural systems while preserving deterministic correctness.
-
----
-
-# **PHASE 5 — Multi-System Structural Convergence**
-
----
-
-## **Test 5.1 — Multi-System Convergence Demo**
-
-**Scenario:** multi-system structural convergence under isolation  
-**Seed:** 41  
-**Systems:** 5  
-
----
-
-### **Objective**
-
-Demonstrate that STOCRS preserves **correctness across multiple independent systems**, each operating with different arrival orders and divergent internal local times, while functioning without GPS, NTP, or internet.
-
----
-
-### **Conditions**
-
-• 5 independent systems  
-• no GPS  
-• no NTP  
-• no internet  
-• different Phase 1 arrival orders across systems  
-• delayed structural dependencies introduced only in Phase 2  
-• different internal local times on each system  
-• no timestamps used for correctness  
-
----
-
-### **Observed Results**
-
-**No GPS:** YES  
-**No NTP:** YES  
-**No Internet:** YES  
-
-**Arrival Diversity OK:** YES  
-**Local Time Diversity OK:** YES  
-
-**Time Used for Correctness:** NO  
-
-**Phase 1 Unresolved OK:** YES  
-**All Results Match:** YES  
-**All Final Complete:** YES  
-
----
-
-### **Observed Local Times and Unresolved Counts**
-
-**S1 Phase 1 Local Time:**  
-`10670695.68`  
-**S1 Phase 2 Local Time:**  
-`10757118.144`  
-**S1 Phase 1 Unresolved Count:**  
-`17`
-
-**S2 Phase 1 Local Time:**  
-`10752341.576`  
-**S2 Phase 2 Local Time:**  
-`10838723.432`  
-**S2 Phase 1 Unresolved Count:**  
-`17`
-
-**S3 Phase 1 Local Time:**  
-`10839176.656`  
-**S3 Phase 2 Local Time:**  
-`10925561.104`  
-**S3 Phase 1 Unresolved Count:**  
-`17`
-
-**S4 Phase 1 Local Time:**  
-`10930374.072`  
-**S4 Phase 2 Local Time:**  
-`11016796.536`  
-**S4 Phase 1 Unresolved Count:**  
-`17`
-
-**S5 Phase 1 Local Time:**  
-`11013130.208`  
-**S5 Phase 2 Local Time:**  
-`11099522.0`  
-**S5 Phase 1 Unresolved Count:**  
-`17`
-
----
-
-### **Final Results**
-
-**Final Node Count:**  
-`43`
-
-**Final Terminal Value:**  
-`H1 = 1963`
-
-**Elapsed Runtime:**  
-`0.001595 s`
-
----
-
-### **Invariant Verified**
-
-`many_independent_systems + different_arrivals + different_local_times + incomplete_structure -> same_final_result`
-
----
-
-### **Certificate**
-
-`ba7f802ff5bfe521f1054e81f00ff8e6b0682c72c5be82afbd64ed774f35fbf7`
-
----
-
-## **Test 5.2 — Multi-System Stress Validation**
-
-**Scenario:** multi-system structural convergence under isolation  
-**Start Seed:** 41  
-**Systems:** 5  
-**Runs:** 100  
-
----
-
-### **Objective**
-
-Validate that STOCRS consistently converges to the same final result across repeated randomized runs involving multiple independent systems with distinct arrival orders and divergent local times.
-
----
-
-### **Stress Test Outcome**
-
-`runs = 100`  
-`passes = 100`  
-
-**All Passed:** YES  
-
----
-
-### **Elapsed Runtime**
-
-`0.309246 s`
-
----
-
-### **Certificate Digest**
-
-`efcc8ef00a1c4c6353be291d450ae62fbaa301c458dac62ebd359371fabb874f`
-
----
-
-## **Phase 5 Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic convergence across multiple independent systems  
-• correctness despite different arrival orders across systems  
-• correctness despite divergent internal local times across systems  
-• preservation of unresolved structure under incomplete information  
-• correctness without GPS, NTP, or internet  
-• repeatable multi-system validation across randomized runs  
-
----
-
-## **Key Insight**
-
-STOCRS generalizes from pairwise convergence to a **scalable multi-system convergence model**, where independent systems consistently reach the same structural truth without coordination.
-
----
-
-# **PHASE 6 — Adversarial Robustness and Contradictory Inputs**
-
----
-
-## **Test 6.1 — Adversarial Multi-System Demo**
-
-**Scenario:** adversarial multi-system structural convergence under isolation  
-**Seed:** 51  
-**Systems:** 5  
-
----
-
-### **Objective**
-
-Demonstrate that STOCRS preserves **correctness across multiple independent systems even in the presence of duplicate declarations and invalid injected inputs**, while operating without GPS, NTP, or internet.
-
----
-
-### **Conditions**
-
-• 5 independent systems  
-• no GPS  
-• no NTP  
-• no internet  
-• different arrival orders across systems  
-• delayed structural dependencies introduced only in Phase 2  
-• duplicate valid declarations present  
-• invalid injected tokens present  
-• different internal local times on each system  
-• no timestamps used for correctness  
-
----
-
-### **Observed Results**
-
-**No GPS:** YES  
-**No NTP:** YES  
-**No Internet:** YES  
-
-**Arrival Diversity OK:** YES  
-**Local Time Diversity OK:** YES  
-**Adversarial Noise Detected:** YES  
-
-**Time Used for Correctness:** NO  
-
-**Phase 1 Unresolved OK:** YES  
-**All Results Match:** YES  
-**All Final Complete:** YES  
-
----
-
-### **Observed Noise Counts**
-
-**S1 Duplicate Count:**  
-`5`  
-**S1 Invalid Count:**  
-`4`
-
-**S2 Duplicate Count:**  
-`5`  
-**S2 Invalid Count:**  
-`4`
-
-**S3 Duplicate Count:**  
-`5`  
-**S3 Invalid Count:**  
-`4`
-
-**S4 Duplicate Count:**  
-`5`  
-**S4 Invalid Count:**  
-`4`
-
-**S5 Duplicate Count:**  
-`5`  
-**S5 Invalid Count:**  
-`4`
-
----
-
-### **Observed Local Times**
-
-**S1 Phase 1 Local Time:**  
-`13364147.2`  
-**S1 Phase 2 Local Time:**  
-`13450574.848`
-
-**S2 Phase 1 Local Time:**  
-`13443871.256`  
-**S2 Phase 2 Local Time:**  
-`13530253.112`
-
-**S3 Phase 1 Local Time:**  
-`13535126.256`  
-**S3 Phase 2 Local Time:**  
-`13621538.784`
-
-**S4 Phase 1 Local Time:**  
-`13618577.176`  
-**S4 Phase 2 Local Time:**  
-`13704968.968`
-
-**S5 Phase 1 Local Time:**  
-`13709903.456`  
-**S5 Phase 2 Local Time:**  
-`13796325.92`
-
----
-
-### **Observed Phase 1 Unresolved Count**
-
-`5 per system`
-
----
-
-### **Final Results**
-
-**Final Node Count:**  
-`20`
-
-**Final Terminal Value:**  
-`E1 = 202`
-
-**Elapsed Runtime:**  
-`0.001027 s`
-
----
-
-### **Invariant Verified**
-
-`valid_structure + adversarial_noise + different_local_times + different_arrivals -> same_valid_final_result`
-
----
-
-### **Certificate**
-
-`066575e5b822496b12fac4213c4da0223613379337856bd482d599a8a285b694`
-
----
-
-## **Test 6.2 — Adversarial Stress Validation**
-
-**Scenario:** adversarial multi-system structural convergence under isolation  
-**Start Seed:** 51  
-**Systems:** 5  
-**Runs:** 100  
-
----
-
-### **Objective**
-
-Validate that STOCRS consistently converges to the same valid final result across repeated randomized runs, even in the presence of duplicate declarations and invalid injected inputs.
-
----
-
-### **Stress Test Outcome**
-
-`runs = 100`  
-`passes = 100`  
-
-**All Passed:** YES  
-
----
-
-### **Elapsed Runtime**
-
-`0.201942 s`
-
----
-
-### **Certificate Digest**
-
-`457a592325940a132a4db66760cf9d861d9d65577bc9b7e9ddbbe27d529746be`
-
----
-
-## **Phase 6 Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic convergence across multiple independent systems  
-• correctness despite duplicate valid declarations  
-• correctness despite invalid injected inputs  
-• robustness under adversarial noise conditions  
-• correctness despite different arrival orders and divergent local times  
-• preservation of unresolved structure under incomplete information  
-• correctness without GPS, NTP, or internet  
-• repeatable adversarial validation across randomized runs  
-
----
-
-## **Key Insight**
-
-STOCRS preserves **structural truth under adversarial conditions**, maintaining correctness even in the presence of noise, duplication, and invalid inputs.
-
----
-
-# **PHASE 7 — Conflict Resolution and Structural Truth**
-
----
-
-## **Test 7.0 — Structural Conflict Handling Demo**
-
-**Scenario:** direct structural conflict handling  
-**Systems:** 1  
-
----
-
-### **Objective**
-
-Demonstrate that STOCRS explicitly **detects conflicting candidate claims**, abstains from incorrect resolution under ambiguity, and resumes deterministic resolution when stronger structural support becomes available.
-
----
-
-### **Conditions**
-
-• direct structural conflict test  
-• no GPS  
-• no NTP  
-• no internet  
-• no timestamps used for correctness  
-• conflicting claims for the same node  
-• downstream dependency blocked under conflict  
-• deterministic recovery under reinforced support  
-
----
-
-### **Observed Results**
-
-**Stable Run:** PASS  
-**Conflict Run:** PASS  
-**Majority Support Run:** PASS  
-
-**Time Used for Correctness:** NO  
-
----
-
-### **Stable Run Observed**
-
-**Resolved Values:**  
-`X1 = 2`  
-`X2 = 3`  
-`A1 = 5`  
-
-**Unresolved:**  
-`[]`  
-
-**Conflicts:**  
-`{}`  
-
----
-
-### **Conflict Run Observed**
-
-**Resolved Values:**  
-`X2 = 3`  
-
-**Unresolved:**  
-`['A1']`  
-
-**Conflicts:**  
-`X1 -> multi_value_conflict`  
-`claims = [2, 9]`  
-
----
-
-### **Majority Support Run Observed**
-
-**Resolved Values:**  
-`X1 = 2`  
-`X2 = 3`  
-`A1 = 5`  
-
-**Unresolved:**  
-`[]`  
-
-**Conflicts:**  
-`{}`  
-
----
-
-### **Invariant Verified**
-
-`consistent_claims -> deterministic_resolution`  
-
-`conflicting_claims -> abstention_without_incorrect_result`  
-
-`reinforced_consistent_support -> deterministic_recovery`  
-
----
-
-### **Certificate**
-
-`88121ea437d7aec3e27bbe9baf44a15a7cc555fcd43d0a52a653449d90a8575f`
-
----
-
-## **Phase 7 Structural Conflict Note**
-
-This validation confirms that STOCRS now explicitly supports:
-
-• conflict detection  
-• abstention under ambiguity  
-• deterministic recovery under stronger structural support  
-
----
-
-## **Key Insight**
-
-Conflict handling in STOCRS is **runtime-enforced**, ensuring correctness through abstention rather than incorrect resolution.
-
----
-
-## **Test 7.1 — Conflict Resilience Demo**
-
-**Scenario:** multi-system conflict resilience under isolation  
-**Seed:** 61  
-**Systems:** 5  
-
----
-
-### **Objective**
-
-Demonstrate that STOCRS preserves correctness across multiple independent systems even in the presence of conflicting candidate claims, duplicate declarations, and invalid injected inputs, while operating without GPS, NTP, or internet.
-
----
-
-### **Conditions**
-
-• 5 independent systems  
-• no GPS  
-• no NTP  
-• no internet  
-• different arrival orders across systems  
-• delayed structural dependencies introduced only in Phase 2  
-• conflicting candidate claims present  
-• duplicate valid declarations present  
-• invalid injected tokens present  
-• different internal local times on each system  
-• no timestamps used for correctness  
-
----
-
-### **Observed Results**
-
-**No GPS:** YES  
-**No NTP:** YES  
-**No Internet:** YES  
-
-**Arrival Diversity OK:** YES  
-**Local Time Diversity OK:** YES  
-
-**Conflicting Claims Detected:** YES  
-**Duplicate Noise Detected:** YES  
-**Invalid Noise Detected:** YES  
-
-**Time Used for Correctness:** NO  
-
-**Phase 1 Unresolved OK:** YES  
-**All Results Match:** YES  
-**All Final Complete:** YES  
-
----
-
-### **Observed Conflict / Noise Counts**
-
-**S1 Conflict Count:**  
-`5`  
-**S1 Duplicate Count:**  
-`4`  
-**S1 Invalid Count:**  
-`2`
-
-**S2 Conflict Count:**  
-`5`  
-**S2 Duplicate Count:**  
-`4`  
-**S2 Invalid Count:**  
-`2`
-
-**S3 Conflict Count:**  
-`5`  
-**S3 Duplicate Count:**  
-`4`  
-**S3 Invalid Count:**  
-`2`
-
-**S4 Conflict Count:**  
-`5`  
-**S4 Duplicate Count:**  
-`4`  
-**S4 Invalid Count:**  
-`2`
-
-**S5 Conflict Count:**  
-`5`  
-**S5 Duplicate Count:**  
-`4`  
-**S5 Invalid Count:**  
-`2`
-
----
-
-### **Observed Local Times**
-
-**S1 Phase 1 Local Time:**  
-`16056976.64`  
-**S1 Phase 2 Local Time:**  
-`16143404.288`
-
-**S2 Phase 1 Local Time:**  
-`16135288.936`  
-**S2 Phase 2 Local Time:**  
-`16221670.792`
-
-**S3 Phase 1 Local Time:**  
-`16227426.096`  
-**S3 Phase 2 Local Time:**  
-`16313838.624`
-
-**S4 Phase 1 Local Time:**  
-`16310216.936`  
-**S4 Phase 2 Local Time:**  
-`16396608.728`
-
-**S5 Phase 1 Local Time:**  
-`16402425.376`  
-**S5 Phase 2 Local Time:**  
-`16488847.84`
-
----
-
-### **Observed Phase 1 Unresolved Count**
-
-`5 per system`
-
----
-
-### **Final Results**
-
-**Final Node Count:**  
-`20`
-
-**Final Terminal Value:**  
-`E1 = 202`
-
-**Elapsed Runtime:**  
-`0.000991 s`
-
----
-
-### **Invariant Verified**
-
-`valid_structure + conflicting_claims + duplicate_noise + invalid_noise + different_local_times + different_arrivals -> same_valid_final_result`
-
----
-
-### **Certificate**
-
-`70f09e23d9a9e8711b7b10cbd8a0404126ed03799f08e1d3778a89cb9d2dae9b`
-
----
-
-## **Test 7.2 — Conflict Stress Validation**
-
-**Scenario:** multi-system conflict resilience under isolation  
-**Start Seed:** 61  
-**Systems:** 5  
-**Runs:** 100  
-
----
-
-### **Objective**
-
-Validate that STOCRS consistently converges to the same valid final result across repeated randomized runs, even in the presence of conflicting candidate claims, duplicate declarations, and invalid injected inputs.
-
----
-
-### **Stress Test Outcome**
-
-`runs = 100`  
-`passes = 100`  
-
-**All Passed:** YES  
-
----
-
-### **Elapsed Runtime**
-
-`0.234818 s`
-
----
-
-### **Certificate Digest**
-
-`269f082bcecefbabef84742d36c9d07ac8b0d86af615ffb6c21ff1715154c55f`
-
----
-
-## **Phase 7 Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic convergence across multiple independent systems  
-• correctness despite conflicting candidate claims  
-• correctness despite duplicate declarations  
-• correctness despite invalid injected inputs  
-• robustness under conflict and adversarial conditions  
-• correctness despite different arrival orders and divergent local times  
-• preservation of unresolved structure under incomplete information  
-• correctness without GPS, NTP, or internet  
-• repeatable conflict-resilience validation across randomized runs  
-
----
-
-## **Key Insight**
-
-STOCRS preserves **structural truth even under competing claims and adversarial noise**, ensuring correctness through abstention and deterministic recovery.
-
----
-
-# **PHASE 8 — Partial Information Sharing and Structural Reconvergence**
-
----
-
-## **Test 8.1 — Partial Sharing Reconvergence Demo**
-
-**Scenario:** partial cross-system sharing under isolation  
-**Seed:** 71  
-**Systems:** 5  
-
----
-
-### **Objective**
-
-Demonstrate that STOCRS can begin from **different incomplete structural fragments across multiple independent systems**, support partial cross-system sharing over multiple phases, preserve unresolved structure under partial visibility, and ultimately reconverge to the same complete result.
-
----
-
-### **Conditions**
-
-• 5 independent systems  
-• no GPS  
-• no NTP  
-• no internet  
-• different initial incomplete fragments across systems  
-• partial cross-system sharing in multiple stages  
-• unresolved structure intentionally preserved in intermediate phases  
-• different internal local times on each system  
-• no timestamps used for correctness  
-
----
-
-### **Observed Results**
-
-**No GPS:** YES  
-**No NTP:** YES  
-**No Internet:** YES  
-
-**Phase 1 Diversity OK:** YES  
-**Phase 1 Incomplete OK:** YES  
-
-**Phase 2 Growth OK:** YES  
-**Phase 3 Growth OK:** YES  
-
-**Phase 1 Unresolved Exists:** YES  
-**Phase 2 Unresolved Exists:** YES  
-**Phase 3 Unresolved Exists:** YES  
-
-**Local Time Diversity OK:** YES  
-
-**Time Used for Correctness:** NO  
-
-**Phase 4 Complete OK:** YES  
-**Phase 4 Match OK:** YES  
-
----
-
-### **Observed Progression Per System**
-
-**S1 Phase1 Known:**  
-`6`  
-**S1 Phase2 Known:**  
-`9`  
-**S1 Phase3 Known:**  
-`14`  
-**S1 Phase4 Known:**  
-`20`  
-**S1 Phase1 Unresolved:**  
-`3`  
-**S1 Phase2 Unresolved:**  
-`6`  
-**S1 Phase3 Unresolved:**  
-`8`  
-**S1 Phase4 Local Time:**  
-`18144812.544`
-
----
-
-**S2 Phase1 Known:**  
-`6`  
-**S2 Phase2 Known:**  
-`9`  
-**S2 Phase3 Known:**  
-`14`  
-**S2 Phase4 Known:**  
-`20`  
-**S2 Phase1 Unresolved:**  
-`3`  
-**S2 Phase2 Unresolved:**  
-`6`  
-**S2 Phase3 Unresolved:**  
-`5`  
-**S2 Phase4 Local Time:**  
-`18222089.624`
-
----
-
-**S3 Phase1 Known:**  
-`6`  
-**S3 Phase2 Known:**  
-`9`  
-**S3 Phase3 Known:**  
-`14`  
-**S3 Phase4 Known:**  
-`20`  
-**S3 Phase1 Unresolved:**  
-`3`  
-**S3 Phase2 Unresolved:**  
-`3`  
-**S3 Phase3 Unresolved:**  
-`6`  
-**S3 Phase4 Local Time:**  
-`18314950.24`
-
----
-
-**S4 Phase1 Known:**  
-`6`  
-**S4 Phase2 Known:**  
-`9`  
-**S4 Phase3 Known:**  
-`14`  
-**S4 Phase4 Known:**  
-`20`  
-**S4 Phase1 Unresolved:**  
-`3`  
-**S4 Phase2 Unresolved:**  
-`5`  
-**S4 Phase3 Unresolved:**  
-`7`  
-**S4 Phase4 Local Time:**  
-`18397282.152`
-
----
-
-**S5 Phase1 Known:**  
-`6`  
-**S5 Phase2 Known:**  
-`9`  
-**S5 Phase3 Known:**  
-`14`  
-**S5 Phase4 Known:**  
-`20`  
-**S5 Phase1 Unresolved:**  
-`4`  
-**S5 Phase2 Unresolved:**  
-`6`  
-**S5 Phase3 Unresolved:**  
-`9`  
-**S5 Phase4 Local Time:**  
-`18490214.048`
-
----
-
-### **Final Results**
-
-**Final Node Count:**  
-`20`
-
-**Final Terminal Value:**  
-`E1 = 202`
-
-**Elapsed Runtime:**  
-`0.0009 s`
-
----
-
-### **Invariant Verified**
-
-`different_partial_fragments + partial_cross_sharing + different_local_times + no_external_authority -> same_final_result`
-
----
-
-### **Certificate**
-
-`d5e45debc45abae5919cda68087a1ac00d4af143cbb7e50fa60501b5d5ab0e24`
-
----
-
-## **Test 8.2 — Partial Sharing Stress Validation**
-
-**Scenario:** partial cross-system sharing under isolation  
-**Start Seed:** 71  
-**Systems:** 5  
-**Runs:** 100  
-
----
-
-### **Objective**
-
-Validate that STOCRS consistently reconverges to the same final result across repeated randomized runs when systems begin with different incomplete fragments and exchange only partial structural information during intermediate phases.
-
----
-
-### **Stress Test Outcome**
-
-`runs = 100`  
-`passes = 100`  
-
-**All Passed:** YES  
-
----
-
-### **Elapsed Runtime**
-
-`0.202167 s`
-
----
-
-### **Certificate Digest**
-
-`ef9ea0979d682bec9a862e74c4a0f7b5ba3fce0d036f1dcceba8a210805cc668`
-
----
-
-## **Phase 8 Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic reconvergence from different incomplete initial fragments  
-• preservation of unresolved structure across multiple partial-sharing phases  
-• structural growth through limited cross-system information exchange  
-• correctness despite divergent internal local times  
-• correctness without GPS, NTP, or internet  
-• final convergence to the same valid result across all systems  
-• repeatable distributed reconvergence validation across randomized runs  
-
----
-
-## **Key Insight**
-
-STOCRS achieves **deterministic correctness even under incomplete, evolving, and partially shared structural knowledge**, without reliance on time, sequence, or coordination.
-
----
-
-# **PHASE 9 — Bounded Sharing and Delayed Reconvergence Pressure**
-
----
-
-## **Test 9.1 — Bounded Sharing Demo**
-
-**Scenario:** bounded partial sharing under delayed reconvergence pressure  
-**Seed:** 81  
-**Systems:** 5  
-
----
-
-### **Objective**
-
-Demonstrate that STOCRS preserves **unresolved structural state across multiple bounded-sharing phases**, where early information exchange is intentionally restricted, and still converges to the same final result once full structural completion becomes available.
-
----
-
-### **Conditions**
-
-• 5 independent systems  
-• no GPS  
-• no NTP  
-• no internet  
-• different initial incomplete fragments across systems  
-• early sharing intentionally bounded by strict caps  
-• unresolved structure intentionally preserved across multiple intermediate phases  
-• different internal local times on each system  
-• no timestamps used for correctness  
-
----
-
-### **Observed Results**
-
-**No GPS:** YES  
-**No NTP:** YES  
-**No Internet:** YES  
-
-**Phase 1 Diversity OK:** YES  
-**Phase 1 Incomplete OK:** YES  
-
-**Phase 2 Bounded OK:** YES  
-**Phase 3 Bounded OK:** YES  
-**Phase 4 Bounded OK:** YES  
-
-**Phase 2 Growth OK:** YES  
-**Phase 3 Growth OK:** YES  
-**Phase 4 Growth OK:** YES  
-
-**Phase 1 Unresolved Exists:** YES  
-**Phase 2 Unresolved Exists:** YES  
-**Phase 3 Unresolved Exists:** YES  
-**Phase 4 Unresolved Exists:** YES  
-
-**Local Time Diversity OK:** YES  
-
-**Time Used for Correctness:** NO  
-
-**Phase 5 Complete OK:** YES  
-**Phase 5 Match OK:** YES  
-
----
-
-### **Observed Progression Per System**
-
-**S1 Phase1 Known:**  
-`5`  
-**S1 Phase2 Known:**  
-`7`  
-**S1 Phase3 Known:**  
-`10`  
-**S1 Phase4 Known:**  
-`14`  
-**S1 Phase5 Known:**  
-`20`  
-**S1 Phase1 Unresolved:**  
-`4`  
-**S1 Phase2 Unresolved:**  
-`6`  
-**S1 Phase3 Unresolved:**  
-`9`  
-**S1 Phase4 Unresolved:**  
-`11`  
-**S1 Phase5 Local Time:**  
-`20059793.152`
-
----
-
-**S2 Phase1 Known:**  
-`5`  
-**S2 Phase2 Known:**  
-`7`  
-**S2 Phase3 Known:**  
-`10`  
-**S2 Phase4 Known:**  
-`14`  
-**S2 Phase5 Known:**  
-`20`  
-**S2 Phase1 Unresolved:**  
-`4`  
-**S2 Phase2 Unresolved:**  
-`6`  
-**S2 Phase3 Unresolved:**  
-`8`  
-**S2 Phase4 Unresolved:**  
-`8`  
-**S2 Phase5 Local Time:**  
-`20136074.6`
-
----
-
-**S3 Phase1 Known:**  
-`5`  
-**S3 Phase2 Known:**  
-`7`  
-**S3 Phase3 Known:**  
-`10`  
-**S3 Phase4 Known:**  
-`14`  
-**S3 Phase5 Known:**  
-`20`  
-**S3 Phase1 Unresolved:**  
-`4`  
-**S3 Phase2 Unresolved:**  
-`4`  
-**S3 Phase3 Unresolved:**  
-`5`  
-**S3 Phase4 Unresolved:**  
-`8`  
-**S3 Phase5 Local Time:**  
-`20229545.328`
-
----
-
-**S4 Phase1 Known:**  
-`5`  
-**S4 Phase2 Known:**  
-`7`  
-**S4 Phase3 Known:**  
-`10`  
-**S4 Phase4 Known:**  
-`14`  
-**S4 Phase5 Known:**  
-`20`  
-**S4 Phase1 Unresolved:**  
-`4`  
-**S4 Phase2 Unresolved:**  
-`5`  
-**S4 Phase3 Unresolved:**  
-`6`  
-**S4 Phase4 Unresolved:**  
-`7`  
-**S4 Phase5 Local Time:**  
-`20311407.784`
-
----
-
-**S5 Phase1 Known:**  
-`5`  
-**S5 Phase2 Known:**  
-`7`  
-**S5 Phase3 Known:**  
-`10`  
-**S5 Phase4 Known:**  
-`14`  
-**S5 Phase5 Known:**  
-`20`  
-**S5 Phase1 Unresolved:**  
-`3`  
-**S5 Phase2 Unresolved:**  
-`4`  
-**S5 Phase3 Unresolved:**  
-`6`  
-**S5 Phase4 Unresolved:**  
-`8`  
-**S5 Phase5 Local Time:**  
-`20404949.792`
-
----
-
-### **Final Results**
-
-**Final Node Count:**  
-`20`
-
-**Final Terminal Value:**  
-`E1 = 202`
-
-**Elapsed Runtime:**  
-`0.001023 s`
-
----
-
-### **Invariant Verified**
-
-`bounded_early_sharing + prolonged_unresolved_state + eventual_structural_completion -> same_final_result`
-
----
-
-### **Certificate**
-
-`e14c152b42c21b2f5bb70a76bd06196f0df72331ac26d1386398531190d541d3`
-
----
-
-## **Test 9.2 — Bounded Sharing Stress Validation**
-
-**Scenario:** bounded partial sharing under delayed reconvergence pressure  
-**Start Seed:** 81  
-**Systems:** 5  
-**Runs:** 100  
-
----
-
-### **Objective**
-
-Validate that STOCRS consistently preserves unresolved structure across multiple bounded-sharing phases and converges to the same final result across repeated randomized runs.
-
----
-
-### **Stress Test Outcome**
-
-`runs = 100`  
-`passes = 100`  
-
-**All Passed:** YES  
-
----
-
-### **Elapsed Runtime**
-
-`0.216267 s`
-
----
-
-### **Certificate Digest**
-
-`563422f41d1d4b4adfca17f6199cc307252b09044efc418dc4bd94d2956751cb`
-
----
-
-## **Phase 9 Conclusion**
-
-STOCRS demonstrates:
-
-• deterministic reconvergence under explicitly bounded information sharing  
-• prolonged preservation of unresolved structure across multiple intermediate phases  
-• structural growth under strict sharing constraints  
-• correctness despite divergent internal local times  
-• correctness without GPS, NTP, or internet  
-• final convergence to the same valid result across all systems  
-• repeatable bounded-sharing validation across randomized runs  
-
----
-
-## **Key Insight**
-
-STOCRS maintains **structural correctness even under constrained communication**, enabling delayed yet deterministic reconvergence when information flow is limited.
-
----
-
-# **PHASE 10 — Canonical Demonstration**
-
----
-
-## **Test 10.1 — STOCRS Canonical Demo**
-
-**Scenario:** canonical bounded-sharing structural convergence with conflict-aware validation  
-**Seed:** 101  
-**Systems:** 5  
-
----
-
-### **Objective**
-
-Demonstrate, in a single unified canonical execution, that STOCRS can:
-
-• begin from different incomplete structural fragments  
-• remain unresolved across multiple bounded-sharing phases  
-• operate under divergent internal local times with no external authority  
-• deterministically converge to the same final structural result  
-
-while also validating:
-
-• conflict abstention under ambiguity  
-• deterministic structural recovery under reinforced support  
-
----
-
-### **Conditions**
-
-• 5 independent systems  
-• no GPS  
-• no NTP  
-• no internet  
-• different incomplete initial fragments across systems  
-• bounded partial sharing across multiple intermediate phases  
-• prolonged unresolved persistence before completion  
-• different internal local times across systems  
-• no timestamps used for correctness  
-• embedded conflict validation story included  
-
----
-
-### **Observed Results**
-
-**No GPS:** YES  
-**No NTP:** YES  
-**No Internet:** YES  
-
-**Time Used for Correctness:** NO  
-
-**Phase 1 Diversity OK:** YES  
-**Phase 1 Incomplete OK:** YES  
-
-**Phase 2 Bounded OK:** YES  
-**Phase 3 Bounded OK:** YES  
-**Phase 4 Bounded OK:** YES  
-
-**Phase 1 Unresolved Exists:** YES  
-**Phase 2 Unresolved Exists:** YES  
-**Phase 3 Unresolved Exists:** YES  
-**Phase 4 Unresolved Exists:** YES  
-
-**Final Complete OK:** YES  
-**Final Match OK:** YES  
-
----
-
-### **Final Results**
-
-**Final Node Count:**  
-`20`
-
-**Final Terminal Value:**  
-`E1 = 202`
-
----
-
-### **Conflict Story Validation**
-
-**Stable OK:** YES  
-**Conflict OK:** YES  
-**Recovery OK:** YES  
-
----
+`Recovery OK: YES`
 
 ### **Conflict Story Certificate**
 
 `8cb9667dfc12e6a09ea0728e927b3f19609eee0eac00159d062e2980a67bd2b9`
 
----
-
-### **Elapsed Runtime**
-
-`0.001418 s`
-
----
-
-### **Invariant Verified**
-
-`different_incomplete_fragments + bounded_partial_sharing + prolonged_unresolved_state + different_local_times + no_external_authority -> same_final_result`
-
-and
-
-`conflicting_claims -> abstention_without_incorrect_result -> reinforced_resolution`
-
----
-
-### **Certificate**
+### **Canonical Certificate**
 
 `150c3ca5135af3320929a4fc2a92cc39001d5b3f49a9ce972bcccc49c1c55f36`
 
----
+### **Validated Relation**
 
-## **Phase 10 Conclusion**
+`same complete compatible structure + same frozen rules -> same supported structural result`
 
-STOCRS demonstrates:
+### **Important Boundary**
 
-• deterministic convergence from different incomplete structural fragments  
-• correctness under bounded and delayed information sharing  
-• preservation of unresolved structure across multiple intermediate phases  
-• convergence despite divergent internal local times  
-• correctness without GPS, NTP, internet, or external authority  
-• structural growth and completion without reliance on time or sequence  
-• identical final results across independent systems  
-• explicit conflict abstention under structural inconsistency  
-• deterministic recovery through reinforced structural support  
-• replay-verifiable deterministic certification  
+The bounded intermediate phases do not prove that bounded sharing alone guarantees eventual complete dissemination.
+
+The final phase explicitly makes the complete declared node set available to every system.
 
 ---
 
-## **Canonical Insight**
+# **PHASE 11 — CURRENT RUNTIME CONFLICT VALIDATION**
 
-This unified demonstration confirms that STOCRS preserves correctness across:
+## **Test 11.1 — Stable Compatible Claims**
 
-• incompleteness  
-• disorder  
-• isolation  
-• bounded communication  
-• adversarial noise  
-• and direct structural conflict  
+### **Claims**
+
+`X1 = [2, 2]`
+
+`X2 = [3, 3]`
+
+### **Observed**
+
+`X1 = 2`
+
+`X2 = 3`
+
+`A1 = 5`
+
+`Unresolved = []`
+
+`Conflicts = {}`
+
+### **Result**
+
+**PASS**
 
 ---
 
-## **STOCRS Canonical Identity**
+## **Test 11.2 — Multi-Value Conflict**
 
-`correctness = structure`
+### **Claims**
+
+`X1 = [2, 9]`
+
+`X2 = [3, 3]`
+
+### **Observed**
+
+`X2 = 3`
+
+`X1 -> multi_value_conflict`
+
+`A1 -> unresolved`
+
+### **Validated Relation**
+
+`multi-value claim conflict -> conflicted node`
+
+`required dependency not resolved -> dependent node unresolved`
+
+### **Result**
+
+**PASS**
 
 ---
 
-## **STOCRS Theorem (Informal)**
+## **Test 11.3 — Recovery After Corrected Evidence**
 
-For any valid structural program `G`:
+After the conflicting evidence is corrected or removed, the runtime is evaluated again.
 
-`correctness is invariant under arrival order, time variation, fragmentation, bounded sharing, adversarial noise, and structural conflict when abstention rules are preserved.`
+### **Observed**
+
+`X1 = 2`
+
+`X2 = 3`
+
+`A1 = 5`
+
+`Unresolved = []`
+
+`Conflicts = {}`
+
+### **Validated Relation**
+
+`corrected compatible evidence -> resolution may proceed again`
+
+### **Result**
+
+**PASS**
+
+---
+
+## **Test 11.4 — Reverse-Majority Regression**
+
+### **Claims**
+
+`X1 = [9, 9, 2]`
+
+`X2 = [3, 3]`
+
+### **Expected**
+
+- `X1` is conflicted
+- `X1` is not resolved as `9`
+- `A1` remains unresolved
+
+### **Validated Authority Rule**
+
+`claim multiplicity != structural authority`
+
+### **Result**
+
+**PASS**
+
+---
+
+## **Test 11.5 — Unanimous Structure-Incompatible Claim**
+
+### **Claims**
+
+`X1 = [9, 9]`
+
+where declared structure computes:
+
+`X1 = 2`
+
+### **Expected**
+
+`claim_vs_structure`
+
+The repeated incompatible value cannot override declared computation.
+
+### **Result**
+
+**PASS**
+
+---
+
+## **Current Runtime Conflict Certificate**
+
+`3c9ce1ef545e1dd573dcebcd90945a81beb42636d535633769a950df2363eadc`
+
+---
+
+# **PHASE 12 — RECONCILIATION REFERENCE VALIDATION**
+
+## **Test 12.1 — Reconciliation Demo v1.1**
+
+**Seed:** `101`  
+**Systems:** `4`
+
+### **Declared Reference Case**
+
+The systems begin with different incomplete structural fragments.
+
+The completion phase explicitly makes the complete declared structure available.
+
+### **Observed**
+
+`No Logs: YES`
+
+`No Timestamps: YES`
+
+`No Order Required: YES`
+
+`Phase 1 All Systems Unresolved: YES`
+
+`Final Complete OK: YES`
+
+`Final Match OK: YES`
+
+### **Final Values**
+
+`ACC1_FINAL = 120`
+
+`ACC2_FINAL = 40`
+
+`ACC3_FINAL = 80`
+
+`TOTAL_BALANCE = 240`
+
+### **Reconciliation Certificate**
+
+`84ce661a2f89f578ee65eb25dfe46d1b7d0606a15b876c3b9ce7defc99a5f285`
+
+### **Verification Method**
+
+The reconciliation artifact retains a recorded elapsed-runtime field.
+
+Therefore, current verification compares the declared semantic result fields and certificate rather than requiring byte-identical regeneration.
+
+### **Result**
+
+**PASS**
+
+---
+
+# **PHASE 13 — FROZEN FILE IDENTITY**
+
+## **Test 13.1 — Demo SHA-256 Freeze**
+
+### **Illustrative POC**
+
+`demo/stocrs_poc_demo.py`
+
+`5b898feac61cf858e4972991b697059495852fbaae4708c432ec624bdc85f4a6`
+
+### **Canonical Demo v1.2**
+
+`demo/stocrs_canonical_demo_v1_2.py`
+
+`6926803b420d2d89fbb417e5dde0c0ad777be0bfe623afd0bb476b2338d721bd`
+
+### **Reconciliation Demo v1.1**
+
+`demo/stocrs_reconciliation_demo_v1_1.py`
+
+`88515a663a0ebf6eebadb1cde6e3cce0c0f0464e1a1839aae793563e565ffbf3`
+
+### **Result**
+
+**PASS**
+
+---
+
+## **Test 13.2 — Runtime SHA-256 Freeze**
+
+`runtime/stocrs_engine_v1_1.py`
+
+`2b5e229ed5be85657e9f0e7d966b770655cc6743a21d8c6fd37f9b2320cc26d7`
+
+### **Result**
+
+**PASS**
+
+---
+
+## **Test 13.3 — Reference Output SHA-256 Freeze**
+
+### **Canonical JSON Reference**
+
+`reference_outputs/reference_output.json`
+
+`c0a4d5183c17576f06ce34dca8e1469a8a264e47d74d99c4b1ea255ace2ab41b`
+
+### **Human-Readable Canonical Run**
+
+`reference_outputs/reference_run.txt`
+
+`111bf39cc94bedded18a8fd51c35df5cb04b7f3d6fd31f5ed221134f4b398929`
+
+### **Reconciliation Reference**
+
+`reference_outputs/reconciliation_demo_v1_1.json`
+
+`b0b00c1df61076085422c114eb6b3d78278d449e485b9b34aae35017afd240fe`
+
+### **Canonical JSON Copy**
+
+`reference_outputs/stocrs_canonical_demo_v1.json`
+
+`c0a4d5183c17576f06ce34dca8e1469a8a264e47d74d99c4b1ea255ace2ab41b`
+
+### **Runtime Conflict Reference**
+
+`reference_outputs/stocrs_conflict_demo_v1.json`
+
+`9b90f4484b032d905aa30ca85e2a42b671648edad490faf45a539eb2d0c07aef`
+
+### **Result**
+
+**PASS**
+
+---
+
+# **PHASE 14 — COMPLETE LOCAL VERIFICATION**
+
+## **Test 14.1 — Windows Verification Bundle**
+
+Command:
+
+`VERIFY\verify_all.bat`
+
+### **Observed Hash Verification**
+
+- `demo/stocrs_poc_demo.py` — PASS
+- `demo/stocrs_canonical_demo_v1_2.py` — PASS
+- `demo/stocrs_reconciliation_demo_v1_1.py` — PASS
+- `runtime/stocrs_engine_v1_1.py` — PASS
+- `reference_outputs/reference_output.json` — PASS
+- `reference_outputs/reference_run.txt` — PASS
+- `reference_outputs/reconciliation_demo_v1_1.json` — PASS
+- `reference_outputs/stocrs_canonical_demo_v1.json` — PASS
+- `reference_outputs/stocrs_conflict_demo_v1.json` — PASS
+
+### **Observed Semantic Verification**
+
+`Canonical JSON reproduction matched the frozen reference: PASS`
+
+`Reconciliation JSON semantic verification: PASS`
+
+`Conflicting claim multiplicity cannot override declared structure: PASS`
+
+### **Final Result**
+
+`VERIFY RESULT: PASS`
+
+`Deterministic reproduction confirmed within the declared reference cases.`
+
+---
+
+# **PHASE 15 — AUTOMATED WORKFLOW VERIFICATION**
+
+The current repository workflow is:
+
+`.github/workflows/verify.yml`
+
+It is configured to verify the current reference implementation on:
+
+- pushes to `main`
+- pull requests targeting `main`
+
+The workflow checks:
+
+- canonical JSON reproduction
+- canonical result fields
+- canonical certificate
+- conflict-story certificate
+- reconciliation semantic agreement
+- runtime conflict reference output
+- conflict-authority regression behavior
+- all current frozen SHA-256 hashes
+
+The observed successful workflow state is:
+
+`STOCRS Verify -> PASS`
+
+---
+
+# **PART II — HISTORICAL VALIDATION LINEAGE**
+
+The experiments below are preserved in `historical_scripts/`.
+
+They document how the STOCRS idea evolved.
+
+They should be interpreted as scenario-specific historical evidence rather than current universal guarantees.
+
+---
+
+# **PHASE 1 — STRUCTURAL RESOLUTION UNDER REORDERED INPUT**
+
+Historical v1 experiments tested deterministic resolution across different arrival permutations for fixed dependency structures.
+
+Recorded historical scenarios included:
+
+- branching structures
+- diamond structures
+- fragmented configurations
+- 100-run permutation stress tests
+
+Representative historical results included:
+
+`Result Match: YES`
+
+`Time Used for Correctness: NO`
+
+Historical certificates and digests were recorded in the original validation ledger and historical scripts.
+
+### **Current Interpretation**
+
+These experiments support the narrower relation:
+
+`same relevant structure + same deterministic rules -> same supported result`
+
+They do not establish universal order independence for arbitrary computation.
+
+---
+
+# **PHASE 2 — INCOMPLETE STRUCTURE AND DELAYED COMPLETION**
+
+Historical v2 experiments explicitly withheld required structure.
+
+Observed behavior included:
+
+`incomplete structure -> unresolved`
+
+After the missing declaration became available:
+
+`compatible completion -> deterministic resolution`
+
+A representative final state was:
+
+`X = 2`
+
+`Y = 3`
+
+`Z = 10`
+
+`A = 5`
+
+`B = 10`
+
+`C = 20`
+
+`D = 60`
+
+A 100-run historical stress test recorded:
+
+`passes = 100 / 100`
+
+### **Current Interpretation**
+
+The experiment demonstrates explicit incompleteness and later re-evaluation after required structure becomes available.
+
+It does not imply that missing structure arrives automatically.
+
+---
+
+# **PHASE 3 — DIVERGENT LOCAL-TIME CONDITIONS**
+
+Historical v3 experiments used systems with different local-time values under isolated execution.
+
+Recorded conditions included:
+
+- no GPS
+- no NTP
+- no internet
+- different local-time values
+- incomplete structure followed by explicit completion
+
+Historical runs reported matching final supported values.
+
+### **Current Interpretation**
+
+The tested computational result was not selected by local clock values.
+
+This is a reference-case statement, not a claim that time is irrelevant to all computation or operations.
+
+---
+
+# **PHASE 4 — LARGER DEPENDENCY GRAPH**
+
+Historical v4 experiments increased the declared dependency graph size.
+
+A representative historical result recorded:
+
+`Final Node Count = 43`
+
+`H1 = 1963`
+
+A 100-run stress validation recorded:
+
+`passes = 100 / 100`
+
+### **Current Interpretation**
+
+The experiment demonstrates the same structural-resolution pattern on a larger declared graph.
+
+It is not a general scalability benchmark.
+
+Recorded elapsed runtimes were observational only and are not correctness evidence.
+
+---
+
+# **PHASE 5 — MULTI-SYSTEM STRUCTURAL AGREEMENT**
+
+Historical v5 experiments expanded the test to five systems with:
+
+- different fragment orders
+- different local-time values
+- incomplete initial structure
+- explicit later completion
+
+A representative historical final result recorded:
+
+`Final Node Count = 43`
+
+`H1 = 1963`
+
+A 100-run stress validation recorded:
+
+`passes = 100 / 100`
+
+### **Current Interpretation**
+
+The experiment demonstrates agreement across the tested systems after equivalent complete structure becomes available.
+
+It does not establish coordination-free convergence for arbitrary distributed protocols.
+
+---
+
+# **PHASE 6 — DUPLICATE AND INVALID-TOKEN FILTERING**
+
+Historical v6 experiments introduced:
+
+- duplicate valid declarations
+- invalid injected tokens
+
+The historical scripts detected and filtered those specifically defined inputs.
+
+A representative historical final result recorded:
+
+`Final Node Count = 20`
+
+`E1 = 202`
+
+A 100-run stress validation recorded:
+
+`passes = 100 / 100`
+
+### **Current Interpretation**
+
+This phase demonstrates resilience only to the bounded duplicate and invalid-token conditions implemented by that historical script.
+
+It is not a universal adversarial-resilience guarantee.
+
+---
+
+# **PHASE 7 — HISTORICAL CLAIM-CONFLICT EXPERIMENTS**
+
+Historical v7 experiments introduced token-level conflicting candidate claims.
+
+Those scripts are preserved as part of the development lineage.
+
+Earlier documentation described recovery through:
+
+- stronger support
+- reinforcement
+- structural dominance
+
+That is **not the current runtime authority model**.
+
+### **Current Runtime Rule**
+
+`claim multiplicity != structural authority`
+
+Current conflict handling is defined by:
+
+`one distinct claim matching declared computation -> compatible evidence`
+
+`one distinct claim disagreeing with declared computation -> claim_vs_structure`
+
+`more than one distinct claim value -> multi_value_conflict`
+
+Recovery occurs only through a new evaluation after conflicting evidence is corrected or removed.
+
+### **Current Interpretation**
+
+Historical v7 results remain historical evidence of conflict experimentation.
+
+The current runtime semantics supersede majority or reinforcement-based interpretations.
+
+---
+
+# **PHASE 8 — PARTIAL SHARING FOLLOWED BY EXPLICIT COMPLETION**
+
+Historical v8 experiments used:
+
+- different incomplete initial fragments
+- multiple partial-sharing stages
+- unresolved intermediate states
+- explicit final complete structure
+
+A representative final result recorded:
+
+`Final Node Count = 20`
+
+`E1 = 202`
+
+A 100-run stress validation recorded:
+
+`passes = 100 / 100`
+
+### **Current Interpretation**
+
+The partial-sharing stages demonstrate structural growth and persistent incompleteness.
+
+They do not prove that the partial-sharing mechanism itself guarantees complete dissemination.
+
+---
+
+# **PHASE 9 — TIGHTER BOUNDED SHARING FOLLOWED BY EXPLICIT COMPLETION**
+
+Historical v9 experiments imposed stricter intermediate sharing caps.
+
+Recorded progression included bounded known-node counts followed by a final complete node set.
+
+A representative final result recorded:
+
+`Final Node Count = 20`
+
+`E1 = 202`
+
+A 100-run stress validation recorded:
+
+`passes = 100 / 100`
+
+### **Current Interpretation**
+
+The experiment demonstrates that unresolved intermediate states can persist under bounded sharing and that the same final result appears after explicit complete compatible structure becomes available.
+
+It does not establish automatic reconvergence from bounded sharing alone.
+
+---
+
+# **PART III — CURRENT VALIDATION INVARIANTS**
+
+The current STOCRS reference implementation is governed by these bounded invariants:
+
+`same complete compatible structure + same frozen rules -> same supported structural result`
+
+`incomplete structure -> unresolved`
+
+`multi-value claim conflict -> conflicted node`
+
+`structure-incompatible claim -> conflicted node`
+
+`required dependency not resolved -> dependent node unresolved`
+
+`claim multiplicity != structural authority`
+
+`corrected compatible evidence -> resolution may proceed again`
+
+---
+
+## **Certificate and File Identity Distinction**
+
+`certificate -> deterministic declared result payload`
+
+`FREEZE SHA256 -> exact file identity`
+
+Certificates do not replace file-integrity verification.
+
+File hashes do not replace semantic verification.
+
+The current verification path checks both.
+
+---
+
+# **FINAL VALIDATION STATUS**
+
+## **Current Reference Implementation**
+
+**Canonical Demo:** PASS
+
+**Runtime Conflict Demo:** PASS
+
+**Reverse-Majority Regression:** PASS
+
+**Structure-Incompatible Claim Regression:** PASS
+
+**Reconciliation Semantic Verification:** PASS
+
+**Demo SHA-256 Freeze:** PASS
+
+**Runtime SHA-256 Freeze:** PASS
+
+**Reference Output SHA-256 Freeze:** PASS
+
+**Complete Local Verification:** PASS
+
+**Automated Workflow Verification:** PASS
+
+---
+
+# ⭐ **FINAL LEDGER SUMMARY**
+
+**STOCRS currently validates a bounded deterministic structural-computation model in which incomplete structure remains unresolved, conflicting claims cannot acquire authority through repetition, incompatible claims cannot override declared computation, and systems evaluating the same complete compatible structure under the same frozen rules produce the same supported result.**
+
+The historical validation phases document the evolution of that model.
+
+The current canonical demo, runtime engine, frozen reference outputs, verification bundle, and repository workflow define the present reference implementation.
