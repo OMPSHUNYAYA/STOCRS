@@ -2,13 +2,11 @@
 
 **Shunyaya Timeless Computation**
 
-**Deterministic • Time-Independent • Structure-Based Computation**
+**Deterministic • Structure-Driven • Explicit Incompleteness • Conflict-Aware • Replay-Verifiable**
 
 ---
 
-**No Time • No Sequence • No Synchronization Required**
-
-**No GPS • No NTP • No Internet Required for Correctness**
+**No GPS • No NTP • No Internet • No Global Clock Used for Correctness in the Declared Reference Cases**
 
 ---
 
@@ -16,98 +14,123 @@
 
 ## **A1. What is STOCRS?**
 
-STOCRS is a **structural computation model**.
+STOCRS is a **reference model for deterministic structural computation**.
 
-Instead of relying on time, execution order, or synchronization, STOCRS resolves computation through **structural dependency completion**.
+Instead of using time, fragment arrival order, or claim multiplicity as computational authority, STOCRS resolves values from:
 
-Each value is computed only when its dependencies are satisfied and structurally consistent.
+- declared nodes
+- declared dependencies
+- deterministic frozen rules
+- compatible available structure
 
-**Correctness emerges from structure, not from when or how execution occurs.**
+The core relation is:
 
----
-
-## **A2. What problem does STOCRS solve?**
-
-Most modern systems depend on:
-
-• ordered execution  
-• synchronized clocks  
-• coordination between systems  
-• replay logs and event sequencing  
-
-These assumptions break down under:
-
-• network partitions  
-• offline operation  
-• delayed communication  
-• inconsistent arrival orders  
-
-STOCRS introduces a different idea:
-
-Computation can converge correctly even when:
-
-• order is unknown  
-• time is inconsistent  
-• systems are independent  
-• information is incomplete  
+`same complete compatible structure + same frozen rules -> same supported structural result`
 
 ---
 
-## **A3. Does STOCRS replace existing distributed systems?**
+## **A2. What problem does STOCRS explore?**
+
+Many systems use mechanisms such as:
+
+- ordered execution
+- timestamps
+- synchronized clocks
+- continuous coordination
+- replay histories
+
+STOCRS asks a narrower architectural question:
+
+**Can some computational results be determined directly from declared dependency structure rather than from time or arrival order?**
+
+The current reference implementation demonstrates that this is possible within its declared cases.
+
+---
+
+## **A3. Does STOCRS prove that all computation can ignore time or order?**
 
 No.
 
-STOCRS is a **foundational model** that complements existing systems.
+STOCRS does not claim that:
 
-It introduces an alternative correctness model applicable where:
+- every computation is order-independent
+- every distributed system can eliminate coordination
+- every partial-sharing process converges automatically
+- communication or execution infrastructure is unnecessary
 
-• ordering is difficult  
-• synchronization is unreliable  
-• systems must operate independently  
+Its claim is bounded to the declared structural model and verified reference cases.
 
 ---
 
-## **A4. Is STOCRS probabilistic or machine-learning based?**
+## **A4. Does STOCRS replace existing distributed systems?**
 
 No.
 
-STOCRS uses:
+STOCRS is not:
 
-• no probability  
-• no randomness  
-• no machine learning  
-• no training data  
+- a distributed database
+- a consensus protocol
+- a universal replacement for execution systems
+- a production deployment architecture by itself
 
-All computation is **deterministic and structurally defined**.
-
----
-
-## **A5. Why does the STOCRS demo mention no GPS, no NTP, and no internet?**
-
-Because the canonical demo is designed to show that correctness does not depend on **external authority**.
-
-The demo intentionally removes:
-
-• GPS  
-• NTP  
-• internet connectivity  
-
-to show that systems can still converge to the same final truth through **structure alone**.
+It is a structural reference model that may inform systems in which deterministic resolution from explicit dependencies is useful.
 
 ---
 
-## **A6. Is STOCRS mainly about distributed systems?**
+## **A5. Is STOCRS probabilistic or machine-learning based?**
 
-Not only.
+No.
 
-Distributed systems are a strong application area, but STOCRS is more fundamental.
+The reference implementation uses:
 
-It is a computation model for any setting where:
+- no machine learning
+- no probabilistic selection
+- no model training
+- no stochastic resolution authority
 
-• order is unreliable  
-• information is partial  
-• systems are independent  
-• correctness must survive disorder  
+The canonical demo uses seeded shuffling to vary fragment order, but the supported result is determined by declared structure and deterministic rules.
+
+---
+
+## **A6. Why does the STOCRS demo mention no GPS, no NTP, and no internet?**
+
+Because the canonical reference case demonstrates that those external services are not used to determine the supported computational result.
+
+The demo reports:
+
+`No GPS: YES`
+
+`No NTP: YES`
+
+`No Internet: YES`
+
+`Time Used for Correctness: NO`
+
+This does not mean GPS, NTP, internet connectivity, or clocks have no operational value.
+
+It means they are not used as computational authority in the declared reference case.
+
+---
+
+## **A7. Is STOCRS mainly about distributed systems?**
+
+Distributed and intermittently connected systems are natural areas of relevance, but STOCRS is more general.
+
+Its central concern is:
+
+**dependency-governed deterministic resolution**
+
+Possible areas of relevance include:
+
+- distributed computation
+- edge and offline systems
+- deterministic replay
+- recovery and reconstruction
+- data reconciliation
+- audit-oriented computation
+- conflict-aware structural processing
+
+Production use requires independent validation beyond the current reference implementation.
 
 ---
 
@@ -115,13 +138,20 @@ It is a computation model for any setting where:
 
 ## **B1. What is the core idea behind STOCRS?**
 
-STOCRS computes results through **structural dependency resolution**.
+STOCRS represents computation as a dependency-governed structure.
 
-Each node depends on other nodes.
+Each node:
 
-A node is evaluated only when all its dependencies are satisfied and consistent.
+- has declared dependencies
+- becomes structurally ready when those dependencies are resolved
+- is evaluated by a declared deterministic rule
+- remains unresolved when required dependencies are unavailable
 
-Final correctness is achieved when all dependencies are satisfied.
+The central idea is:
+
+`structure determines resolvability`
+
+`declared computation determines supported value`
 
 ---
 
@@ -129,47 +159,51 @@ Final correctness is achieved when all dependencies are satisfied.
 
 Conceptually:
 
-`resolve(nodes) -> evaluate nodes whose dependencies are satisfied -> repeat`
+`resolve(structure) -> evaluate structurally ready nodes -> repeat`
 
-Final correctness condition:
+For a ready node:
 
-`all_dependencies_satisfied -> structural_closure -> final_result`
+`value(node) = declared_rule(resolved_dependency_values)`
 
----
-
-## **B3. How is correctness determined?**
-
-Correctness is determined by **structure**.
-
-If the dependency graph is satisfied and consistent, the result is correct.
-
-Execution order, timing, or coordination do not affect correctness.
+Resolution continues until no additional node can resolve from the currently available compatible structure.
 
 ---
 
-## **B4. Why is time not required?**
+## **B3. How is the supported result determined?**
 
-Time is traditionally used to enforce order.
+Within the current reference model, the supported result is determined by:
 
-STOCRS removes this requirement by allowing resolution only when structure is complete.
+- the declared program structure
+- the available compatible node set
+- the deterministic computation rules
 
-This eliminates the need for:
+Time, arrival order, and claim majority do not replace that authority.
 
-• timestamps  
-• ordering guarantees  
-• synchronization  
+---
+
+## **B4. Why is time not used as computational authority?**
+
+The reference model does not use time to decide what a node means or what value it should produce.
+
+A node resolves when its declared dependencies are available and compatible.
+
+Local time may still be calculated or observed, but it does not determine the supported computational value.
 
 ---
 
 ## **B5. What is a fragment in STOCRS?**
 
-A fragment is a **partial subset of the full computation graph**.
+A fragment is a partial subset of the declared computation structure.
 
-Each system may start with different fragments.
+Different systems may begin with different fragments.
 
-Fragments may be incomplete and unresolved.
+A fragment may contain:
 
-This is valid in STOCRS.
+- resolvable nodes
+- unresolved nodes
+- nodes whose dependencies are absent
+
+Incomplete fragments are valid intermediate states.
 
 ---
 
@@ -177,11 +211,13 @@ This is valid in STOCRS.
 
 Yes.
 
-Unresolved nodes remain unresolved until dependencies are available.
+Incomplete structure may remain partially resolved.
 
-No incorrect partial values are propagated.
+If a required dependency is unavailable:
 
-**Correctness is preserved.**
+`missing required dependency -> unresolved`
+
+STOCRS does not invent a value to force completion.
 
 ---
 
@@ -189,89 +225,101 @@ No incorrect partial values are propagated.
 
 No.
 
-Different systems may begin with different fragments.
+The canonical demo begins with different incomplete fragments across systems.
 
-They do not need identical starting state.
-
-What matters is that valid structure eventually becomes available.
+The verified final agreement occurs when the systems later evaluate the same complete compatible declared structure under the same frozen rules.
 
 ---
 
 ## **B8. What happens if structure never completes?**
 
-Then full resolution does not occur.
+Then some nodes may remain unresolved indefinitely.
 
-Unresolved nodes remain unresolved.
+That is a valid outcome.
 
-This is still a valid outcome.
+STOCRS does not claim that every incomplete state must eventually become complete.
 
-**STOCRS does not force false completion.**
+---
+
+## **B9. Does bounded sharing guarantee complete dissemination?**
+
+No.
+
+The canonical demo includes bounded intermediate sharing, but those phases intentionally remain incomplete.
+
+The demo later makes the complete declared node set explicitly available to every system.
+
+Therefore:
+
+**bounded sharing demonstrates incomplete structural progression, not a proof of guaranteed dissemination.**
 
 ---
 
 # **SECTION C — Multi-System Behavior**
 
-## **C1. How do multiple systems interact?**
+## **C1. How do multiple systems behave in the canonical demo?**
 
-Each system:
+The systems:
 
-• starts with different fragments  
-• processes independently  
-• shares information partially  
+- begin with different incomplete fragments
+- hold different intermediate structural views
+- use different fragment orders
+- have different local-time values
+- remain unresolved through bounded intermediate phases
 
-No coordination or synchronization is required for correctness.
+In the final phase, each system receives the same complete declared structure.
+
+They then produce the same supported final result.
 
 ---
 
-## **C2. What happens when systems share information?**
+## **C2. What happens when systems receive more compatible structure?**
 
-Shared nodes expand structural knowledge.
+Additional compatible structure may satisfy previously missing dependencies.
 
-Dependencies gradually become satisfied.
+This can allow more nodes to resolve.
 
-Resolution progresses.
-
-**Convergence emerges.**
+However, additional structure does not automatically guarantee full completion unless all required dependencies eventually become available.
 
 ---
 
 ## **C3. What if systems have different local times?**
 
-Local time differences do not affect correctness.
+Different local-time values do not determine the supported computational result in the reference model.
 
-STOCRS does not use time to resolve computation.
-
-Each system may have completely different clocks and still converge.
+The canonical demo intentionally uses different reconstructed local-time values while the final supported result remains the same.
 
 ---
 
-## **C4. What if systems process in different orders?**
+## **C4. What if systems receive fragments in different orders?**
 
-Order does not matter.
+Different arrival orders may produce different intermediate views.
 
-Resolution depends only on dependency satisfaction.
+However, when those histories result in the same relevant complete compatible structure under the same frozen rules:
 
-Different execution sequences produce the same final result.
+`same final structure + same rules -> same supported final result`
+
+Arrival order is therefore not resolution authority in the declared reference case.
 
 ---
 
-## **C5. Do systems need to communicate continuously?**
+## **C5. Do systems need continuous communication?**
 
-No.
+Not for the tested final resolution once the same complete compatible structure is locally available.
 
-STOCRS supports **bounded and delayed sharing**.
+However, STOCRS does not claim that required structure can arrive without communication.
 
-Full early communication is not required.
+Transport, persistence, and dissemination remain operational concerns.
 
 ---
 
 ## **C6. Must all systems be online at the same time?**
 
-No.
+Not in the reference model.
 
-Systems may operate asynchronously and reconnect later.
+Systems may hold different incomplete states at different times.
 
-Correctness depends on structural completion, not simultaneity.
+The convergence claim depends on eventual equivalence of the relevant complete compatible structure, not simultaneous online presence.
 
 ---
 
@@ -279,84 +327,124 @@ Correctness depends on structural completion, not simultaneity.
 
 ## **D1. What is an unresolved state?**
 
-An unresolved state is when a node’s dependencies are not yet satisfied.
+A node is unresolved when one or more required dependencies are not resolved.
 
-This is not an error.
+This is not automatically an error.
 
-This is a **valid structural state**.
+It means:
+
+**the currently available structure is insufficient to support that node's value.**
 
 ---
 
 ## **D2. Why is unresolved not considered failure?**
 
-Traditional systems treat incomplete state as failure.
+Because incomplete structure does not justify inventing a result.
 
-STOCRS treats it as valid incompleteness.
-
-Only complete and consistent structure produces results.
+STOCRS treats unresolved as an explicit structural state rather than forcing premature completion.
 
 ---
 
 ## **D3. When does resolution occur?**
 
-Resolution occurs only when all dependencies of a node are satisfied and consistent.
+A node may resolve when:
 
-At that point:
-
-• the node is evaluated  
-• values propagate forward  
+- all declared dependencies are resolved
+- its declared rule can be evaluated
+- available claim evidence, when present, is compatible with declared computation
 
 ---
 
-## **D4. Can unresolved state persist for many phases?**
+## **D4. Can unresolved state persist across many phases?**
 
 Yes.
 
-The canonical demo shows **prolonged unresolved persistence under bounded sharing**.
+The canonical demo intentionally preserves unresolved nodes through multiple bounded-sharing phases.
 
-This demonstrates stability until structure becomes complete.
+This demonstrates that incomplete structure can remain explicit without forcing an unsupported result.
+
+---
+
+## **D5. What is structural closure?**
+
+Structural closure is reached when no additional node can resolve from the currently available compatible structure.
+
+Closure does not always mean full completion.
+
+A closed state may still contain unresolved nodes if required structure is absent or conflicted.
 
 ---
 
 # **SECTION E — Convergence**
 
-## **E1. What guarantees convergence?**
+## **E1. What guarantees convergence in STOCRS?**
 
-Convergence is guaranteed by **structural closure**.
+The current convergence claim is conditional.
 
-As dependencies become available:
+Multiple systems produce the same supported final result when they eventually hold:
 
-• nodes resolve  
-• structure completes  
-• final values emerge  
+- the same declared finite acyclic program structure
+- the same complete compatible node set
+- the same frozen deterministic rules
 
----
+Then:
 
-## **E2. What ensures all systems reach the same result?**
-
-All systems resolve the same dependency structure.
-
-Given deterministic functions, the final result is identical.
+`same complete compatible structure + same frozen rules -> same supported structural result`
 
 ---
 
-## **E3. What is the canonical demo actually proving?**
+## **E2. What ensures all systems reach the same supported result?**
 
-It proves that multiple independent systems can:
+The reference program is deterministic and acyclic.
 
-• begin with different incomplete fragments  
-• remain unresolved across multiple phases  
-• operate with different local times and no authority  
-• still converge to the same final result  
+For the same complete compatible structure:
+
+- root values are fixed by declared rules
+- each dependent node receives the same dependency values
+- each deterministic rule therefore produces the same value
+
+This yields the same supported final value map.
+
+---
+
+## **E3. What does the canonical demo actually demonstrate?**
+
+It demonstrates that five systems can:
+
+- begin with different incomplete fragments
+- remain unresolved through several phases
+- use different fragment orders
+- hold different local-time values
+- later receive the same complete compatible declared structure
+- produce the same supported final result
+
+It does not prove that partial sharing alone guarantees eventual complete structure.
 
 ---
 
 ## **E4. What is the final result in the canonical demo?**
 
-`Final Node Count = 20`  
-`Final E1 = 202`
+The canonical reference case reports:
 
-The result matches across all systems.
+`Final Complete OK: YES`
+
+`Final Match OK: YES`
+
+`Final Node Count: 20`
+
+`Final E1: 202`
+
+---
+
+## **E5. Is the convergence claim universal?**
+
+No.
+
+It is a bounded claim under the declared STOCRS assumptions.
+
+For details, see:
+
+`docs/Convergence-Proof.md`
 
 ---
 
@@ -364,76 +452,180 @@ The result matches across all systems.
 
 ## **F1. Is STOCRS deterministic?**
 
-Yes.
+Within the declared model, yes.
 
-Given the same structure and inputs, STOCRS always produces the same result.
+The governing relation is:
+
+`same complete compatible structure + same frozen rules -> same supported structural result`
 
 ---
 
 ## **F2. How is reproducibility verified?**
 
-Through deterministic output and certificate generation:
+The current verification path uses:
 
-`certificate = SHA256(structural_result_payload)`
-
-Repeated runs produce the same certificate.
+- deterministic canonical reference output
+- deterministic certificates
+- frozen SHA-256 file hashes
+- exact canonical JSON reproduction
+- reconciliation semantic verification
+- conflict-authority regression testing
+- GitHub Actions workflow verification
 
 ---
 
 ## **F3. What is replay verification?**
 
-Replay verification ensures:
+Replay verification checks whether the declared reference case can be executed again and reproduce the expected result.
 
-• same inputs  
-• same outputs  
-
-across independent executions.
+The canonical JSON output is compared exactly with the frozen canonical reference artifact.
 
 ---
 
-## **F4. What does the certificate certify?**
+## **F4. What does the canonical certificate bind?**
 
-It certifies the **structural result payload**.
+The canonical certificate is:
 
-It confirms identical structural resolution under identical conditions.
+`SHA256(certificate_payload)`
 
-It does not certify performance or deployment safety.
+It binds the deterministic structural data included in that declared payload.
 
----
+It does not certify:
 
-## **F5. Why is runtime not part of the certificate?**
+- source-code identity
+- deployment safety
+- performance
+- production readiness
 
-Runtime can vary across systems.
-
-STOCRS certifies **structural truth**, not performance.
-
----
-
-# **SECTION G — Adversarial and Conflict Handling**
-
-## **G1. What happens with conflicting fragments?**
-
-Conflicting inputs lead to:
-
-`conflicting_inputs -> abstention`
-
-No incorrect value is produced.
+Exact file identity is verified separately through the SHA-256 freeze records.
 
 ---
 
-## **G2. Can adversarial conditions break STOCRS?**
+## **F5. Why is file hashing separate from certificates?**
 
-Invalid inputs remain unresolved or isolated.
+Because the two mechanisms serve different purposes.
 
-Correct structure remains unaffected.
+`certificate -> deterministic declared result payload`
+
+`FREEZE SHA256 -> exact file identity`
+
+The verification bundle checks both.
 
 ---
 
-## **G3. Does STOCRS require trusted arrival order?**
+## **F6. Why was elapsed runtime removed from the canonical JSON?**
+
+Elapsed runtime varies between executions and environments.
+
+Removing it from the canonical JSON allows exact deterministic comparison with the frozen canonical reference artifact.
+
+---
+
+## **F7. Why does the reconciliation reference artifact still contain elapsed runtime?**
+
+The reconciliation artifact predates the canonical cleanup and retains its recorded runtime field.
+
+Therefore, reconciliation verification compares its declared semantic result fields and certificate rather than requiring byte-identical regeneration.
+
+---
+
+## **F8. What are the current primary verification files?**
+
+The current reference path includes:
+
+- `demo/stocrs_canonical_demo_v1_2.py`
+- `runtime/stocrs_engine_v1_1.py`
+- `reference_outputs/`
+- `VERIFY/`
+- `.github/workflows/verify.yml`
+
+The illustrative POC demo is not the primary verification authority.
+
+---
+
+# **SECTION G — Conflict Handling**
+
+## **G1. What happens with conflicting claims?**
+
+If more than one distinct claim value is present for a ready node:
+
+`more than one distinct claim value -> multi_value_conflict`
+
+The node does not resolve from those conflicting claims.
+
+---
+
+## **G2. What happens when a claim disagrees with declared computation?**
+
+If there is one distinct claimed value but it disagrees with the value computed from declared structure:
+
+`claim_vs_structure`
+
+The incompatible claim is not allowed to override the declared computation.
+
+---
+
+## **G3. Can majority support override declared structure?**
 
 No.
 
-Truth emerges from structure, not arrival order.
+The authority rule is:
+
+`claim multiplicity != structural authority`
+
+For example, if declared structure computes:
+
+`X1 = 2`
+
+then:
+
+`[9, 9]`
+
+does not make `9` authoritative.
+
+Likewise:
+
+`[9, 9, 2]`
+
+is still conflicting evidence and cannot override declared structure.
+
+---
+
+## **G4. What happens to dependent nodes when a required node is conflicted?**
+
+They remain unresolved if the required dependency is not resolved.
+
+For example:
+
+`X1 claims = [2, 9] -> X1 conflicted`
+
+`A1 depends on X1 -> A1 unresolved`
+
+---
+
+## **G5. How does recovery work?**
+
+Recovery occurs through a new evaluation after conflicting evidence is corrected or removed.
+
+Then compatible structure may resolve again.
+
+This is not:
+
+- majority voting
+- structural dominance by repetition
+- claim reinforcement
+
+It is re-evaluation under corrected compatible evidence.
+
+---
+
+## **G6. Can adversarial inputs ever affect STOCRS?**
+
+The reference implementation contains bounded conflict checks for the specific declared cases.
+
+It should not be interpreted as a universal adversarial-resilience guarantee.
+
+Broader hostile-input handling would require additional validation and engineering.
 
 ---
 
@@ -441,30 +633,29 @@ Truth emerges from structure, not arrival order.
 
 ## **H1. What is required to run STOCRS?**
 
-Only computational capability.
+For the current reference implementation:
 
-It can run on:
+- Python 3.9+
+- standard library only
+- no external Python dependencies
 
-• laptops  
-• servers  
-• embedded systems  
-• offline environments  
-
----
-
-## **H2. Does STOCRS require network connectivity?**
-
-No.
-
-Systems can operate fully offline.
+The GitHub Actions workflow currently runs with Python 3.10.
 
 ---
 
-## **H3. Does STOCRS require synchronization infrastructure?**
+## **H2. Does the reference demo require network connectivity?**
 
 No.
 
-No GPS, NTP, or global clock is required.
+The canonical and runtime demonstrations run fully offline.
+
+---
+
+## **H3. Does STOCRS require GPS, NTP, or a global clock for the tested computational result?**
+
+No.
+
+Those services are not used as computational authority in the declared reference cases.
 
 ---
 
@@ -472,7 +663,7 @@ No GPS, NTP, or global clock is required.
 
 No.
 
-The reference implementation uses standard environments.
+The current reference implementation runs in a standard Python environment.
 
 ---
 
@@ -482,11 +673,11 @@ The reference implementation uses standard environments.
 
 No.
 
-Consensus focuses on agreement protocols.
+Consensus protocols address agreement among participants under specific communication and fault assumptions.
 
-STOCRS focuses on **structural correctness**.
+STOCRS addresses deterministic resolution from declared structure once the relevant complete compatible structure is available.
 
-Agreement emerges as a consequence.
+It is not a consensus protocol.
 
 ---
 
@@ -494,9 +685,9 @@ Agreement emerges as a consequence.
 
 No.
 
-There is philosophical overlap, but STOCRS is based on:
+There may be conceptual overlap around convergence and distributed state, but STOCRS uses a different declared model centered on dependency-governed structural resolution.
 
-**dependency satisfaction**, not merge semantics.
+The repository does not claim that STOCRS replaces CRDTs or eventual-consistency systems.
 
 ---
 
@@ -504,21 +695,29 @@ There is philosophical overlap, but STOCRS is based on:
 
 No.
 
-Schedulers enforce order.
+A scheduler decides when or in what order work should execute.
 
-STOCRS removes dependence on order.
+STOCRS defines which nodes are structurally resolvable and what supported values follow from declared deterministic rules.
+
+Operational scheduling may still exist independently.
 
 ---
 
 # **SECTION J — Scope and Non-Claims**
 
-## **J1. What STOCRS does NOT claim**
+## **J1. What does STOCRS not claim?**
 
 STOCRS does not claim:
 
-• replacement of all distributed systems  
-• elimination of communication  
-• universal applicability  
+- universal order independence
+- universal time independence
+- universal convergence of arbitrary distributed protocols
+- elimination of communication
+- elimination of physical execution
+- elimination of operational coordination
+- automatic completion from bounded sharing
+- production safety certification
+- formal technical-standard recognition
 
 ---
 
@@ -526,15 +725,17 @@ STOCRS does not claim:
 
 No.
 
-STOCRS focuses on correctness, not performance.
+The reference implementation focuses on structural resolution and correctness properties, not performance optimization.
 
 ---
 
 ## **J3. Is STOCRS production-ready?**
 
-This is a reference implementation.
+No production-readiness claim is made.
 
-Further engineering is required for production.
+The repository provides a public reference implementation.
+
+Production use requires additional engineering, security review, operational design, and independent validation.
 
 ---
 
@@ -542,28 +743,43 @@ Further engineering is required for production.
 
 No.
 
-Clocks remain useful for:
+Clocks may remain useful or necessary for:
 
-• logging  
-• monitoring  
-• scheduling  
-• user-facing operations  
+- logging
+- monitoring
+- scheduling
+- expiration
+- timeout handling
+- user-facing operations
+- physical coordination
 
-STOCRS only removes clocks from **correctness dependency**.
+STOCRS only demonstrates that the tested supported computational result is not selected by clock values.
+
+---
+
+## **J5. Does STOCRS eliminate ordering everywhere?**
+
+No.
+
+Many systems and computations inherently depend on order.
+
+STOCRS demonstrates arrival-order independence only for the declared reference cases where the same relevant complete compatible structure and deterministic rules are eventually available.
 
 ---
 
 # **SECTION K — Architectural Perspective**
 
-Traditional systems:
+A coordination-heavy system may use:
 
-`time + order + synchronization -> correctness`
+`time + order + synchronization -> operational agreement`
 
-STOCRS:
+The STOCRS reference model asks whether some computational decisions can instead use:
 
-`structure -> correctness`
+`declared structure + frozen rules -> supported result`
 
-Computation becomes structural resolution, not ordered execution.
+This is a shift in **resolution authority**.
+
+It is not a claim that execution, communication, transport, or operational coordination disappear.
 
 ---
 
@@ -571,29 +787,33 @@ Computation becomes structural resolution, not ordered execution.
 
 ## **L1. Why is this important?**
 
-Because many systems fail when they depend on:
+Because some systems may benefit from separating:
 
-• strict order  
-• continuous connectivity  
-• global time authority  
-• perfect coordination  
+- operational history
+- transport order
+- clock state
+- evidence multiplicity
 
-STOCRS grounds correctness in structure.
+from:
+
+- computational authority
+
+STOCRS demonstrates one bounded way to make that separation explicit.
 
 ---
 
 ## **L2. What is the broader implication?**
 
-Some computation can be designed around **structural truth**, not timing.
+Where the required structure is complete, compatible, and governed by deterministic rules:
 
-This enables:
+- a global clock may not be needed as computational authority
+- arrival order may not be needed as computational authority
+- continuous synchronization may not be needed as computational authority
 
-• deterministic systems  
-• resilient systems  
-• replay-verifiable systems  
+This may support research into deterministic, replay-verifiable, conflict-aware structural systems.
 
 ---
 
 # ⭐ **ONE-LINE SUMMARY**
 
-**STOCRS is a deterministic structural computation model in which independent systems can begin with incomplete or conflicting information and still converge to the same final result without relying on time, sequence, synchronization, GPS, NTP, or internet — through structural resolution and abstention-based correctness.**
+**STOCRS is a bounded deterministic structural computation reference model in which incomplete structure remains unresolved, conflicting claims cannot override declared computation, and systems evaluating the same complete compatible structure under the same frozen rules produce the same supported result without using time, arrival order, continuous synchronization, or claim majority as computational authority.**
